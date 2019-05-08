@@ -74,12 +74,8 @@ Old and new versions of Marxan
 ## Interacting with the map
 ## Changing how the results are displayed
 ## Changing the basemap
-<details>
-  <summary># Help </summary>
-  
-  ## Server details
-  ## Help item
-  ## About item
-</details>
-
+# Help 
+## Server details
+## Help item
+## About item
 # Providing Feedback
