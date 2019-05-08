@@ -11,6 +11,7 @@ Marxan Web is a software tool for doing systematic planning in a number of domai
 ### Types of project
 Old and new versions of Marxan
 ## The projects window
+![Image of Projects Windows](marxan_projects.png)
 ## Included case studies
 ## Managing projects
 ### Creating new projects
