@@ -65,6 +65,7 @@ To import a DOS-based Marxan project:
 5. Specify the name of the planning grid - this will be the name of the planning grid that is created from the zipped up shapefile
 6. Click Next and enter the project metadata
 7. Click Finish.  
+
 The project will now be imported and the shapefile will be uploaded to Mapbox (for more information see Understanding mapping). Once this process has finished the new Marxan Web project will be shown in the project window with the text 'Imported Project' at the bottom. The project can be run immediately.  
 ### Duplicating a project
 Duplicating a project copies all of the project information to a new project with the same project name but with a '\_copy' suffix. The project can then be opened, edited and run. This provides a mechanism for iterating and improving projects until they are fit-for-purpose.
