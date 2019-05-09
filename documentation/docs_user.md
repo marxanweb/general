@@ -77,9 +77,13 @@ By default projects are created as public which means that they can be viewed by
 To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER.
 ## Managing features within a project
 The features that are included in a project are shown in the features tab and for each feature there is a target icon (on the left), a status bar (underneath the feature name) and a context menu (on the right).  
+
 The target icon shows the target that has been set for that particular species and its color reflects the status of the feature. If the project has been run and the target has been achieved for the feature then it is white. If the target has not been achieved it is shown in pink.  
+
 The status bar shows a scale from 0 to 100% which shows the amount of the feature that needs to be protected (in grey) and the amount protected in the current run (in blue). If the amount protected in the current run does not reach the amount to be protected then the target icon is shown in pink.  
+
 The context menu provides a set of functions that apply to the feature and the precise set of functions depends on whether the project was created using the New Project wizard or imported and also on whether the feature was uploaded to Mapbox (see the Mapping section).  
+
 The following list is the full set of functions that are available in the context menu:  
 - Properties - this opens the Feature Properties window - for more information see this section below
 - Remove from project - this is a shortcut to remove that feature from the project
