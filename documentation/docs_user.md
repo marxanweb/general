@@ -1,8 +1,9 @@
 # Background
-Marxan Web is a software tool for doing systematic planning in a number of domains including conservation,agriculture and many sectors. Systematic planning is bla bla bla.
+Marxan Web is a software tool for doing Systematic Conservation Planning over the web and for sharing the results amongst the conservation community and other stakeholders. It builds upon the existing DOS-based Marxan software and offers the following new features and benefits:  
+bla bla bla  
 # Systematic Conservation Planning with Marxan Web
 ## Achieving conservation targets 
-## Making Marxan more accessible
+## Making Marxan more accessible  
 ## Sharing results with the conservation community
 # Tutorial 1: Case study from British Columbia
 # Tutorial 2: Creating a simple project in 4 steps
