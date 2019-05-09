@@ -48,6 +48,7 @@ To create a new project using the New Project wizard:
 3. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the Planning Grids section) and then the wizard can be restarted. Click Next
 4. Choose the conservation features that will be part of your project
 5. Select a cost surface (not currently implemented) and click Finish  
+
 The project will now be created and opened and can be run immediately.  
 ### Importing existing Marxan projects
 Existing DOS-based Marxan projects can also be imported to Marxan Web using the Import Project window (currently only supported on Google Chrome). Imported projects share some of the features of projects created with the New Project wizard, but there are a number of important differences that may influence which method you use. In particular, the following capabilities are not supported on imported projects:  
