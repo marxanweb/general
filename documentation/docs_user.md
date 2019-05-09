@@ -7,6 +7,10 @@ bla bla bla
 ## Sharing results with the conservation community
 # Tutorial 1: Case study from British Columbia
 # Tutorial 2: Creating a simple project in 4 steps
+# The Marxan User Interface
+## Projects window
+## Results window
+## The Map
 # Projects
 ## Understanding projects
 ### Types of project
