@@ -41,6 +41,7 @@ In a default installation of Marxan Web on a desktop machine, there are a number
 This section contains information on the common tasks associated with managing projects.  
 ### Creating new projects
 The preferred way to create new projects in Marxan Web is to create them with the New Project wizard. This wizard takes the user through a simple set of steps to create a fully functioning Marxan Web project. The user creates the project metadata; selects the conservation features that will be included in the project and chooses the planning grid that will form the geographic extend and resolution for the analysis.  
+  
 To create a new project using the New Project wizard:  
 1. Click on the New button in the projects window
 2. Enter the project metadata and click Next
@@ -54,6 +55,7 @@ Existing DOS-based Marxan projects can also be imported to Marxan Web using the 
 - Showing the project features on the map is not supported
 - Zooming to project features on the map is not supported
 - Project features have only basic metadata, e.g. simple names and no descriptions  
+  
 To import a DOS-based Marxan project:  
 1. Click on the Import button in the Projects window
 2. Specify the Marxan Project Folder which should point to the folder that contains the input.dat file
