@@ -196,7 +196,7 @@ Section "Marxan Client" SectionMarxanClient
   SectionIn 1 RO 
   ;INSTALL MARXAN-CLIENT
   SetOutPath "$INSTDIR"
-  File /r marxan-client-0.61 ;TODO Update to correct version
+  File /r marxan-client-0.62 ;TODO Update to correct version
   ;Store installation folder
   WriteRegStr HKCU "Software\Marxan Web" "" $INSTDIR
   ;Create uninstaller
@@ -370,7 +370,7 @@ FunctionEnd
 Section "Uninstall"
  
   ;marxan server and client files
-  RMDir /r "$INSTDIR\marxan-client-0.61" ;TODO Update to correct version
+  RMDir /r "$INSTDIR\marxan-client-0.62" ;TODO Update to correct version
   RMDir /r "$INSTDIR\marxan-server-0.6" ;TODO Update to correct version
   Delete "$INSTDIR\Uninstall.exe"
   
