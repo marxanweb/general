@@ -5,6 +5,7 @@ This is the main repo for the Marxan Web Systematic Conservation Planning tool a
 - Installer for Windows
 - Marxan Registry information
 - Issue tracker
+- Client apps
 
 These are described in the following sections below.
 
@@ -13,4 +14,6 @@ These are described in the following sections below.
 ## Compiled installer for Windows
 ## Marxan Registry information
 ## Issue tracker
+## Client apps
+
 
