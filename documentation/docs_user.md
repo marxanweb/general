@@ -100,17 +100,38 @@ Feature targets can be changed in one of two ways:
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
 - In the Feature Properties window, enter a new value in the Target Percent field and click OK  
 ### Changing feature penalty factor  
-In the Feature Properties window, enter a new value in the Species Penalty Factor field and click OK  
+In the Feature Properties window, enter a new value in the Species Penalty Factor field and click OK.  
 ## Running projects
-### Changing run settings
+### An overview of running projects
+When you run a project in Marxan Web there are a number of discrete steps that take place. These are described in the following paragraphs.  
+If you are running the project for the first time or you have added new features since the last time you ran it, then all of those features need to be preprocesssed. For more information see [Preprocessing features](#preprocessing-features). This is done automatically as part of the Marxan run and the state of that preprocessing is shown in the Log tab.   
+
+Once feature preprocessing has been completed, then the algorithms that compute the best combinations of planning units will be run. During this step, the algorithms produce a set of optimal solutions that protect the features (according to their stated targets) with the minimum cost. The number of these solutions that are produced is set in the Run Settings window (see [Run settings](#run-settings) and has a large bearing on how long the Marxan run will take. By default any new project will have 10 iterations. The run duration will also depend on how many features there are and how extensive and detailed the planning grid is. Runs can be stopped at any time using a number of methods. For more information see [Stopping runs](#stopping-runs).  
+
+The state of the Marxan run is shown in the Log tab (although this is currently not supported on Windows) and the Run number shows the number of the iteration that have already been run. There is a lot of additional information in the Log window which shows the statistics that have been produced by the Marxan algorithms for the run. The state of a Marxan run is also shown in the Run log window (admin users only). For more information see [the Run log](#the-run-log).
+
+If the run completes succesfully, at the end of the run the results will be shown on the map and in the features tab. For more information see [Viewing results](#viewing-results). If the run is stopped before it has finished then no results will be available and the results from the previous run will still be visible in the map and in the features tab.
+
+### Run settings
+There are a large number of settings that can be changed for the Marxan run and these are editing in the Run Settings window which is accessed from the bottom of the main project window. A lot of these settings are for experienced Marxan users that understand how the different values can affect the results, but there are some commonly used settings that are described in the next sections: the number of runs and the degree of clumping. For more information on all of the Marxan Run settings consult the Marxan User Manual available in pdf form [here](https://github.com/andrewcottam/marxan-server/raw/master/marxan%20manual%201.8.10.pdf).  
+
+To set a run parameter, simply click in the value column next to the corresponding parameter, enter a new value and click OK. The setting will be used the next time you run the project. The method to change the BLM parameter value is different - for more information see [Choosing how much clumping](#choosing-how-much-clumping).  
+
 #### Changing the number of runs
+One of the most important of the run settings is setting the number of iterations that will be done. During the development of a Marxan project it will usually suffice if the number of runs is relatively low, e.g. 10-20 to get a rough idea of the impact of any changes in features, targets or costs. However, when these changes have been finalised it is important to run Marxan with a much greater number of iterations to get the best results. The number of iterations is set in the NUMITNS parameter. 
+
 #### Choosing how much clumping
+
 ### Stopping runs
+Project runs can be stopped at any point using one of the following methods:
+- By clicking on the Stop button in the main project window
+- By opening the Run Log window (admin users only) and clicking on the running project and clicking the Stop button. For more information see [the run log](#the-run-log).
+Other users stopping your runs!
 ### Viewing results
 ### The log window
 #### Output from preprocessing
 #### Output from runs
-### The run log
+### The Run log
 # Features
 ## Understanding features
 ## The features window
@@ -122,6 +143,8 @@ In the Feature Properties window, enter a new value in the Species Penalty Facto
 #### Adding features from the IUCN Red List of Threatened Species
 ### Deleting features
 ## Preprocessing features
+Explaing that this used to be done in Marxan but is no longer necessary
+Once preprocessing has been started it cannot be stopped.
 ## Feature properties window
 ## Showing features on the map
 # Planning grids
