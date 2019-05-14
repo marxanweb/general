@@ -1,4 +1,6 @@
-# Migration Guide for Marxan to Marxan Web
+# Migration Guide
+This guide is aimed at existing users of the DOS version of Marxan (together with the various tools that support it) who are considering migrating to Marxan Web. It describes when it may be useful to migrate and how to do it.
+
 ## Should I migrate to Marxan Web?
 Marxan Web offers a number of advantages and features that were not available in the DOS version of Marxan. However, there are some cases in which it may be better to stick with what you know rather than moving to Marxan Web. Below are some of the questions that may help in making the decision.  
 
