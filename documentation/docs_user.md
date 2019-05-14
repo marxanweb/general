@@ -1,6 +1,11 @@
 # Background
 Marxan Web is a software tool for doing Systematic Conservation Planning over the web and for sharing the results amongst the conservation community and other stakeholders. It builds upon the existing DOS-based Marxan software and offers the following new features and benefits:  
-bla bla bla  
+- It can installed locally or used directly online (hosted version)
+- It is great
+- It is fantastic etc
+
+For more information about migrating from the existing version of Marxan see the [Migration Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_migration.html)
+
 # Systematic Conservation Planning with Marxan Web
 ## Achieving conservation targets 
 ## Making Marxan more accessible  
