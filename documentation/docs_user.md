@@ -160,4 +160,4 @@ Describe why Mapbox is used
 ## About item
 # Providing Feedback
 # FAQ
-## Why do imported projects have less functions available?
+## #Why do imported projects have less functions available?
