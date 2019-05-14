@@ -6,8 +6,9 @@
 Projects, features and planning grids
 Marxan Registry
 ## Scalable
-# Importing existing Marxan projects
-## Preparation
-## Issues
-## 
+# Migrating to Marxan Web
+## Which do I choose? Hosted or a local installation
+## Importing existing Marxan projects
+### Preparation
+### Issues
 # FAQ
