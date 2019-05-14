@@ -125,13 +125,19 @@ To set a run parameter, simply click in the value column next to the correspondi
 #### Changing the number of runs
 One of the most important of the run settings is setting the number of iterations that will be done. During the development of a Marxan project it will usually suffice if the number of runs is relatively low, e.g. 10-20 to get a rough idea of the impact of any changes in features, targets or costs. However, when these changes have been finalised it is important to run Marxan with a much greater number of iterations to get the best results. The number of iterations is set in the NUMITNS parameter. 
 
-#### Choosing how much clumping
+#### Clumping window
+The degree to which the planning units are grouped or clumped together is controlled by the BLM setting and this value is set using the Clumping window.  
+
+This window provides an interactive way to set the degree of clumping by running the project 5 times using different clumping values and showing the results on 5 separate maps. To use a specific BLM value, click on the map that has the most promising distribution of planning units or enter its value directly in the Run settings window. The default values for the clumping window are: 0.001, 0.01, 0.1, 1 and 10. These may not necessarily be the best values for the current project and it may be necessary to experiment with different values to find the one that works the best. To change the range of BLM values in the clumping window, enter new values for the minimum and maximum and click the Refresh button. These values will be scaled over the 5 separate maps and a new set of results will be shown.  
+
+To change the scale and position of all of the 5 separate maps, move or zoom the map in the main window.  
 
 ### Stopping runs
 Project runs can be stopped at any point using one of the following methods:
 - By clicking on the Stop button in the main project window
 - By opening the Run Log window (admin users only) and clicking on the running project and clicking the Stop button. For more information see [the run log](#the-run-log).
-Other users stopping your runs!
+Bear in mind that admin users have access to all of the runs that are currently running and can stop any run using the Run Log window. To avoid this happening you can restrict access to particular projects by setting them as private. See [Controlling access to a project](#controlling-access-to-a-project).
+
 ### Viewing results
 ### The log window
 #### Output from preprocessing
