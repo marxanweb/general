@@ -29,6 +29,7 @@ Marxan Registry
 ### Which do I choose? Hosted or a local installation
 ### Importing existing Marxan projects
 #### Preparation
+Planning grids need to be in WGS84 geographic coordinates and there must be a field named 'puid' (lowercase).
 #### Issues
 ## FAQ
 ### Can I just copy all my existing Marxan projects over to Marxan Web?
