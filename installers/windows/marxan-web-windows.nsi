@@ -189,8 +189,9 @@ Section "Marxan Server" SectionMarxanServer
   ;CREATE WINDOWS SHORTCUTS
   CreateDirectory "$SMPROGRAMS\Marxan Web"
   SetOutPath "$INSTDIR\marxan-server" 
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Open Marxan Web.lnk" "$INSTDIR\Miniconda2\python.exe" "$\"$INSTDIR\marxan-server\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
-  
+  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda2\python.exe" "$\"$INSTDIR\marxan-server\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
+
 SectionEnd
 
 Section "Marxan Client" SectionMarxanClient
