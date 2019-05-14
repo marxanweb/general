@@ -1,5 +1,4 @@
-Marxan User Guide  
-=================
+# User Guide  
 Marxan Web is a software tool for doing Systematic Conservation Planning over the web and for sharing the results amongst the conservation community and other stakeholders. It builds upon the existing DOS-based Marxan software and offers the following new features and benefits:  
 - It can installed locally or used directly online (hosted version)
 - It is great
