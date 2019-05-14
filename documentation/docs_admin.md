@@ -1,4 +1,6 @@
 # Architecture
+## Cross-platform
+##
 # Installation
 ## Windows
 ## Linux
