@@ -92,7 +92,7 @@ The following list is the full set of functions that are available in the contex
 - Zoom to feature extent - zooms the map to the extent of the features geometry
 - Preprocess - intersects the feature with the planning grid which is a prerequisite for a Marxan run. For more information see Feature preprocessing.  
 ### Adding and removing features  
-To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#Why-do-imported-projects-have-less-functions-available?)
+To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 ### Viewing feature metadata  
 In the context menu click Properties to view all of the feature metadata. For more information see the Feature Properties section below.  
 ### Changing feature targets  
@@ -160,4 +160,4 @@ Describe why Mapbox is used
 ## About item
 # Providing Feedback
 # FAQ
-## #Why do imported projects have less functions available?
+## Why do imported projects have less functions available?
