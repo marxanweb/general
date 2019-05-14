@@ -21,17 +21,17 @@ Once a server has been selected, the user must enter their credentials to login 
 
 Once you are logged in you will see the Marxan User Interface. This comprises three main elements which are part of a single page web application: the map, the project window (on the left) and the results window (on the right). Other windows are shown as and when they are required. This single page will remain the main user interface until logging out and all tasks are completed in this interface.  
 ## Project window
-On the left hand side of the application user interface is the project window which comprises three tabs: the project tab, the features tab and the planning units tab. These tabs taken together represent the inputs to the analysis: which project, which features are part of that project and what planning units will be used. For more information on projects see the projects section.  
+On the left hand side of the application user interface is the project window which comprises three tabs: the project tab, the features tab and the planning units tab. These tabs taken together represent the inputs to the analysis: which project, which features are part of that project and what planning units will be used. For more information on projects see the [Projects](#projects) section.  
 
 ## Results window
-On the right hand side of the application user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the running projects section.  
+On the right hand side of the application user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the [Running projects](#running-projects) section.  
 ## The Map
-The main part of the application user interface is taken up by the interactive map. The map is the main way of visualising the outputs from any Marxan analyses and is a powerful and flexible tool for visualising hundreds of thousands of individual planning units on-the-fly in three dimensions. The map can be zoomed, panned, rotated and tilted to find the best viewing perspective for a particular run. For more information see the mapping section.  
+The main part of the application user interface is taken up by the interactive map. The map is the main way of visualising the outputs from any Marxan analyses and is a powerful and flexible tool for visualising hundreds of thousands of individual planning units on-the-fly in three dimensions. The map can be zoomed, panned, rotated and tilted to find the best viewing perspective for a particular run. For more information see the [Mapping](#mapping) section.  
 # Projects
 ## Understanding projects
 Projects are the main way of organising any Marxan Web analyses and are the logical starting point for any conservation planning. Each project contains a set of conservation features (i.e the things that you are interesting in protecting); a set of planning units which represent the geographic domain over which the analysis will be done and a set of run parameters that are used to fine-tune the analysis to get the best results. A project also has a limited set of metadata including the project name, a description and the date that it was created. Users with read/write permissions can create any number of projects which are limited only by the amount of disk storage on the server machine.  
 ### Types of project
-Marxan Web projects can be created from scratch using the New Project wizard, or they can be imported from previous DOS-based Marxan projects. Both types of projects can be run and visualised in the map, but imported projects have less capabilities than new projects. The preferred method of creating projects is to create them using the New Project wizard where possible. The main difference is that features cannot be added or removed in imported projects and those features can't be visualied on the map.  
+Marxan Web projects can be created from scratch using the New Project wizard, or they can be imported from previous DOS-based Marxan projects. Both types of projects can be run and visualised in the map, but imported projects have less capabilities than new projects. The preferred method of creating projects is to create them using the New Project wizard where possible. The main difference is that features cannot be added or removed in imported projects and those features can't be visualised on the map.  
 ## The projects window
 ![Image of Projects Windows](marxan_projects.png)  
 The projects window is the main way you manage projects on a server and depending on your user role you can manage your own projects or everybodys projects. The projects window lists the projects on the server together with their metadata including the user, project name, description and creation date (the actual columns that are shown will depend on the user role). The view of projects can be sorted by any of the columns by clicking on the column header to sort in ascending or descending order. At the bottom of the window is a toolbar that contains the common tasks associated with managing projects - the actual buttons that are shown will depend on the user role. The functioning of these buttons is described in the following sections.  
@@ -45,7 +45,7 @@ The preferred way to create new projects in Marxan Web is to create them with th
 To create a new project using the New Project wizard:  
 1. Click on the New button in the projects window
 2. Enter the project metadata and click Next
-3. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the Planning Grids section) and then the wizard can be restarted. Click Next
+3. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the [Planning Grids](#planning-grids) section) and then the wizard can be restarted. Click Next
 4. Choose the conservation features that will be part of your project
 5. Select a cost surface (not currently implemented) and click Finish  
 
@@ -66,7 +66,7 @@ To import a DOS-based Marxan project:
 6. Click Next and enter the project metadata
 7. Click Finish.  
 
-The project will now be imported and the shapefile will be uploaded to Mapbox (for more information see Understanding mapping). Once this process has finished the new Marxan Web project will be shown in the project window with the text 'Imported Project' at the bottom. The project can be run immediately.  
+The project will now be imported and the shapefile will be uploaded to Mapbox (for more information see [Understanding mapping](#understanding-mapping)). Once this process has finished the new Marxan Web project will be shown in the project window with the text 'Imported Project' at the bottom. The project can be run immediately.  
 ### Duplicating a project
 Duplicating a project copies all of the project information to a new project with the same project name but with a '\_copy' suffix. The project can then be opened, edited and run. This provides a mechanism for iterating and improving projects until they are fit-for-purpose.
 ### Deleting a project
@@ -82,19 +82,19 @@ The target icon shows the target that has been set for that particular species a
 
 The status bar shows a scale from 0 to 100% which shows the amount of the feature that needs to be protected (in grey) and the amount protected in the current run (in blue). If the amount protected in the current run does not reach the amount to be protected then the target icon is shown in pink.  
 
-The context menu provides a set of functions that apply to the feature and the precise set of functions depends on whether the project was created using the New Project wizard or imported and also on whether the feature was uploaded to Mapbox (see the Mapping section).  
+The context menu provides a set of functions that apply to the feature and the precise set of functions depends on whether the project was created using the New Project wizard or imported and also on whether the feature was uploaded to Mapbox (see the [Mapping](#mapping) section).  
 
 The following list is the full set of functions that are available in the context menu:  
-- Properties - this opens the Feature Properties window - for more information see this section below
+- Properties - this opens the Feature Properties window - for more information see [Feature Properties window](#feature-properties-window)  
 - Remove from project - this is a shortcut to remove that feature from the project
 - Add to map - the features geometry will be added to the map as a polygon - currently only one feature at a time can be shown on the map
 - Outline planning units where the feature occurs - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.
 - Zoom to feature extent - zooms the map to the extent of the features geometry
-- Preprocess - intersects the feature with the planning grid which is a prerequisite for a Marxan run. For more information see Feature preprocessing.  
+- Preprocess - intersects the feature with the planning grid which is a prerequisite for a Marxan run. For more information see [Preprocessing features](#preprocessing-features).  
 ### Adding and removing features  
-To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects.  
+To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 ### Viewing feature metadata  
-In the context menu click Properties to view all of the feature metadata. For more information see the Feature Properties section below.  
+In the context menu click Properties to view all of the feature metadata. For more information see [Feature Properties window](#feature-properties-window).  
 ### Changing feature targets  
 Feature targets can be changed in one of two ways:  
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
@@ -159,3 +159,5 @@ Describe why Mapbox is used
 ## Help item
 ## About item
 # Providing Feedback
+# FAQ
+## Why do imported projects have less functions available?
