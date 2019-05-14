@@ -1,32 +1,32 @@
 # Migration Guide for Marxan to Marxan Web
-# Should I migrate to Marxan Web?
+## Should I migrate to Marxan Web?
 Marxan Web offers a number of advantages and features that were not available in the DOS version of Marxan. However, there are some cases in which it may be better to stick with what you know rather than moving to Marxan Web. Below are some of the questions that may help in making the decision.  
 
-## Do you have an internet connection?  
+### Do you have an internet connection?  
 It may be obvious, bu Marxan Web depends on an internet connection and although it will work over low bandwidth connections it not work without an internet connection. This also applies to the local installation of Marxan Web running on Windows as it uses live spatial data from Open Street Map and Mapbox. CLUZ (Conservation Land-Use Zoning software) is an alternative tool for working with Marxan that has no dependency on the internet, so if you need to work offline then this is a better option that migrating to Marxan Web. For more information see [CLUZ](https://anotherbobsmith.wordpress.com/software/cluz/).  
 
-## Do you need to share resources?
+### Do you need to share resources?
 Another question to ask is whether or not you need to share various Marxan resources with anyone else, e.g. scenarios, features, spatial data, planning grids or indeed the results. If the answer to all of these is no, then you may be better to continue with your existing Marxan tools and setup. However, if you want to share at least some data then Marxan Web makes it very easy.  
 
-## Do you have many existing Marxan projects?
+### Do you have many existing Marxan projects?
 If you have a lot of existing Marxan projects it is actually very easy to import them into Marxan Web and indeed, managing them will be much easier once they have been brought into the tool. Existing Marxan projects can co-exist side-by-side with their imported versions as they do not share the same files or information, so you can continue to work with the projects in both tools if necessary.  
 
-## Does Marxan Web offer the same set of features as the DOS version of Marxan?
+### Does Marxan Web offer the same set of features as the DOS version of Marxan?
 Yes, it offers more features but with one caveat. None of the features that are available in Marxan with Zones are currently available, although this is planned for a future release. If you currently use Marxan with Zones then you are better off sticking with that until a future version of Marxan Web offers the same set of features.
 
-# What's different?
-## Where are all the .dat files?
-## No more external tools
-## Built in mapping interface
-## Share resources online
+## What's different?
+### Where are all the .dat files?
+### No more external tools
+### Built in mapping interface
+### Share resources online
 Projects, features and planning grids
 Marxan Registry
-## Scalable
-## Iterate with stakeholders
-# Migrating to Marxan Web
-## Which do I choose? Hosted or a local installation
-## Importing existing Marxan projects
-### Preparation
-### Issues
-# FAQ
-## Can I just copy all my existing Marxan projects over to Marxan Web?
+### Scalable
+### Iterate with stakeholders
+## Migrating to Marxan Web
+### Which do I choose? Hosted or a local installation
+### Importing existing Marxan projects
+#### Preparation
+#### Issues
+## FAQ
+### Can I just copy all my existing Marxan projects over to Marxan Web?
