@@ -218,18 +218,18 @@ The Feature properties window shows information about the feature including its 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).
 - ID - an internal unique identifer for the feature.  
 - Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
-- Feature class name - the unique system-provided name for the feature. This identifer is unique across all Marxan Server databases and is the same identifier used in the MapboxID.  
+- Feature class name - the unique system-provided name for the feature. This identifer is unique across all Marxan Server databases and is the same identifier used in the Mapbox ID.  
 - Description - the description the user provided for the feature.
 - Creation date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
 - Mapbox ID - a unique identifier for the feature in Mapbox.
 - Total area - the total area of the feature in square kilometers.
-- Target percent - the target percentage for the feature that should be attained in the Marxan run.
+- Target percent - the target percentage for the feature for the Marxan run.
 - Species penalty factor - the weighting given to the feature.
 - Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the  planning unit count and area.
 - Planning unit count - the total number of planning units which intersect the feature.
 - Planning unit area - the total area of the feature in the planning grid (in square kilometers). 
 - Target area - the area that needs to be protected to meet the target percentage for the feature (in square kilometers).
-- Area protected - the total area of the feature protected in the current solution (in square kilometers). If the area protected is less than the target area then this figure will be shown in red. In some cases the area protected may appear to be the same as the target area and yet the figure is shown in red. This is because of rounding issues in showing the figure in the table and if you hover over the area protected you will see the actual un-rounded area of the feature.  
+- Area protected - the total area of the feature protected in the current solution (in square kilometers). This is only available after a run has completed. If the area protected is less than the target area then this figure will be shown in red. In some cases the area protected may appear to be the same as the target area and yet the figure is shown in red. This is because of rounding issues in showing the figure in the table and if you hover over the area protected you will see the actual un-rounded area of the feature.  
 
 ### Showing features on the map
 For new projects that have been created in Marxan Web, the features can be shown on the map as polygons.  Imported projects do not support showing feature polygons on the map - for more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available) To show a feature on a map, click on the link in the features context menu. Only one feature can be shown in the map at any time.  
@@ -237,6 +237,7 @@ For new projects that have been created in Marxan Web, the features can be shown
 For all projects, the extent of the feature can also be mapped by clicking 'Outline planning units where the feature occurs' in the context menu - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
 
 ## Planning grids
+
 ### Understanding planning grids
 ### The planning grids window
 ### Managing planning grids
