@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
-markdown: CommonMarkGhPages
+markdown: kramdown
 kramdown:
   toc_levels: 2..3
