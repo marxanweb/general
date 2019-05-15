@@ -189,7 +189,7 @@ The features window is used to show all of the features that are available on th
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Mapping](#mapping).  
 
 ##### Importing existing features
-To upload existing spatial data from a local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+To upload existing spatial data from the local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
 
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that the feature can be intersected with the planning grid. For more information see [Preprocessing features](#preprocessing-features).  
 
