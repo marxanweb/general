@@ -189,15 +189,15 @@ The features window is used to show all of the features that are available on th
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Mapping](#mapping).  
 
 ##### Importing existing features
-To upload existing spatial data from the local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+To upload existing spatial data from the local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
 
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that the feature can be intersected with the planning grid. For more information see [Preprocessing features](#preprocessing-features).  
 
 ##### Drawing features on screen
-Another way to capture new features within Marxan Web is to digitised them directly on the map using the mouse. To do this:
-1. Click on New and select 
+Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
+1. In the Features window click on New and Draw on screen   
 2. Draw the new feature on the map by clicking and drawing a polygon
-3. When you are finished ..
+3. When you are finished double click to finish the polygon
 4. Enter the name and description in the dialog box and click OK  
 
 ##### Adding features from the Global Biodiversity Information Facility (GBIF)
@@ -210,7 +210,7 @@ Adding features from the IUCN Red List will also be made available in future ver
 Deleting features is only possible as an admin user and should be done with great caution as those features may be in use in any number of projects on that Marxan Server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.
 
 ### Preprocessing features
-In order for the features to be able to be used in Marxan they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has been done it does not need to be done again.  
+In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
 
 ### Feature properties window
 The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the best solution by default). To show the feature properties window, click on the Properties item in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
