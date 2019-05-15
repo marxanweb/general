@@ -164,7 +164,7 @@ The purpose of the Log window is to provide realtime feedback on any processes t
 Whenever any preprocessing or Marxan runs are started, the log window is opened to show the progress and to show any errors, if they occur. This log can be copied to the clipboard (by clicking on the copy button at the bottom of the window) and cleared (by clicking on the erase button).  
 
 #### The Run log
-The run log is used to view the status of any Marxan runs and to stop those runs where necessary. The table shows a list of all of the known Marxan runs and shows information on the user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The status is set according to the following values:  
+The run log is used to view the status of any Marxan runs and to stop those runs where necessary. The table shows a list of all of the known Marxan runs and shows information on the process ID, user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The status is set according to the following values:  
 - Running - the run is currently running. This can also appear under exceptional circumstances either if the server crashes or is turned off.  
 - Stopped - the run was stopped by a user
 - Killed - the run was killed by the operating system. This can happen if there are too many concurrent runs and the server runs out of memory.  
