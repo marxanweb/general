@@ -213,26 +213,28 @@ Deleting features is only possible as an admin user and should be done with grea
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
 
 ### Feature properties window
-The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the best solution by default). To show the feature properties window, click on the Properties item in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
+The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the best solution by default). To show the feature properties window, click on Properties in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).
-- feature_class_name - the unique system-provided name for the feature. This identifer is unique across all Marxan Server databases and is the same identifier used in the MapboxID.  
-- name - the user-friendly name for the feature and the one that will be shown in the features window and features tab
-- description - the description the user provided for the feature
-- creation_date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
-- mapboxid - a unique identifier for the feature in Mapbox
-- target_percent - the target percentage for the feature that should be attained in the Marxan run
-- species penalty factor - the weighting given to the feature ???
-- total_area - the total area of the feature in square kilometers (if the feature occurs outside the planning grid this figure will include all of those additional areas as well)  
-- planning_unit_count - the total number of planning units which intersect the feature 
-- planning_unit_area - the total area of the feature in the planning grid (in square kilometers)  
-- target_area - the area that needs to be protected to meet the target for the feature (in square kilometers)
-- area_protected - the total area of the feature protected in the current solution (in square kilometers). If the area protected is less than the target area then this figure will be shown in red. In some cases the area protected may appear to be the same as the target area and yet the figure is shown in red. This is down to rounding issues in showing the figure in the table and if you hover over the area protected you will see the actual un-rounded area of the feature.  
+- ID - an internal unique identifer for the feature.  
+- Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
+- Feature class name - the unique system-provided name for the feature. This identifer is unique across all Marxan Server databases and is the same identifier used in the MapboxID.  
+- Description - the description the user provided for the feature.
+- Creation date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
+- Mapbox ID - a unique identifier for the feature in Mapbox.
+- Total area - the total area of the feature in square kilometers.
+- Target percent - the target percentage for the feature that should be attained in the Marxan run.
+- Species penalty factor - the weighting given to the feature.
+- Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the  planning unit count and area.
+- Planning unit count - the total number of planning units which intersect the feature.
+- Planning unit area - the total area of the feature in the planning grid (in square kilometers). 
+- Target area - the area that needs to be protected to meet the target percentage for the feature (in square kilometers).
+- Area protected - the total area of the feature protected in the current solution (in square kilometers). If the area protected is less than the target area then this figure will be shown in red. In some cases the area protected may appear to be the same as the target area and yet the figure is shown in red. This is because of rounding issues in showing the figure in the table and if you hover over the area protected you will see the actual un-rounded area of the feature.  
 
 ### Showing features on the map
-For new projects that have been created in Marxan Web, the features can be shown on the map as polygons.  Imported projects do not support showing feature polygons on the map - for more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available). To show a feature on a map click on the link in the features context menu. Only one feature can be shown in the map at the same time.  
+For new projects that have been created in Marxan Web, the features can be shown on the map as polygons.  Imported projects do not support showing feature polygons on the map - for more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available) To show a feature on a map, click on the link in the features context menu. Only one feature can be shown in the map at any time.  
 
-For all projects, the extent of the feature can also be mapped using the 'Outline planning units where the feature occurs' context item - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
+For all projects, the extent of the feature can also be mapped by clicking 'Outline planning units where the feature occurs' in the context menu - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
 
 ## Planning grids
 ### Understanding planning grids
