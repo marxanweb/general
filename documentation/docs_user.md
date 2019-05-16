@@ -104,12 +104,15 @@ The following list is the full set of functions that are available in the contex
 To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 #### Viewing feature metadata  
 In the context menu click Properties to view all of the feature metadata. For more information see [Feature Properties window](#feature-properties-window).  
+
 #### Changing feature targets  
 Feature targets can be changed in one of two ways:  
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
 - In the Feature Properties window, enter a new value in the Target Percent field and click OK  
+
 #### Changing feature penalty factor  
 In the Feature Properties window, enter a new value in the Species Penalty Factor field and click OK.  
+
 ### Running projects
 #### An overview of running projects
 When you run a project in Marxan Web there are a number of discrete steps that take place. These are described in the following paragraphs.  
