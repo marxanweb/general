@@ -170,7 +170,7 @@ The purpose of the Log window is to provide realtime feedback on any processes t
 Whenever any preprocessing or Marxan runs are started, the log window is opened to show the progress and to show any errors, if they occur. This log can be copied to the clipboard (by clicking on the copy button at the bottom of the window) and cleared (by clicking on the erase button).  
 
 #### The Run log
-The run log is used to view the status of any Marxan runs and to stop those runs where necessary. The table shows a list of all of the known Marxan runs and shows information on the process ID, user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The status is set according to the following values:  
+The Run log is used to view the status of any Marxan runs and to stop those runs where necessary. The table shows a list of all of the known Marxan runs and shows information on the process ID, user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The status is set according to the following values:  
 - Running - the run is currently running. This can also appear under exceptional circumstances either if the server crashes or is turned off.  
 - Stopped - the run was stopped by a user
 - Killed - the run was killed by the operating system. This can happen if there are too many concurrent runs and the server runs out of memory.  
@@ -196,8 +196,7 @@ All users can create new features using a number of different methods which are 
 
 ##### Importing existing features
 To upload existing spatial data from the local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
-
-The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that the feature can be intersected with the planning grid. For more information see [Preprocessing features](#preprocessing-features).  
+The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
@@ -243,14 +242,39 @@ For new projects that have been created in Marxan Web, the features can be shown
 For all projects, the extent of the feature can also be mapped by clicking 'Outline planning units where the feature occurs' in the context menu - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
 
 ## Planning grids
-
 ### Understanding planning grids
+Planning grids provide the geographic framework for the systematic conservation planning process. They define the geographic extent and the resolution of the individual planning units that make up the grid and it is this grid which forms the basis of the Marxan analysis. Within Marxan Web there are various tools for creating and managing planning grids and the size and type of planning grid that is used has an important bearing on the analysis and also on the real-world implementation of the new reserve system. 
+
+
+
 ### The planning grids window
+The planning grids window provides information on the planning grids that are available on the Marxan Server that the user is currently connected to. The table shows the following information:
+
+- Name - the user-friendly name of the planning grid. If you hover over the name you will also see the internal unique identifier for the planning grid. This is also the unique identifier for the dataset on Mapbox.
+- Description - a brief description of the planning grid. Hover over the description to see the full text.
+- Country - The country that the planning grid covers (not available for imported planning grids).
+- Domain - Whether the planning grid relates to marine or terrestrial areas (not available for imported planning grids).
+- Area - The area of the planing units that make up the planning grid (in square kilometers).  
+
+At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections.  
+
 ### Managing planning grids
+Planning grids can be created, imported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
+
 #### Creating new planning grids
+There are two basic types of planning grid: ones created in Marxan Web and ones created externally and imported from the local machine. Both of these can be used in projects and the only difference is that creating planning grids externally provides more flexibility in defining the geographic extent and characteristics of the planning units. For example, you may want to conduct a project over a province or state rather that a whole country and in this case you would have to create the planning grid using an external tool and import it.  
+
+Whatever type of planning grid that you create, at the end of the creation process the planning grid will be uploaded to Mapbox - for more information see [Mapping](#mapping).  
+
 #### Importing existing planning grids
+To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
+
 #### Deleting planning grids
+Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that Marxan Server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
+
 ### Including/excluding individual planning units
+
+
 ### Including/excluding already protected areas
 #### Protected areas information
 #### Preprocessing protected areas
@@ -275,6 +299,8 @@ Describe why Mapbox is used
 ### Interacting with the map
 ### Changing how the results are displayed
 ### Changing the basemap
+### Requirements for importing spatial data
+Any spatial data imported into Marxan Web must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that spatial operations can be done (e.g. intersection) and so that Marxan can run using the data. 
 
 ## Help 
 ### Server details
