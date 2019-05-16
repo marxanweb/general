@@ -337,6 +337,7 @@ The Users window provides information on the users that are registered on the Ma
 ### Understanding mapping
 Describe why Mapbox is used
 ### Interacting with the map
+Clicking on the map shows a list of features for a planning unit.
 ### Changing how the results are displayed
 ### Changing the basemap
 ### Requirements for importing spatial data
