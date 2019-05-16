@@ -243,7 +243,7 @@ For all projects, the extent of the feature can also be mapped by clicking 'Outl
 
 ## Planning grids
 ### Understanding planning grids
-Planning grids provide the geographic framework for the systematic conservation planning process. They define the geographic extent and the resolution of the individual planning units that make up the grid and it is this grid which forms the basis of the Marxan analysis. Within Marxan Web there are various tools for creating and managing planning grids and the size and type of planning grid that is used has an important bearing on the analysis and also on the real-world implementation of the new reserve system. 
+Planning grids provide the geographic framework for the systematic conservation planning process. They define the geographic extent and the resolution of the individual planning units that make up the grid and it is this grid which forms the basis of the Marxan analysis. Within Marxan Web there are various tools for creating and managing planning grids and the size and type of planning grid used has an important bearing on the analysis and also on the real-world implementation of the new reserve system. 
 
 ### The planning grids window
 The planning grids window provides information on the planning grids that are available on the Marxan Server that the user is currently connected to. The table shows the following information:
@@ -274,12 +274,12 @@ To import an existing planning grid into Marxan Web, click on the Import button 
 Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that Marxan Server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
 
 ### The Planning Units tab
-When a planning grid is used within a project, by default all of the planning units within the grid are used in the analysis. If you want to change how these planning units are used, this is done through the Planning Units tab. This tab allows you to either manually include or exclude individual planning units, or to include or exclude all planning units which contain existing protected areas. These are described in the sections below.  
+When a planning grid is used within a project, by default all of the planning units within the grid are used in the analysis. If you want to change how these planning units are used, this is done through the Planning Units tab. This tab allows you to either manually include or exclude individual planning units, or to include all planning units which contain existing protected areas. These are described in the sections below.  
 
 #### Including/excluding individual planning units
-Manually including or excluding individual planning units is useful where a real-world issue affects where new protected areas can be designated. For example, if you know that a particular planning unit contains a restricted military area, then you can manually exclude that planning unit from the project.  
+Manually including or excluding individual planning units is useful where a real-world issue affects where new protected areas can be designated. For example, if you know that a particular planning unit contains a restricted military area and cannot be designated, then you could manually exclude that planning unit from the project.  
 
-If you want to manually include or exclude individual planning units from the project then click on the lock icon. The planning units are now in edit mode, where you can now change the status of any of the units to be one of the following: 
+If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode, where you can change the status of any of the units to be one of the following: 
 
 - initially included (i.e. the planning unit is initially in the reserve system but is not guaranteed to be in the results). 
 - locked in the reserve system, i.e. the planning unit will be present in every solution.
@@ -290,16 +290,16 @@ To change the status of a planning unit, click on the map. The status will cycle
 When you have finished editing the planning units, click on the lock icon again and the statuses will be saved. You can now run the project with these updated statuses. It is important to note that these changes to the planning units only appy to the current project and not to the planning grid itself. Creating a new project with the same planning grid will not show any of the manual changes that have been made.  
 
 #### Including existing protected areas
-Another method of changing the status of planning units, is to include all existing protected areas in the project. By including protected areas in the project you are ensuring that the existing protected areas network is part of your overall reserve design. See [Protected area information](#protected-area-information) for information on the source of the protected areas data.  
+Another method of changing the status of planning units, is to include all existing protected areas in the project. By including protected areas in the project you are ensuring that the existing protected areas network is part of your overall reserve design. See [Protected Areas information](#protected-areas-information) for information on the source of the protected areas data.  
 
-To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories). The map will update to show the location of the protected areas within that particular IUCN category (terrestrial protected areas are shown in green and marine protected areas are shown in blue).  
+To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories){:target="_blank"}. The map will update to show the location of the protected areas within that particular IUCN category (terrestrial protected areas are shown in green and marine protected areas are shown in blue).  
 
 If this is the first time that the protected areas have been selected, then preprocessing will need to be done on those protected area boundaries. For more information see [Preprocessing protected areas](#preprocessing-protected-areas).  
 
 If you have already made some manual edits to the planning units and these overlap with the planning units that contain protected areas, then the manual edit will take precedence.  
 
-#### Protected area information
-Marxan Web uses protected area information from the World Database of Protected Areas (WDPA) and the citation and version of the WDPA that is used is indicated in the Help | About window and at the bottom of the map (see also [Acknowledgements](#acknowledgements). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
+#### Protected Areas information
+Marxan Web uses protected areas information from the World Database of Protected Areas (WDPA) and the citation and version of the WDPA that is used is indicated in the Help | About window and at the bottom of the map (see also [Acknowledgements](#acknowledgements). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
 
 #### Preprocessing protected areas
 Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab.  
