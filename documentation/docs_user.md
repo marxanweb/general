@@ -99,6 +99,7 @@ The following list is the full set of functions that are available in the contex
 - Outline planning units where the feature occurs - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
 - Zoom to feature extent - zooms the map to the extent of the features geometry.  
 - Preprocess - intersects the feature with the planning grid which is a prerequisite for a Marxan run. For more information see [Preprocessing features](#preprocessing-features).  
+
 #### Adding and removing features  
 To add or remove conservation features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 #### Viewing feature metadata  
@@ -112,7 +113,6 @@ In the Feature Properties window, enter a new value in the Species Penalty Facto
 ### Running projects
 #### An overview of running projects
 When you run a project in Marxan Web there are a number of discrete steps that take place. These are described in the following paragraphs.  
-
 
 If you are running the project for the first time or you have added new features since the last time you ran it, then all of those features need to be preprocesssed. For more information see [Preprocessing features](#preprocessing-features). This is done automatically as part of the Marxan run and the state of that preprocessing is shown in the Log tab.   
 
