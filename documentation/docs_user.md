@@ -113,6 +113,7 @@ In the Feature Properties window, enter a new value in the Species Penalty Facto
 #### An overview of running projects
 When you run a project in Marxan Web there are a number of discrete steps that take place. These are described in the following paragraphs.  
 
+
 If you are running the project for the first time or you have added new features since the last time you ran it, then all of those features need to be preprocesssed. For more information see [Preprocessing features](#preprocessing-features). This is done automatically as part of the Marxan run and the state of that preprocessing is shown in the Log tab.   
 
 Once feature preprocessing has been completed, then the algorithms that compute the best combinations of planning units will be run. During this step, the algorithms produce a set of optimal solutions that protect the features (according to their stated targets) with the minimum cost. The number of these solutions that are produced is set in the Run Settings window (see [Run settings](#run-settings) and has a large bearing on how long the Marxan run will take. By default any new project will have 10 iterations. The run duration will also depend on how many features there are and how extensive and detailed the planning grid is. Runs can be stopped at any time using a number of methods. For more information see [Stopping runs](#stopping-runs).  
