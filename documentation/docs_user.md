@@ -294,7 +294,7 @@ Another method of changing the status of planning units, is to include all exist
 
 To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories). The map will update to show the location of the protected areas within that particular IUCN category (terrestrial protected areas are shown in green and marine protected areas are shown in blue).  
 
-If this is the first time that the protected areas have been selected, then preprocessing will need to be done on those protected area boundaries to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab.  
+If this is the first time that the protected areas have been selected, then preprocessing will need to be done on those protected area boundaries. For more information see [Preprocessing protected areas](#preprocessing-protected-areas).  
 
 If you have already made some manual edits to the planning units and these overlap with the planning units that contain protected areas, then the manual edit will take precedence.  
 
@@ -302,6 +302,7 @@ If you have already made some manual edits to the planning units and these overl
 Marxan Web uses protected area information from the World Database of Protected Areas (WDPA) and the citation and version of the WDPA that is used is indicated in the Help | About window and at the bottom of the map (see also [Acknowledgements](#acknowledgements). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
 
 #### Preprocessing protected areas
+Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab.  
 
 ## Users
 ### Understanding users
@@ -328,6 +329,11 @@ Any spatial data imported into Marxan Web must have the necessary projection inf
 ### Uploading spatial data to Mapbox
 This is necessary because..
 What happens if you try something when it hasnt finished uploading.
+
+## Reports and outputs
+Future versions will have a downloadable pdf etc.
+GIS users can directly connect to the database of a local installation of Marxan Web and produce their own maps using their own data layers. For more information see the [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html).
+
 ## Help 
 ### Server details
 ### Help item
