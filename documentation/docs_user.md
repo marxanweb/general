@@ -18,7 +18,7 @@ For more information about migrating from the existing version of Marxan see the
 ## The Marxan User Interface
 The section provides a brief overview of the main elements in the Marxan User Interface and introduces some of the terminology in use. For more detailed information visit the individual sections further on.
 ### Log in window
-When Marxan Web is first loaded the login screen is presented as shown in the image below. The login screen allows you to select a Marxan Server and to login to that server. It also allows you to register as a new user.
+When Marxan Web is first loaded the login screen is presented as shown in the image below. The login screen allows you to select a Marxan Server and to login to that server. It also allows you to register as a new user. For more information see [New User Registration](#new-user-registration).  
 
 Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local Marxan Server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
 - <no symbol> Read/write - projects can be viewed and edited (by users with those permissions)
@@ -28,6 +28,7 @@ Marxan Servers are the databases that contain all of the Marxan projects that ar
 Once a server has been selected, the user must enter their credentials to login to that server. The user will be logged in according to their role: read-only user, user or admin user. Each of these roles have a different set of features that they have access to in the application with admin users having access to all features. All of the screen shots in the following sections show the application as an admin user and hence not all elements may be visible if logged in as a different user. For more information see [Roles](#roles).
 
 Once you are logged in you will see the Marxan User Interface. This comprises three main elements which are part of a single page web application: the map, the project window (on the left) and the results window (on the right). Other windows are shown as and when they are required. This single page will remain the main user interface until logging out and all tasks are completed in this interface.  
+
 ### Project window
 On the left hand side of the application user interface is the project window which comprises three tabs: the project tab, the features tab and the planning units tab. These tabs taken together represent the inputs to the analysis: which project, which features are part of that project and what planning units will be used. For more information on projects see the [Projects](#projects) section.  
 
@@ -306,13 +307,27 @@ Preprocessing of protected areas is necessary to see how they intersect with the
 
 ## Users
 ### Understanding users
-### The users window
+The Marxan Web tool is designed to support the design of new reserve systems and protected area networks that can be shared amongst a user community and some of that information may be sensitive or confidential. Therefore controlling access to that data and who can do what with it is a fundamental requirement of the tool.  
+
+Marxan Web provides controlled access to resources through the use of Roles and every registered user belongs to a particular role. By default all new registered users belong to the 'user' role. Role management is done by users with an admin role through the Users window.  
+
+Every user has access to their own profile and settings through the User menu which allows you to change overall settings for Marxan Web, change your personal information and your password. For more information see [The User menu](#the-user-menu).  
+
+### The Users window (admin users only)
+The Users window provides information on the users that are registered on the Marxan Server that the user is currently connected to and is available from the Admin menu. The table shows the following information: the username, the users full name and email and their current role. At the bottom of the Users window is a toolbar that allows you to manage Users. These tools are described in the following sections.  
+
 ### Managing users
+#### New User Registration
+
+#### Deleting users
+#### Enabling Guest Users
+
 ### Roles
 #### Guest users
 #### Users
 #### Admin users
-### The user menu
+
+### The User menu
 #### Settings 
 #### Profile
 #### Change password
