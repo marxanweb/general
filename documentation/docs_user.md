@@ -318,14 +318,29 @@ The Users window provides information on the users that are registered on the Ma
 
 ### Managing users
 #### New User Registration
+New users are registered with the New User Registration window accessible from the Login form and new users must provide their username, password, full name and an email address. If the username already exists on that Marxan Server then they will receive an error message and will choose a different username. This user information can be changed at any time using the User menu. For more information see [The User menu](#the-user-menu).  
 
-#### Deleting users
-#### Enabling Guest Users
+Currently registration is done automatically and users can immediately login with their credentials in the Login form.  
+
+#### Deleting users (admin users only)
+Users can be deleted from the Users window by admin users. To delete a user, select the user and click on the Delete button. This should be done with great caution as all of the associated projects for that user on that Marxan Server will also be deleted.  
+
+#### Enabling Guest Users (admin users only)
+By default all Marxan Servers provide read-only access to all projects through the Guest user. For more information see [Guest users](#guest-users). To enable/disable the Guest user tick/untick the checkbox at the bottom of the Users window.  
 
 ### Roles
+This section describes the access that specific roles have to Marxan Web and the underlying data.  
+
 #### Guest users
+Guest users are read-only users that allow access to all projects on the Marxan Server (with the exception of projects which have been flagged as private which they will not be able to see - for more information see [Controlling access to a project](#controlling-access-to-a-project)). As a read-only user they can view projects, features and grids but they will not be able to change any of them. For projects, they will be restricted to viewing the results of projects and changing how they are displayed on the map - no other settings can be changed for a project and they will not be able to run them either.  
+
+The Guest user is enabled by default on Marxan Servers so that you can view projects on other Marxan Servers as a read-only user. This can be changed in the Users window. For more information see [Enabling Guest Users](#enabling-guest-users-admin-users-only). If the Guest user is disabled on a Marxan Server then login attempts will fail.  
+
 #### Users
+The role 'User' is the default role for new registered users in Marxan Web. This role can create and manage projects, features and planning grids with some restrictions (they have no delete rights for any of these resources). In addition, the Projects window will only show projects belonging to that user (to make it easier for them to find their own projects on a Marxan Server with lots of users and projects). If a user wants to see all of the other projects on the Marxan Server, then they can log in as the Guest user (but with read-only access).  
+
 #### Admin users
+Admin users have the most privilages in Marxan Web and have full access to all features including managing users. Each Marxan Server will have at least one admin user and this role is responsible for managing access for all of the other registered users. Administration of Marxan Web is covered in more detail in the [Administrator Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html).  
 
 ### The User menu
 #### Settings 
