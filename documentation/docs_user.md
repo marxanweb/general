@@ -20,7 +20,7 @@ The section provides a brief overview of the main elements in the Marxan User In
 ### Log in window
 When Marxan Web is first loaded the login screen is presented as shown in the image below. The login screen allows you to select a Marxan Server and to login to that server. It also allows you to register as a new user. For more information see [New User Registration](#new-user-registration).  
 
-Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local Marxan Server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
+Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
 - <no symbol> Read/write - projects can be viewed and edited (by users with those permissions)
 - <padlock> Read only - project can be viewed only (by the guest user)
 - <broken link> - server currently offline - no connection is possible. This could be due to a number of reasons: the server could be down, the server may be inaccessible due to firewall restrictions or the network connection may have been lost.  
@@ -176,7 +176,7 @@ The Run log is used to view the status of any Marxan runs and to stop those runs
 - Stopped - the run was stopped by a user
 - Killed - the run was killed by the operating system. This can happen if there are too many concurrent runs and the server runs out of memory.  
 
-Projects that have started running will continue to run on the Marxan Server until one of the following happens: they complete; they are explicitly stopped or if the server kills the process. If the browser window or tab is closed or the connection to the server is lost, the run will continue regardless. To check the progress of a run if you have lost the connection to the server, you can open the run log and click on the Refresh button to see whether it has completed or not. If it has completed and you want to view the results then you can open the project from the Projects window. Only the results from last successful run can be loaded, as each subsequent run overwrites the previous results in Marxan. If you want to save the results of previous runs then the best approach is to duplicate the project and then run it with a different name.  
+Projects that have started running will continue to run on the server until one of the following happens: they complete; they are explicitly stopped or if the server kills the process. If the browser window or tab is closed or the connection to the server is lost, the run will continue regardless. To check the progress of a run if you have lost the connection to the server, you can open the run log and click on the Refresh button to see whether it has completed or not. If it has completed and you want to view the results then you can open the project from the Projects window. Only the results from last successful run can be loaded, as each subsequent run overwrites the previous results in Marxan. If you want to save the results of previous runs then the best approach is to duplicate the project and then run it with a different name.  
 
 Bear in mind that admin users have access to all of the runs that are currently running (for any user) and can stop runs using the Run Log window. To avoid this happening you can restrict access to particular projects by setting them as private. See [Controlling access to a project](#controlling-access-to-a-project).   
 
@@ -189,14 +189,14 @@ All features within the project initially carry the same weight - that is, all o
 The source for these features can come from a range of different sources including local spatial data, global data providers or digitising them on the screen. One of the benefits of using Marxan Web is that any features that have been captured by the community can be shared between projects (if users have permissions).  
 
 ### The features window
-The features window is used to show all of the features that are available on the Marxan Server that the user is currently connected to and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table.  
+The features window is used to show all of the features that are available on the server that the user is currently connected to and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table.  
 
 ### Managing features
 #### Creating new features
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).  
 
 ##### Importing existing features
-To upload existing spatial data from the local machine onto the Marxan Server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+To upload existing spatial data from the local machine onto the server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Drawing features on screen
@@ -213,7 +213,7 @@ The ability to add new features from GBIF will be made available in future versi
 Adding features from the IUCN Red List will also be made available in future versions of Marxan Web and the workflow will be similar to that for GBIF data.  
 
 #### Deleting features
-Deleting features is only possible as an admin user and should be done with great caution as those features may be in use in any number of projects on that Marxan Server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.
+Deleting features is only possible as an admin user and should be done with great caution as those features may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.
 
 ### Preprocessing features
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
@@ -224,7 +224,7 @@ The Feature properties window shows information about the feature including its 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).
 - ID - an internal unique identifer for the feature.  
 - Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
-- Feature class name - the unique system-provided name for the feature. This identifer is unique across all Marxan Server databases and is the same identifier used in the Mapbox ID.  
+- Feature class name - the unique system-provided name for the feature. This identifer is unique across all server databases and is the same identifier used in the Mapbox ID.  
 - Description - the description the user provided for the feature.
 - Creation date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
 - Mapbox ID - a unique identifier for the feature in Mapbox.
@@ -247,7 +247,7 @@ For all projects, the extent of the feature can also be mapped by clicking 'Outl
 Planning grids provide the geographic framework for the systematic conservation planning process. They define the geographic extent and the resolution of the individual planning units that make up the grid and it is this grid which forms the basis of the Marxan analysis. Within Marxan Web there are various tools for creating and managing planning grids and the size and type of planning grid used has an important bearing on the analysis and also on the real-world implementation of the new reserve system. 
 
 ### The planning grids window
-The planning grids window provides information on the planning grids that are available on the Marxan Server that the user is currently connected to. The table shows the following information:
+The planning grids window provides information on the planning grids that are available on the server that the user is currently connected to. The table shows the following information:
 
 - Name - the user-friendly name of the planning grid. If you hover over the name you will also see the internal unique identifier for the planning grid. This is also the unique identifier for the dataset on Mapbox.
 - Description - a brief description of the planning grid. Hover over the description to see the full text.
@@ -272,7 +272,7 @@ To create a new planning grid in Marxan Web, click on the New button in the plan
 To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
 
 #### Deleting planning grids
-Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that Marxan Server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
+Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
 
 ### The Planning Units tab
 When a planning grid is used within a project, by default all of the planning units within the grid are used in the analysis. If you want to change how these planning units are used, this is done through the Planning Units tab. This tab allows you to either manually include or exclude individual planning units, or to include all planning units which contain existing protected areas. These are described in the sections below.  
@@ -314,33 +314,33 @@ Marxan Web provides controlled access to resources through the use of Roles and 
 Every user has access to their own profile and settings through the User menu which allows you to change overall settings for Marxan Web, change your personal information and your password. For more information see [The User menu](#the-user-menu).  
 
 ### The Users window (admin users only)
-The Users window provides information on the users that are registered on the Marxan Server that the user is currently connected to and is available from the Admin menu. The table shows the following information: the username, the users full name and email and their current role. At the bottom of the Users window is a toolbar that allows you to manage Users. These tools are described in the following sections.  
+The Users window provides information on the users that are registered on the server that the user is currently connected to and is available from the Admin menu. The table shows the following information: the username, the users full name and email and their current role. At the bottom of the Users window is a toolbar that allows you to manage Users. These tools are described in the following sections.  
 
 ### Managing users
 #### New User Registration
-New users are registered with the New User Registration window accessible from the Login form and new users must provide their username, password, full name and an email address. If the username already exists on that Marxan Server then they will receive an error message and will choose a different username. This user information can be changed at any time using the User menu. For more information see [The User menu](#the-user-menu).  
+New users are registered with the New User Registration window accessible from the Login form and new users must provide their username, password, full name and an email address. If the username already exists on that server then they will receive an error message and will have to choose a different username. This user information can be changed at any time using the User menu. For more information see [The User menu](#the-user-menu).  
 
 Currently registration is done automatically and users can immediately login with their credentials in the Login form.  
 
 #### Deleting users (admin users only)
-Users can be deleted from the Users window by admin users. To delete a user, select the user and click on the Delete button. This should be done with great caution as all of the associated projects for that user on that Marxan Server will also be deleted.  
+Users can be deleted from the Users window by admin users. To delete a user, select the user and click on the Delete button. This should be done with great caution as all of the associated projects for that user on that server will also be deleted.  
 
 #### Enabling Guest Users (admin users only)
-By default all Marxan Servers provide read-only access to all projects through the Guest user. For more information see [Guest users](#guest-users). To enable/disable the Guest user tick/untick the checkbox at the bottom of the Users window.  
+By default all servers provide read-only access to all projects through the Guest user. For more information see [Guest users](#guest-users). To enable/disable the Guest user tick/untick the checkbox at the bottom of the Users window.  
 
 ### Roles
 This section describes the access that specific roles have to Marxan Web and the underlying data.  
 
 #### Guest users
-Guest users are read-only users that allow access to all projects on the Marxan Server (with the exception of projects which have been flagged as private which they will not be able to see - for more information see [Controlling access to a project](#controlling-access-to-a-project)). As a read-only user they can view projects, features and grids but they will not be able to change any of them. For projects, they will be restricted to viewing the results of projects and changing how they are displayed on the map - no other settings can be changed for a project and they will not be able to run them either.  
+Guest users are users that have read-only access to all projects on the server (with the exception of projects which have been flagged as private, which they will not be able to see - for more information see [Controlling access to a project](#controlling-access-to-a-project)). As a read-only user they can view projects, features and grids but they will not be able to change any of them. For projects, they will be restricted to viewing the results of projects and changing how they are displayed on the map - no other settings can be changed for a project and they will not be able to run them either.  
 
-The Guest user is enabled by default on Marxan Servers so that you can view projects on other Marxan Servers as a read-only user. This can be changed in the Users window. For more information see [Enabling Guest Users](#enabling-guest-users-admin-users-only). If the Guest user is disabled on a Marxan Server then login attempts will fail.  
+The Guest user is enabled by default on servers so that you can view projects on other servers as a read-only user. This can be changed in the Users window. For more information see [Enabling Guest Users](#enabling-guest-users-admin-users-only). If the Guest user is disabled on a server then login attempts will fail.  
 
 #### Users
-The role 'User' is the default role for new registered users in Marxan Web. This role can create and manage projects, features and planning grids with some restrictions (they have no delete rights for any of these resources). In addition, the Projects window will only show projects belonging to that user (to make it easier for them to find their own projects on a Marxan Server with lots of users and projects). If a user wants to see all of the other projects on the Marxan Server, then they can log in as the Guest user (but with read-only access).  
+The role 'User' is the default role for new registered users in Marxan Web. This role can create and manage projects, features and planning grids with some restrictions (they have no delete rights for any of these resources). In addition, the Projects window will only show projects belonging to that user (to make it easier for them to find their own projects on a server with lots of other users and projects). If a user wants to see all of the other projects on the server, regardless of user, then they can log in as the Guest user (with read-only access).  
 
 #### Admin users
-Admin users have the most privilages in Marxan Web and have full access to all features including managing users. Each Marxan Server will have at least one admin user and this role is responsible for managing access for all of the other registered users. Administration of Marxan Web is covered in more detail in the [Administrator Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html).  
+Admin users have the most privilages in Marxan Web and have full access to all features including managing users. Each server will have at least one admin user and this role is responsible for managing access for all of the other registered users. Administration of Marxan Web is covered in more detail in the [Administrator Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html).  
 
 ### The User menu
 #### Settings 
