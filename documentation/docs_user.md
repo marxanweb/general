@@ -401,13 +401,34 @@ Future versions of Marxan Web will have features to produce a downloadable repor
 
 GIS users can directly connect to the database of a local installation of Marxan Web and produce their own maps and reports by combining this Marxan data with their own local data layers. For more information see the [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html).  
 
-## Help 
+## Help menu
+The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
+
 ### Server details
-### Help item
-### About item
+The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system and the version of the marxan-server (and the marxan-client, if it is installed).  
+
+### Documentation
+This provides a link to the main page for the Marxan Web documentation.  
+
+### About window
+The About window provides information on the versions of software that are being used including the underlying DOS version of Marxan. It also provides information on data providers and funding and in-kind contributions. 
+
 ## Providing Feedback
+Please provide any feature requests or bug reports to the [GitHub repo](https://github.com/andrewcottam/marxan-web) by logging in and clicking on: Issues | New Issue and attaching a label of Bug (for a bug) or Enhancement (for a feature request).  
+
+For general feedback, please email andrew.cottam@ec.europa.eu.
+
 ## Acknowledgements
-WDPA & everyone else
+### Data providers:  
+
+Uses data from the World Database of Protected Areas. IUCN and UNEP-WCMC (2017), The World Database on Protected Areas (WDPA) August 2017, Cambridge, UK: UNEP-WCMC. Available at: www.protectedplanet.net  
+
+### Funding and in-kind contributions:  
+Marxan Web funded by the BIOPAMA project of the European Commission. With in-kind contributions from Mapbox.  
+
+Marxan funded by a range of donors - see [here](http://marxan.org/credits.html).
+
 ## FAQ
 ### Why do imported projects have less functions available?
-### Is my spatial data publically visible either in Marxan Web or on Mapbox?
+Projects that have been imported from the DOS version of Marxan only contain text files with data in. These files were taken directly from the Marxan project input and output folders and do not contain the original spatial data that was used to create all of the necessary tabular input files. Therefore, because there is no spatial data available for any of the features, they cannot be shown on the map pr added/removed from projects in the same way that new projects created with Marxan Web can be.   
+
