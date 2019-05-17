@@ -343,10 +343,23 @@ The role 'User' is the default role for new registered users in Marxan Web. This
 Admin users have the most privilages in Marxan Web and have full access to all features including managing users. Each server will have at least one admin user and this role is responsible for managing access for all of the other registered users. Administration of Marxan Web is covered in more detail in the [Administrator Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html).  
 
 ### The User menu
+The User menu allows you to view and update information on the currently logged on user and to set general settings for Marxan Web. Hovering over the User menu will show you the username of the currently logged on user and their role. The items in the menu below are described in the following sections.  
+
 #### Settings 
+The Settings window provides access to general settings for the Marxan Web tool and these settings are saved between sessions.  
+
+The Mapbox basemap style setting allows users to select their default basemap from a list including vector basemaps and imagery basemaps. For more information see [Changing the basemap](#changing-the-basemap).  
+
+The Show planning unit popup is used to control the visibility of the popup with information about each of the planning units. With this emabled whenever the user hovers over a planning unit, a window is shown with information about that planinng unit including the number of times it is included in the summed solutions. For more information see [Understanding the summary of solutions](#understanding-the-summary-of-solutions).  
+
 #### Profile
+The Profile window allows users to update their profile information.  
+
 #### Change password
+The Change password window allows users to update their password. Users will have to use this new password the next time they log into Marxan Web.  
+
 #### Logout
+Logs a user out of the system.  
 
 ## Mapping
 ### Understanding mapping
