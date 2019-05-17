@@ -1,7 +1,7 @@
 # Marxan Web
 This is the main repo for the Marxan Web Systematic Conservation Planning tool and provides access to the following:
 - Online Documentation for the tool
-- Install scripts for the Windows platform
+- Install script for the Windows platform
 - Compiled installer for Windows
 - Marxan Registry information
 - Issue tracker
@@ -14,8 +14,8 @@ This repo should be used alongside the [marxan-server](https://github.com/andrew
 ## Online Documentation for the tool
 This contains the Documentation that is linked to directly from the Marxan Web app and is a set of markdown pages that are automatically build in GitHub Pages using Jekyll. The start page is the [docs_overview.html](https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html) page.  
 
-## Install scripts for the Windows platform
-This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://github.com/andrewcottam/marxan-web/blob/master/installers/README.md) file.
+## Install script for the Windows platform
+This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://andrewcottam.github.io/marxan-web/installers/windows/) file.
 
 ## Compiled installer for Windows
 The compiled installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repo. Click on Release and download and run the relevant installer.  
