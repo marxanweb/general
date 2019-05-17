@@ -218,7 +218,7 @@ In order for the features to be able to be used in Marxan, they have to be prepr
 ### Feature properties window
 The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the best solution by default). To show the feature properties window, click on Properties in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
 
-The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).
+The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 - ID - an internal unique identifer for the feature.  
 - Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
 - Feature class name - the unique system-provided name for the feature. This identifer is unique across all server databases and is the same identifier used in the Mapbox ID.  
