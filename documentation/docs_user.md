@@ -416,6 +416,8 @@ The About window provides information on the versions of software that are being
 ## Providing Feedback
 Please provide any feature requests or bug reports to the [GitHub repo](https://github.com/andrewcottam/marxan-web) by logging in and clicking on: Issues | New Issue and attaching a label of Bug (for a bug) or Enhancement (for a feature request).  
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
 For general feedback, please email andrew.cottam@ec.europa.eu.
 
 ## Acknowledgements
