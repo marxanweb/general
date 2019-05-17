@@ -1,5 +1,3 @@
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
-{:toc}
 # User Guide  
 Marxan Web is a software tool for doing Systematic Conservation Planning over the web and for sharing the results amongst the conservation community and other stakeholders. It builds upon the existing DOS-based Marxan software and offers the following new features and benefits:  
 - It can installed locally or used directly online (hosted version)
