@@ -174,7 +174,7 @@ One of the most important of the run settings is the number of iterations that w
 ##### Clumping window
 The degree to which the planning units are grouped or clumped together is controlled by the BLM setting and this value is set using the Clumping window. To access the Clumping window, click on the icon in the value column for the BLM setting.  
 
-<img src='images/window_clumping.png' title='Clumping window' class='docsImage'>
+<img src='images/windows_clumping.png' title='Clumping window' class='docsImage'>
 
 When the clumping window first opens for a project, Marxan Web has to produce the necessary information to determine the connectedness of the planning units and thus enable the clumping algorithm. The calculation of the connectedness (or boundary lengths) is done automatically in Marxan Web and the progress is shown in the Log tab. At the end of the process the clumping window will be enabled and can be used.  
 
