@@ -7,12 +7,6 @@ Marxan Web is a software tool for doing Systematic Conservation Planning over th
 
 For more information about migrating from the existing version of Marxan see the [Migration Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_migration.html)
 
-## Systematic Conservation Planning with Marxan Web
-### Achieving conservation targets 
-### Making Marxan more accessible  
-### Sharing results with the conservation community
-## Tutorial 1: Case study from British Columbia
-## Tutorial 2: Creating a simple project in 4 steps
 ## The Marxan User Interface
 The section provides a brief overview of the main elements in the Marxan User Interface and introduces some of the terminology in use. For more detailed information visit the individual sections further on.
 ### Log in window
