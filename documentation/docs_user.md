@@ -64,8 +64,8 @@ To create a new project using the New Project wizard:
 
 <img src='images/window_new_project_01.png' title='New project step 1' class='docsImage'>
 
-2. Enter the project metadata and click Next
-3. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the [Planning Grids](#planning-grids) section) and then the wizard can be restarted. Click Next
+1. Enter the project metadata and click Next
+2. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the [Planning Grids](#planning-grids) section) and then the wizard can be restarted. Click Next
 
 <img src='images/window_new_project_02.png' title='New project step 2' class='docsImage'>
 
