@@ -12,7 +12,7 @@ The section provides a brief overview of the main elements in the Marxan User In
 ### Log in window
 When Marxan Web is first loaded the login screen is presented as shown in the image below. The login screen allows you to select a Marxan Server and to login to that server. It also allows you to register as a new user. For more information see [New User Registration](#new-user-registration).  
 
-![login screen](images/window_login.png){: width=150 height=100 style="float:right; padding:16px"}
+![login screen](images/window_login.png)   
 
 Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
 - <no symbol> Read/write - projects can be viewed and edited (by users with those permissions)
