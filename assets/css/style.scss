@@ -3,5 +3,7 @@
 
 @import "{{ site.theme }}";
 .docsImage{
-  border: 10px red solid;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
