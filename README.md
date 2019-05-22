@@ -14,7 +14,7 @@ This repo should be used alongside the [marxan-server](https://github.com/andrew
 Marxan Web is available for beta testing here: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
 
 ## Online Documentation for the tool
-This contains the Documentation that is linked to directly from the Marxan Web app and is a set of markdown pages that are automatically build in GitHub Pages using Jekyll. The start page is the [docs_overview.html](https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html) page.  
+This contains the Documentation that is linked to directly from Marxan Web and is a set of markdown pages that are automatically build in GitHub Pages using Jekyll. The start page is the [docs_overview.html](https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html) page.  
 
 ## Install script for the Windows platform
 This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://andrewcottam.github.io/marxan-web/installers/windows/) file.
