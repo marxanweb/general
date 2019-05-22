@@ -18,6 +18,8 @@
 #### Disabling security
 ### Database configuration
 ## Maintenance
+### Updates 
+To software
 ### Routines tasks
 #### Removing clumping projects
 ## FAQ
