@@ -29,5 +29,5 @@ The Marxan Registry information is a Javascript file that contains information o
 All bugs and feature requests for Marxan Web are managed in this repo under the [Issues](https://github.com/andrewcottam/marxan-web/issues) sections.  
 
 ## Sample client applications for developers  
-Some example applications that use the marxan-server services are included in this folder. For more information see the readme.md.  
+Some example applications that use the marxan-server services are included in this folder. Start page [here](https://andrewcottam.github.io/marxan-web/client-apps/).   
 
