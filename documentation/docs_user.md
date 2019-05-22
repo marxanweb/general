@@ -60,20 +60,20 @@ This section contains information on the common tasks associated with managing p
 The preferred way to create new projects in Marxan Web is to create them with the New Project wizard. This wizard takes the user through a simple set of steps to create a fully functioning Marxan Web project. The user creates the project metadata; selects the conservation features that will be included in the project and chooses the planning grid that will form the geographic extend and resolution for the analysis.  
   
 To create a new project using the New Project wizard:  
-1. Click on the New button in the projects window
+- Click on the New button in the projects window
 
 <img src='images/window_new_project_01.png' title='New project step 1' class='docsImage'>
 
-1. Enter the project metadata and click Next
-2. Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the [Planning Grids](#planning-grids) section) and then the wizard can be restarted. Click Next
+- Enter the project metadata and click Next
+- Choose a planning grid from the drop down list - when you choose an item the map zooms to the extend of the grid and shows the planning units. If the required planning grid is not shown, then it can be created in from the Planning Grids window (see the [Planning Grids](#planning-grids) section) and then the wizard can be restarted. Click Next
 
 <img src='images/window_new_project_02.png' title='New project step 2' class='docsImage'>
 
-4. Choose the conservation features that will be part of your project
+- Choose the conservation features that will be part of your project
 
 <img src='images/window_new_project_03.png' title='New project step 3' class='docsImage'>
 
-5. Select a cost surface (not currently implemented) and click Finish  
+- Select a cost surface (not currently implemented) and click Finish  
 
 <img src='images/window_new_project_04.png' title='New project step 4' class='docsImage'>
 
@@ -87,19 +87,19 @@ Existing DOS-based Marxan projects can also be imported to Marxan Web using the 
 - Project features have only basic metadata, e.g. simple names and no descriptions  
   
 To import a DOS-based Marxan project:  
-1. Click on the Import button in the Projects window
-2. Specify the Marxan Project Folder which should point to the folder that contains the input.dat file
-3. Zip up the planning grid shapefile that was used in the DOS-based Marxan project - this shapefile should have a field called 'puid' which is the unique value for the planning unit. All of the individual files that make up a shapefile should be included (e.g. shp, shx, dbf etc.)
-4. Upload the zipped shapefile
-5. Specify the name of the planning grid - this will be the name of the planning grid that is created from the zipped up shapefile
+- Click on the Import button in the Projects window
+- Specify the Marxan Project Folder which should point to the folder that contains the input.dat file
+- Zip up the planning grid shapefile that was used in the DOS-based Marxan project - this shapefile should have a field called 'puid' which is the unique value for the planning unit. All of the individual files that make up a shapefile should be included (e.g. shp, shx, dbf etc.)
+- Upload the zipped shapefile
+- Specify the name of the planning grid - this will be the name of the planning grid that is created from the zipped up shapefile
 
 <img src='images/window_import_project_01.png' title='Import project window' class='docsImage'>
 
-6. Click Next and enter the project metadata
+- Click Next and enter the project metadata
 
 <img src='images/window_import_project_02.png' title='Import project window' class='docsImage'>
 
-7. Click Finish.  
+- Click Finish.  
 
 The project will now be imported and the shapefile will be uploaded to Mapbox (for more information see [Understanding mapping](#understanding-mapping)). Once this process has finished the new Marxan Web project will be shown in the project window with the text 'Imported Project' at the bottom. The project can be run immediately.  
 
@@ -250,10 +250,10 @@ The only prerequisite for importing an existing feature is that the feature must
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
-1. In the Features window click on New and Draw on screen   
-2. Draw the new feature on the map by clicking and drawing a polygon
-3. When you are finished double click to finish the polygon
-4. Enter the name and description in the dialog box and click OK  
+- In the Features window click on New and Draw on screen   
+- Draw the new feature on the map by clicking and drawing a polygon
+- When you are finished double click to finish the polygon
+- Enter the name and description in the dialog box and click OK  
 
 <img src='images/digitise.png' title='Drawing a new feature on the map' class='docsImage'>
 
