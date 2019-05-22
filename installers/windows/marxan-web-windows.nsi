@@ -182,21 +182,23 @@ Section "Marxan Server" SectionMarxanServer
   SectionIn 1 RO ;add RO to make it read only
   ;INSTALL MARXAN-SERVER 
   SetOutPath "$INSTDIR"
-  File /r marxan-server-0.6 ;TODO Update to correct version
+  File /r ..\..\..\marxan-server 
+  #On windows we want to create a server.dat file from the default file - the user shouldnt have to configure it 
+  File /oname=$INSTDIR\marxan-server\server.dat ..\..\..\marxan-server\server.dat.default
 
   ;CREATE WINDOWS SHORTCUTS
   CreateDirectory "$SMPROGRAMS\Marxan Web"
-  ;TODO Update to correct version in the following lines
-  SetOutPath "$INSTDIR\marxan-server-0.6" 
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Open Marxan Web.lnk" "$INSTDIR\Miniconda2\python" "$\"$INSTDIR\marxan-server-0.6\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
-  
+  SetOutPath "$INSTDIR\marxan-server" 
+  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda2\python.exe" "$\"$INSTDIR\marxan-server\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
+
 SectionEnd
 
 Section "Marxan Client" SectionMarxanClient
   SectionIn 1 RO 
   ;INSTALL MARXAN-CLIENT
   SetOutPath "$INSTDIR"
-  File /r marxan-client-0.62 ;TODO Update to correct version
+  File /r ..\..\..\marxan-client 
   ;Store installation folder
   WriteRegStr HKCU "Software\Marxan Web" "" $INSTDIR
   ;Create uninstaller
@@ -238,7 +240,7 @@ Section -"Database installation"
 	;default install location is: C:\Program Files\PostgreSQL\10 folder and sets the GDAL_DATA environment variable
 	SetOutPath "$INSTDIR"
 	File "postgresql-10.7-1-windows-x64.exe"
-	File "dump_v06.sql"
+	File "dump.sql"
 	${If} ${SectionIsSelected} ${SectionPostGIS}
 		;install the full postgresql database on the local machine
 		DetailPrint 'Installing the full postgresql database on the local machine'
@@ -253,25 +255,25 @@ Section -"Database installation"
 		;restore the database dump to the new local installation of postgresql/postgis connecting as the postgres superuser
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
 			DetailPrint 'Restoring the database dump to the new local installation of postgresql/postgis'
-			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -f dump_v06.sql postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -f dump.sql postgresql://postgres:postgres@localhost:5432/'
 		${EndIf}
 		
 	${Else}
 		;Using an existing PostGIS instance - write the data to the marxan web server.dat file
-		${ConfigWrite} "$INSTDIR\marxan-server-0.6\server.dat" "DATABASE_HOST " "$Host" $R0 ;TODO Update to correct version
+		${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_HOST " "$Host" $R0 
 		;the following sections are no longer used - the user and password in the server.dat file will always be jrc/thargal88
-		;${ConfigWrite} "$INSTDIR\marxan-server-0.6\server.dat" "DATABASE_USER " "$User" $R0 ;TODO Update to correct version
-		;${ConfigWrite} "$INSTDIR\marxan-server-0.6\server.dat" "DATABASE_PASSWORD " "$Password" $R0 ;TODO Update to correct version
+		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_USER " "$User" $R0 
+		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_PASSWORD " "$Password" $R0 
 		
-		;install the client tools only so that the dump_v06.sql can be restored to an existing database
-		DetailPrint 'Installing the client tools only so that the dump_v06.sql can be restored to an existing database'
+		;install the client tools only so that the dump.sql can be restored to an existing database
+		DetailPrint 'Installing the client tools only so that the dump.sql can be restored to an existing database'
 		ExecWait '"$INSTDIR\postgresql-10.7-1-windows-x64.exe" --enable-components commandlinetools --disable-components server,pgAdmin,stackbuilder --unattendedmodeui minimal --mode unattended'
 		
 		;restore the database dump to the specified instance of postgis - here we run psql with the superuser user/password (or a user with CREATEROLE privileges)
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
 		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
 			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\psql"
-			StrCpy $2 " -f dump_v06.sql postgresql://"
+			StrCpy $2 " -f dump.sql postgresql://"
 			StrCpy $3 ":"
 			StrCpy $4 "@"
 			StrCpy $5 ":5432/"
@@ -286,7 +288,7 @@ Section -"Database installation"
 		${EndIf}
 	${EndIf}
 	Delete $INSTDIR\postgresql-10.7-1-windows-x64.exe		
-	Delete "dump_v06.sql"
+	Delete "dump.sql"
 
 SectionEnd
 
@@ -370,8 +372,8 @@ FunctionEnd
 Section "Uninstall"
  
   ;marxan server and client files
-  RMDir /r "$INSTDIR\marxan-client-0.62" ;TODO Update to correct version
-  RMDir /r "$INSTDIR\marxan-server-0.6" ;TODO Update to correct version
+  RMDir /r "$INSTDIR\marxan-client"
+  RMDir /r "$INSTDIR\marxan-server"
   Delete "$INSTDIR\Uninstall.exe"
   
   ;anaconda2 and all packages
