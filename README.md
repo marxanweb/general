@@ -7,7 +7,7 @@ This is the main repo for the Marxan Web Systematic Conservation Planning tool a
 - Compiled installer for Windows
 - Marxan Registry information
 - Issue tracker
-- Client apps
+- Sample client applications for developers  
 
 This repo should be used alongside the [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client) repos which provide the source code for the Marxan Server and Client respectively. More information on the architecture of Marxan Web is available in the [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html).  
 
