@@ -15,7 +15,9 @@ When Marxan Web is first loaded the login screen is presented as shown in the im
 
 <img src='images/window_login.png' title='Login window' class='docsImage'>
 
-Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
+Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. The list of servers comes from a central database (called the Marxan Registry) and any organisation can be added to this list.  
+
+Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
 - <no symbol> Read/write - projects can be viewed and edited (by users with those permissions)
 - ![read only](images/read_only.png) Read only - project can be viewed only (by the guest user)
 - ![offline](images/offline.png) Server currently offline - no connection is possible. This could be due to a number of reasons: the server could be down, the server may be inaccessible due to firewall restrictions or the network connection may have been lost.  
