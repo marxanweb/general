@@ -1,7 +1,8 @@
 # Administrator Documentation
 ## Architecture
+### Marxan Servers and the Marxan Registry
 ### Cross-platform
-###
+### 
 ## Installation
 ### Windows
 ### Linux
@@ -19,7 +20,7 @@
 ### Database configuration
 ## Maintenance
 ### Updates 
-To software
+To software just pull
 ### Routines tasks
 #### Removing clumping projects
 ## FAQ
