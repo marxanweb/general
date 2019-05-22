@@ -7,7 +7,7 @@ This is the main repo for the Marxan Web Systematic Conservation Planning tool a
 - Issue tracker
 - Client apps
 
-These are described in the following sections below. 
+Marxan Web is available for beta testing here: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
 
 This repo should be used alongside the [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client) repos which provide the source code for the Marxan Server and Client respectively. More information on the architecture of Marxan Web is available in the [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html).  
 
