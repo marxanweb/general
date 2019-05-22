@@ -29,7 +29,7 @@ A project in Marxan Web is defined by the input.dat file and this includes the p
 The planning unit file is managed from the Planning Unit tab where the status of each planning unit can be directly edited using the map. Planning units can be locked in, locked out or in the initial reserve system.  For more information see [User Guide - The Planning Units tab](docs_user.md#the-planning-units-tab).  
 
 #### puvspr.dat file
-The puvsrp.dat file is created automatically whenever a project is run by intersecting the features with the planning units. The progress of this preprocessing is shown in the Log window. If features are removed from a project, then the relevant records are also removed from the puvspr.dat file. For more information see [User Guide - The Planning Units tab](docs_user.md#preprocessing-features).  
+The puvsrp.dat file is created automatically whenever a project is run by intersecting the features with the planning units. The progress of this preprocessing is shown in the Log window. If features are removed from a project, then the relevant records are also removed from the puvspr.dat file. For more information see [User Guide - Preprocessing features](docs_user.md#preprocessing-features).  
 
 #### spec.dat file
 The species file managed using the Features tab and when species are added/removed or their targets of spf values are changed then the underlying spec.dat file is updated. For more information see [User Guide - Managing features within a project](docs_user.md#managing-features-within-a-project).  
