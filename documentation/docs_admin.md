@@ -100,7 +100,7 @@ Secure-Sockets Layer is way of encrypting communication between computer systems
 Authentication between marxan-client and marxan-server is done using secure cookie authentication and all secure cookies are encrypted using the COOKIE_RANDOM_VALUE in the server.dat file. See [COOKIE_RANDOM_VALUE](#cookie_random_value) for more information.  
 
 #### CORS restrictions
-To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-server only allows read-write access from those domains that are listed in the PERMITTED_DOMAINS value in the server.dat file. All other domains will only have read-only access. See [PERMITTED_DOMAINS](#permitted-domains) for more information.  
+To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-server only allows read-write access from those domains that are listed in the PERMITTED_DOMAINS value in the server.dat file. All other domains will only have read-only access. See [PERMITTED_DOMAINS](#permitted_domains) for more information.  
 
 #### Disabling security
 To disable all security in marxan-server, set the DISABLE_SECURITY constant in the webAPI_tornado.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
