@@ -11,7 +11,7 @@ These different options are shown in the following sections.
 #### Single machine installation
 In a single machine installation, both marxan-server and marxan-client are installed on the same physical machine.
 
-<img src='images/admin_single_machine.png' title='Single machine installation' class='docsImage'>
+<img src='images/admin_single_machine.png' title='Single machine installation' class='docsImage2'>
 
 This is typical of a Windows installation on a desktop computer or a Unix installation on a network machine. For more information on installing on Windows, see [Windows](#windows). For more information on installing on Unix, see [Unix](#unix).  
 
