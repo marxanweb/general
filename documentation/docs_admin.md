@@ -22,11 +22,16 @@ Wherever Marxan Web is installed, when it is run the login screen shows a list o
 Marxan Web is cross-platform which means that it will install and run on any operating system (although there may be some slight differences in the support on different platforms). Instructions for installing on different operating systems are given below.  
 
 ### Windows
-A Windows install file is available for installing Marxan Web on Windows. For more information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases) page.  
+A Windows installer is available for installing Marxan Web on Windows. For more information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases) page.  
 
 ### Unix
+marxan-server and marxan-client have to be installed separately on Unix operating systems. For more information on installing these, see the relevant GitHub repos: [marxan-server](https://github.com/andrewcottam/marxan-server) and[marxan-client](https://github.com/andrewcottam/marxan-client).  
+
 ### Mac
+The installation of Marxan Web on Mac operating systems has not been done yet as there are some issues with installing PostGIS which is a prerequisite of marxan-server.  
+
 ## Configuration
+
 ### Configuration files
 #### server.dat
 ##### ENABLE_GUEST_USER 
