@@ -5,7 +5,7 @@ This documentation is aimed at IT staff within organisations who wish to deploy 
 The Marxan Web software comprises a set of discrete components that work together in a network to provide the tools to do systematic conservation planning. This section outlines how these components work together and what the options are for deploying and using Marxan Web in your organisation.  
 
 ### Client/server
-Marxan Web comprises software running on a server (marxan-server) and software running on the client (marxan-client). These two separate bits of software work together in a loosely-coupled way through web services with the marxan-server providing the data storage and processing layer and marxan-client providing the user interface to that content. 
+Marxan Web comprises software running on a server ([marxan-server](https://github.com/andrewcottam/marxan-server)) and software running on the client ([marxan-client](https://github.com/andrewcottam/marxan-client)). These two separate bits of software work together in a loosely-coupled way through web services with the marxan-server providing the data storage and processing layer and marxan-client providing the user interface to that content. 
 
 #### marxan-server
 The architecture of the marxan-server software is shown in the following figure. 
