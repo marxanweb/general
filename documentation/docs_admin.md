@@ -10,7 +10,7 @@ Marxan Web comprises software running on a server (marxan-server) and software r
 #### marxan-server
 The architecture of the marxan-server software is shown in the following figure. 
 
-<img src='images/admin_marxan-server.png' title='marxan-server architecture' class='docsImage2'>
+<img src='images/admin_marxan_server.png' title='marxan-server architecture' class='docsImage2'>
 
 
 
