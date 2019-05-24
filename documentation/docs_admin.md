@@ -121,8 +121,8 @@ In the Marxan Web client all error messages are reported at the bottom of the sc
 
 This is a brief description of the problem - a more complete description and stack trace is available in the browsers console. To open the browsers console:
 
-- In Chrome, goto the Customise and control Google Chrome button in the top right. Click on More tools | Developer Tools and then in the tabs at the bottom of the screen click on the Console tab. The full error message is shown in red.
-- In Firefox, goto the Open menu in the top right. Click on Web Developer | Browser Console. The full error message is shown in red.
+- In Chrome, goto the Customise and control Google Chrome button in the top right. Click on More tools, Developer Tools and then in the tabs at the bottom of the screen click on the Console tab. The full error message is shown in red.
+- In Firefox, goto the Open menu in the top right. Click on Web Developer, Browser Console. The full error message is shown in red.
 
 #### Clearing cache and service worker
 The Marxan Web client uses caching and service workers to improve performance but when you need to diagnose problems they can often get in the way by caching previous versions of the software. To clear the cache and the servive worker, use Chrome and do the following:
