@@ -109,13 +109,24 @@ To disable all security in marxan-server, set the DISABLE_SECURITY constant in t
 To configure you own database to use with marxan-server, set the appropriate settings in the server.dat file. See [DATABASE_NAME, DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD](#database_name-database_host-database_user-database_password) for more information.  
 
 ## Maintenance
-### Updates 
-To software just pull
+This section outlines what tasks need to be done periodically or on an ad-hoc basis to ensure Marxan Web runs without problems.  
+
 ### Routines tasks
 #### Stopping marxan-server
-To stop 
+marxan-server runs as a Python script from the marxan-server folder and can be stopped using one of the following methods:
+
+- If the Marxan Log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
+- If the Marxan Log is not visible:
+ - Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
+ - Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
+
 #### Starting marxan-server 
+#### Stopping PostGIS server
+#### Starting PostGIS server
+
 #### Testing the server is running 
 #### Removing clumping projects
+### Updates 
+To software just pull
 ## FAQ
 ## Providing Feedback
