@@ -136,7 +136,7 @@ The Marxan Web client uses caching and service workers to improve performance bu
 #### marxan-server log
 If you need to diagnose problems in the marxan-server, you can view the marxan-server log which is shown when you start running marxan-server. For more information see [Starting/stopping marxan-server](#startingstopping-marxan-server). An example screen shot of the marxan-server log is shown below running on Unix.  
 
-<img src='images/server_log4.png' title='marxan-server log'>
+<img src='images/server_log5.png' title='marxan-server log'>
 
 This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log.  
 
