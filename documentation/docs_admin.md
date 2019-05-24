@@ -166,11 +166,13 @@ http://<domain>:8081/marxan-server/testTornado
  
 You should see the following if marxan-server is running properly:
 
-<img src='images/testTornado.png.png' title='testTornado' class='docsImage'>
+<img src='images/testTornado.png' title='testTornado' class='docsImage'>
 
 If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](*clearing-cache-and-service-worker). 
 
 #### Removing clumping projects
+Marxan Web uses temporary projects to be able to see the effects of change the BLM value and sometimes these projects are not deleted. These projects are stored in the users/_clumping folder. All of the projects in this folder can be deleted whenever necessary.  
+
 ### Updates 
 To software just pull
 ## FAQ
