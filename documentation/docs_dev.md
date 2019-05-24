@@ -41,18 +41,64 @@ The DOS-based Marxan software is still the heart of Marxan Web and it is this so
 #### marxan-client
 The marxan-client uses the React Framework which is a Javascript Framework developed by Facebook that is used to build user-interfaces where UI components use data binding to bind the json data coming from REST calls. 
 
-The other technology that is used in the marxan-client software is Mapbox mapping technology. This technology offers a number of benefits:
+Another technology that is used in the marxan-client software is Mapbox mapping technology. This technology offers a number of benefits:
 
 - Performance is excellent, even with hundreds of thousands of planning units
 - Maps can be restyled on the fly 
 - Maps can be rotated and tilted to get the best viewing perspective
 
-The most important of these is the performance: the Vector Tile technology means that the non-spatial results that Marxan produces (i.e. a csv file with hundreds of thousands of rows with lots of numbers in) can be mapped on-the-fly in the client. This cannot be achieved with conventional web GIS. 
+The most important of these is the performance: the MapboxGL technology means that the non-spatial results that Marxan produces (i.e. a csv file with hundreds of thousands of rows with lots of numbers in) can be mapped on-the-fly in the client. This cannot be achieved with conventional web GIS. 
+
+Finally, the mapping data itself is delivered through Vector Tiles that are sourced from Mapbox (and other providers in the future). These Vector Tiles are based on OpenStreetMap data and all of the feature attributes are sent to the browser with the spatial data meaning that they can be styled and queried on-the-fly in the browser.  
 
 ## marxan-server development
+This section provides a quick guide to getting going in extending the marxan-server software.  
+
+Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/andrewcottam/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  
+
+Now that repo is forked you can edit the webAPI_tornado.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
+
 ### Creating REST services
+The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in \/marxan-server\/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server.  
+
+```
+def make_app():
+    return tornado.web.Application([
+        ("/marxan-server/testTornado", testTornado),
+        ..
+```
+
+#### Controlling access to REST services
+There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see [User Guide - Roles](docs_user.html#roles) and in the marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. An curtailed example of this dictionary is shown below:
+
+```
+ROLE_UNAUTHORISED_METHODS = {
+    "ReadOnly": ["createProject","createImportProject".. etc],
+    "User": ["testRoleAuthorisation","deleteProject".. etc],
+    "Admin": []
+}
+
+```
+
+The ROLE_UNAUTHORISED_METHODS dictionary has an entry for each role and for each role it has a list of the methods that that role is NOT ALLOWED to access. So, in the example above, the ReadOnly role is not allowed to access the createProject service or many others. The admin role can access any service.  
+
+When you have finished developing your new REST service, make sure that you control access to that service using the ROLE_UNAUTHORISED_METHODS dictionary and restart marxan-server. For more information see [Adminstrator Documentation - Starting/stopping marxan-server](docs_admin.html#startingstopping-marxan-server). 
+
+The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictionary firstly to show/hide relevant user interface components and secondly to physically stop any unauthorised access to a service based on the currently logged on users role.  
+
+#### Testing new REST services
+When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the webAPI_tornado.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation.  
+
+```
+PERMITTED_METHODS = ["getServerData","createUser","validateUser","resendPassword","testTornado", "getProjectsWithGrids"]    
+```
+
 ### Interacting with PostGIS
+
 ### Interacting with Mapbox
+
+### Creating WebSocket extensions
+Subclass MarxanWebSocketHandler
 
 ## marxan-client development
 ### Building 
