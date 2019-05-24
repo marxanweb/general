@@ -90,7 +90,7 @@ The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictiona
 When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the webAPI_tornado.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation.  
 
 ```
-PERMITTED_METHODS = ["getServerData","createUser","validateUser","resendPassword","testTornado", "getProjectsWithGrids"]    
+PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]    
 ```
 
 ### Interacting with PostGIS
