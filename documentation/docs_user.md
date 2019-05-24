@@ -7,7 +7,7 @@
 Marxan Web is a software tool for doing Systematic Conservation Planning over the web and for sharing the results amongst the conservation community and other stakeholders. It builds upon the existing DOS-based Marxan software and offers the following new features and benefits:  
 
 - Mapping and preprocessing are built in and no other tools are required
-- It can be run online, on a network or on a local machine
+- It can be run using a hosted service or within your own organisation
 - It includes information on existing protected areas
 - It provides access to systematic conservation plans from other organisations
 
