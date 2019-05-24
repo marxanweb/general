@@ -43,7 +43,7 @@ Configuration in marxan-server is done through a set of configuration files that
 These files are described in the following sections. 
 
 #### server.dat
-The server.dat file contains settings that apply at the server level. These settings are described in the following sections. If any of the settings in the server.dat file are changed, then the marxan-server will need to be restarted for those changes to take effect. For more information see [Starting marxan-server](#starting-marxan-server).  
+The server.dat file contains settings that apply at the server level. These settings are described in the following sections. If any of the settings in the server.dat file are changed, then the marxan-server will need to be restarted for those changes to take effect. For more information see [Starting/stopping marxan-server](#startingstopping-marxan-server).  
 
 ##### ENABLE_GUEST_USER 
 This value is set using the Marxan Web application but it can also be set directly in the server.dat file. For more information see [User Guide - Enabling Guest Users](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#enabling-guest-users-admin-users-only).  
@@ -168,12 +168,20 @@ You should see the following if marxan-server is running properly:
 
 <img src='images/testTornado.png' title='testTornado'>
 
-If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](*clearing-cache-and-service-worker). 
+If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](#clearing-cache-and-service-worker). 
 
 #### Removing clumping projects
-Marxan Web uses temporary projects to be able to see the effects of change the BLM value and sometimes these projects are not deleted. These projects are stored in the users/_clumping folder. All of the projects in this folder can be deleted whenever necessary.  
+Marxan Web uses temporary projects to be able to see the effects of changes to the BLM value and sometimes these projects are not deleted. These projects are stored in the users/_clumping folder. All of the projects in this folder can be deleted whenever necessary. 
 
 ### Updates 
-To software just pull
-## FAQ
-## Providing Feedback
+To install software updates to marxan-server:  
+
+- Stop marxan-server - see [Starting/stopping marxan-server](#startingstopping-marxan-server)
+- In the command prompt, navigate to the marxan-server folder
+- Type git pull
+- Start marxan-server and check that the version is updated in the marxan-server log - see [marxan-server log](#marxan-server-log)
+
+To install software updates to marxan-client:  
+
+- In the command prompt, navigate to the marxan-client folder
+- Type git pull
