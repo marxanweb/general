@@ -59,7 +59,7 @@ Firstly, in order to extend the marxan-server software you will need to fork the
 Now that repo is forked you can edit the webAPI_tornado.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
 ### Creating REST services
-The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server.  
+The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server. 
 
 ```
 def make_app():
@@ -68,8 +68,10 @@ def make_app():
         ..
 ```
 
+REST services are ideal if the execution time is short and communication between marxan-server and marxan-client is just a request and response. Longer running or more complex services should be creating using WebSockets - for more information see [Creating WebSocket extensions](#creating-websocket-extensions).  
+
 #### Controlling access to REST services
-There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see [User Guide - Roles](docs_user.html#roles) and in the marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. An curtailed example of this dictionary is shown below:
+There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see [User Guide - Roles](docs_user.html#roles)) and in the marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. An curtailed example of this dictionary is shown below:
 
 ```
 ROLE_UNAUTHORISED_METHODS = {
@@ -87,13 +89,14 @@ When you have finished developing your new REST service, make sure that you cont
 The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictionary firstly to show/hide relevant user interface components and secondly to physically stop any unauthorised access to a service based on the currently logged on users role.  
 
 #### Testing new REST services
-When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the webAPI_tornado.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation.  
+When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the webAPI_tornado.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation. At the end of the development process, make sure that you control access properly to the service.  
 
 ```
 PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]    
 ```
 
 ### Interacting with PostGIS
+PostGIS is used by the marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. 
 
 ### Interacting with Mapbox
 
