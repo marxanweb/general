@@ -115,10 +115,10 @@ This section outlines what tasks need to be done periodically or on an ad-hoc ba
 #### Stopping marxan-server
 marxan-server runs as a Python script from the marxan-server folder and can be stopped using one of the following methods:
 
-- If the Marxan Log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
-- If the Marxan Log is not visible:
- - Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
- - Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
+ - If the Marxan Log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
+ - If the Marxan Log is not visible:
+  - Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
+  - Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
 
 #### Starting marxan-server 
 #### Stopping PostGIS server
