@@ -1,5 +1,5 @@
 # Administrator Documentation
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above {:toc}  
+* TOC {:toc}  
 This documentation is aimed at IT staff within organisations who wish to host and use Marxan Web within their organisation. It covers the architecture, installation, configuration and security and maintenance. If you just want to use Marxan Web without hosting it yourself, then you can simply use a hosted service which requires no installation. For more information see [Migration Guide - Which should I choose? A hosted service or hosted within my organisation](/docs_migration.md#which-should-i-choose-a-hosted-service-or-hosted-within-my-organisation).  
 
 ## Architecture
