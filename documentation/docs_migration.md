@@ -1,4 +1,9 @@
 # Migration Guide
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+[Back to documentation](docs_overview.html)
+
 This guide is aimed at existing users of the DOS version of Marxan (together with the various tools that support it) who are considering migrating to Marxan Web. It describes when it may be useful to migrate and how to do it.
 
 ## Should I migrate to Marxan Web?
