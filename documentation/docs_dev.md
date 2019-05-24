@@ -59,7 +59,7 @@ Firstly, in order to extend the marxan-server software you will need to fork the
 Now that repo is forked you can edit the webAPI_tornado.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
 ### Creating REST services
-The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in \/marxan-server\/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server.  
+The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server.  
 
 ```
 def make_app():
