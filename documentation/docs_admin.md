@@ -134,7 +134,7 @@ The Marxan Web client uses caching and service workers to improve performance bu
 - Click on Unregister in the right hand side
 
 #### marxan-server log
-If you need to diagnose problems in the marxan-server, you can view the marxan-server log which is shown when you start running marxan-server. For more information see [Starting/stopping marxan-server](#startingstopping-marxan-server). An example screen shot of the marxan-server log is shown below running on Windows.  
+If you need to diagnose problems in the marxan-server, you can view the marxan-server log which is shown when you start running marxan-server. For more information see [Starting/stopping marxan-server](#startingstopping-marxan-server). An example screen shot of the marxan-server log is shown below running on Unix.  
 
 <img src='images/server_log4.png' title='marxan-server log'>
 
@@ -166,7 +166,7 @@ http://<domain>:8081/marxan-server/testTornado
  
 You should see the following if marxan-server is running properly:
 
-<img src='images/testTornado.png' title='testTornado' class='docsImage'>
+<img src='images/testTornado.png' title='testTornado'>
 
 If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](*clearing-cache-and-service-worker). 
 
