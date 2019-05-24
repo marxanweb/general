@@ -111,20 +111,65 @@ To configure you own database to use with marxan-server, set the appropriate set
 ## Maintenance
 This section outlines what tasks need to be done periodically or on an ad-hoc basis to ensure Marxan Web runs without problems.  
 
-### Routines tasks
-#### Stopping marxan-server
-marxan-server runs as a Python script from the marxan-server folder and can be stopped using one of the following methods:
+### Diagnosing problems  
+If Marxan Web is not running properly, then there are a number of tools to help you diagnose the problem. 
 
- - If the Marxan Log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
- - If the Marxan Log is not visible:
+#### marxan-client console
+In the Marxan Web client all error messages are reported at the bottom of the screen in a pop up message as shown below. 
+
+<img src='images/error_message.png' title='Error message' class='docsImage'>
+
+This is a brief description of the problem - a more complete description and stack trace is available in the browsers console. To open the browsers console:
+
+- In Chrome, goto the Customise and control Google Chrome button in the top right. Click on More tools | Developer Tools and then in the tabs at the bottom of the screen click on the Console tab. The full error message is shown in red.
+- In Firefox, goto the Open menu in the top right. Click on Web Developer | Browser Console. The full error message is shown in red.
+
+#### Clearing cache and service worker
+The Marxan Web client uses caching and service workers to improve performance but when you need to diagnose problems they can often get in the way by caching previous versions of the software. To clear the cache and the servive worker, use Chrome and do the following:
+
+- Open the browser console - see [marxan-client console](#marxan-client-console)
+- Click on the Application tab and in the left pane click on Clear Storage
+- Click on the Clear site data button to clear the sites cache
+- In the left pane click on Service Workers
+- Click on Unregister in the right hand side
+
+#### marxan-server log
+If you need to diagnose problems in the marxan-server, you can view the marxan-server log which is shown when you start running marxan-server. For more information see [Starting marxan-server](#starting-marxan-server). An example screen shot of the marxan-server log is shown below running on Windows.  
+
+<img src='images/server_log4.png.png' title='marxan-server log' class='docsImage'>
+
+This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log.  
+
+### Routine tasks
+#### Starting/stopping marxan-server
+marxan-server runs as a Python script from the marxan-server folder and on Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. It can also be started manually (for other operating systems or if you want to start it manually on Windows):  
+
+- Navigate to the marxan-server folder
+- Start the marxan-server by entering python webAPI_tornado.py
+
+You should see the marxan-server log output - for more information see [marxan-server log](#marxan-server-log).  
+
+ marxan-server can be stopped using one of the following methods:
+
+ - If the marxan-server log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
+ - If the marxan-server log is not visible:
   -  Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
   -  Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
 
-#### Starting marxan-server 
-#### Stopping PostGIS server
-#### Starting PostGIS server
+#### Starting/stopping Postgresql/PostGIS server
+If the PostGIS server is stopped for any reason, it can be restarted using the operating system specific commands. For more information search online for starting/stopping the Postgresql/PostGIS server.  
 
-#### Testing the server is running 
+#### Testing the marxan-server is running 
+To test whether the marxan-server is running properly, goto:
+
+http://<domain>:8081/marxan-server/testTornado
+ 
+You should see the following if marxan-server is running properly:
+
+<img src='images/testTornado.png.png' title='testTornado' class='docsImage'>
+
+If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](*clearing-cache-and-service-worker). 
+
 #### Removing clumping projects
 ### Updates 
 To software just pull
