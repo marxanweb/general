@@ -96,12 +96,21 @@ PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]
 ```
 
 ### Interacting with PostGIS
-PostGIS is used by the marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. 
+PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with an 'f_' (for features) and 'pu_' (for planning units). Each of these tables with be projected in an equal area projection (EPSG:3410).  
+
+In addition, new features and planning grids will each have a respective new record in the 'metadata_planning_units' or 'metadata_interest_features' tables. These tables are used to capture the metadata for these entities.  
+
+There are two other tables in PostGIS that are used by marxan-server to create new planning grids (either marine or terrestrial): eez_simplified_1km - which contains the marine extent of all countries in the world and gaul_2015_simplified_1km - which contains the country boundaries of the world.  
+
+To create new features using the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc.  
 
 ### Interacting with Mapbox
+All new features and planning grids that are created in marxan-server have to be uploaded to Mapbox to enable visualisation on the map. There are some convenience classes and methods for interacting with Mapbox in marxan-server including _uploadTilesetToMapbox, _uploadTileset and _deleteTileset.  
 
 ### Creating WebSocket extensions
-Subclass MarxanWebSocketHandler
+For most purposes in marxan-server, creating extensions by creating new REST services should be sufficient. However, for more long-running or complex extensions WebSockets should be used. WebSockets provide a mechanism for communication between marxan-client and marxan-server that is stateful and persistent so messages can be sent back and forth at regular intervals. The marxan-client uses WebSocket classes to update the Log tab in Marxan Web with information on the progress of long-running jobs, e.g. a Marxan run or the import of an existing Marxan project. 
+
+To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There are already two example subclasses of the MarxanWebSocketHandler class: runMarxan (for running Marxan jobs) and QueryWebSocketHandler (for running PostGIS queries). Follow these example classes to create your own WebSocket extensions.  
 
 ## marxan-client development
 ### Building 
