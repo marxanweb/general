@@ -1,4 +1,9 @@
 # Developer Documentation
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+[Back to documentation](docs_overview.html)
+
 ## Overview of extending Marxan Web
 ### Technologies
 ### Architecture
