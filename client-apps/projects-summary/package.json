@@ -7,7 +7,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-mapbox-gl": "^4.3.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "wellknown": "^0.5.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,6 +16,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }, 
+  },
   "homepage": "."
 }
