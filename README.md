@@ -1,7 +1,7 @@
 # Marxan Web
 This is the main repo for the Marxan Web Systematic Conservation Planning tool and provides access to the following:
 - Link to hosted Marxan Web beta version  
-- Compiled installer for Windows
+- Installer for Windows
 - Install script for the Windows platform
 - Online Documentation for the tool
 - Marxan Registry information
@@ -13,8 +13,8 @@ This repo should be used alongside the [marxan-server](https://github.com/andrew
 ## Marxan Web (hosted beta version)
 Marxan Web is available for beta testing here: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
 
-## Compiled installer for Windows
-The compiled installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repo. Click on Release and download and run the relevant installer.  
+## Installer for Windows
+The installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repo.  
 
 ## Install script for the Windows platform
 This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://andrewcottam.github.io/marxan-web/installers/windows/) file.
