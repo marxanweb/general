@@ -66,6 +66,12 @@ def make_app():
     return tornado.web.Application([
         ("/marxan-server/testTornado", testTornado),
         ..
+        ..
+        
+class testTornado(MarxanRESTHandler):
+    def get(self):
+        self.send_response({'info': "Tornado running"})
+
 ```
 
 REST services are ideal if the execution time is short and communication between marxan-server and marxan-client is just a request and response. Longer running or more complex services should be creating using WebSockets - for more information see [Creating WebSocket extensions](#creating-websocket-extensions).  
