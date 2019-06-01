@@ -77,7 +77,7 @@ class testTornado(MarxanRESTHandler):
 REST services are ideal if the execution time is short and communication between marxan-server and marxan-client is just a request and response. Longer running or more complex services should be creating using WebSockets - for more information see [Creating WebSocket extensions](#creating-websocket-extensions).  
 
 #### Controlling access to REST services
-There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see [User Guide - Roles](docs_user.html#roles)) and in the marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. An curtailed example of this dictionary is shown below:
+There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see the [User Guide - Roles](docs_user.html#roles)) and in marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. A curtailed example of this dictionary is shown below:
 
 ```
 ROLE_UNAUTHORISED_METHODS = {
