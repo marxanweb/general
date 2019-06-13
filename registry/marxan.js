@@ -8,5 +8,5 @@ var MAPBOX_BASEMAPS = [{name: 'Streets', description: 'A complete basemap, perfe
 var MARXAN_SERVERS = [{name: 'JRC Development Server', host: 'marxan-server-blishten.c9users.io', port:8080,description: 'Main development server for Marxan Web.',type:'remote'},
                       {name: 'The Nature Conservancy, USA', host: 'pending', port:8080,description: 'Central service for TNC',type:'remote'},
                       {name: 'SPREP Regional Hub, Samoa', host: 'nonexistant', port:8080,description: 'Regional node for BIOPAMA',type:'remote'},
-                      {name:'Beta test (8081)',host: 'andrewcottam.com',port:8081,description:'Beta test Marxan Server hosted on Google Cloud Platform on port 8080. All projects will be deleted at the end.', type:'remote'},
+                      {name:'Beta test (8081)',host: 'andrewcottam.com',port:8081,description:'Beta test Marxan Server hosted on Google Cloud Platform on port 8081. All projects will be deleted at the end.', type:'remote'},
                      {name:'Beta test (8080)',host: 'andrewcottam.com',port:8080,description:'Beta test Marxan Server hosted on Google Cloud Platform on port 8080. All projects will be deleted at the end.', type:'remote'}]
