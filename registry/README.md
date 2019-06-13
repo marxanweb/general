@@ -13,7 +13,7 @@ Array of Mapbox basemap styles that are available to Marxan users. This list is 
  - id: The Mapbox identifier of the style including the username, e.g. mapbox/outdoors-v9 or blishten/cjg6jk8vg3tir2spd2eatu5fd
  - provider: The organisation or person who created the style
 
-`MARXAN_SERVERS`
+`MARXAN_SERVERS`  
 Array of Marxan Servers that are listed in the login dialog in all instances of Marxan Web. Each object has the following keys:
 - name: The name of the Marxan Server that is shown in the Marxan Server drop-down box in the login dialog  
 - description: The text description to show for the Marxan Server in the hover on the drop-down box 
