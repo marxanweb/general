@@ -170,7 +170,7 @@ If the PostGIS server is stopped for any reason, it can be restarted using the o
 #### Testing the marxan-server is running 
 To test whether the marxan-server is running properly, goto:
 
-http://\<domain\>:8081/marxan-server/testTornado
+http://\<domain\>/marxan-server/testTornado
  
 You should see the following if marxan-server is running properly:
 
