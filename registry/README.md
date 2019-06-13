@@ -13,6 +13,13 @@ Array of Mapbox basemap styles that are available to Marxan users. This list is 
  - id: The Mapbox identifier of the style including the username, e.g. mapbox/outdoors-v9 or blishten/cjg6jk8vg3tir2spd2eatu5fd
  - provider: The organisation or person who created the style
 
+`MARXAN_SERVERS`
+Array of Marxan Servers that are listed in the login dialog in all instances of Marxan Web. Each object has the following keys:
+- name: The name of the Marxan Server that is shown in the Marxan Server drop-down box in the login dialog  
+- description: The text description to show for the Marxan Server in the hover on the drop-down box 
+- host: The host for the Marxan Server (omitting the protocol) and the port (if a non-default port is specified in the Server Configuration), e.g. andrewcottam.com or andrewcottam.com:8081. For more information see Administration Guide - Enabling Guest Users](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html#port)  
+- type: Either remote or local
+
 ## Contact
 Andrew Cottam, Joint Research Centre :email:
 
