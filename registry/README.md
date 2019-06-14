@@ -19,6 +19,7 @@ Array of Marxan Servers that are listed in the login dialog in all instances of 
 - description: The text description to show for the Marxan Server in the hover on the drop-down box 
 - host: The host for the Marxan Server (omitting the protocol)  
 - port: The port that the Marxan Server is listening on. By default Marxan Servers listen on port 8080, but if a non-default port is specified in the Server Configuration, then this must also be set here. e.g.8081. For more information see [Administration Guide - Enabling Guest Users](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html#port) 
+- protocol: Either http or https
 - type: Either remote or local
 
 ## Contact
