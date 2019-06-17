@@ -1,4 +1,4 @@
-# Marxan Web Beta Test Programme
+# Beta Test Programme
 Welcome to the Marxan Web Beta Test Programme! This page gives instructions for the Beta testers on where to go and what to do for the testing programme. Thanks for taking part.
 
 ## What to test
