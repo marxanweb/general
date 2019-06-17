@@ -25,9 +25,9 @@ There are some known bugs in the underlying DOS-based Marxan software which will
 For feature requests, please also add them as issues in the Marxan Web repository on GitHub by following the instructions in the [User Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#providing-feedback).
 
 ## Notes 
-All data that is uploaded in the Beta testing programme will be in the public domain and will be deleted at the end of the programme. Please don't upload any sensitive or unlicensed data.  
+- All data that is uploaded in the Beta testing programme will be in the public domain and will be deleted at the end of the programme. Please don't upload any sensitive or unlicensed data.  
 
-For the Beta programme, the Marxan Web hosted service is running on a machine with a single processor and this will be shared by all users. Therefore in some cases the performance may be very slow when multiple users are using the tool. Please try to keep the number of iterations for a project as low as possible. The release version of Marxan Web will be hosted on a production-ready machine with multiple processors and there may also be multiple instances hosted in different organisations.  
+- The Marxan Web hosted service is running on a machine with a single processor and this will be shared by all users. Therefore in some cases the performance may be very slow when multiple users are using the tool. Please try to keep the number of iterations for a project as low as possible. This should not be an issue for the release version of Marxan Web as it will be hosted on a production-ready machine with multiple processors and there may also be additional instances hosted in other organisations.  
 
 Not all the World Database of Protected Areas is included in the current version of Marxan Web - it is only available for countries in Africa, the Caribbean and the Pacific. The full version will be available with the full release.  
 
