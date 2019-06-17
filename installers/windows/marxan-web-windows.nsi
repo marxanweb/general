@@ -123,7 +123,7 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.6.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.7.2.exe" ;TODO Update to correct version
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\Marxan Web"

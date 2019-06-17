@@ -74,6 +74,9 @@ The location of an digital certificate file (*.crt) used with a web browser to p
 ##### KEYFILE 
 This is the location of a private key for this machine that is used with the certificate file to provide SSL authentication. Reference a private key file (*.key).  
 
+##### PORT 
+This is the port that Tornado is listening on for requests and in the default server.dat file it is set to 8080. If this is set to a non-default value and this instance of marxan-server has been registered in the Marxan Registry, then make sure that the host value in the Marxan Registry includes the correct port in the host, e.g. andrewcottam.com:8081.  
+
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
 
@@ -167,7 +170,7 @@ If the PostGIS server is stopped for any reason, it can be restarted using the o
 #### Testing the marxan-server is running 
 To test whether the marxan-server is running properly, goto:
 
-http://\<domain\>:8081/marxan-server/testTornado
+http://\<domain\>/marxan-server/testTornado
  
 You should see the following if marxan-server is running properly:
 
