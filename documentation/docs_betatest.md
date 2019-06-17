@@ -30,7 +30,7 @@ All data that is uploaded in the Beta testing programme will be in the public do
 For the Beta programme, the Marxan Web hosted service is running on a machine with a single processor and this will be shared by all users. Therefore in some cases the performance may be very slow when multiple users are using the tool. Please try to keep the number of iterations for a project as low as possible. The release version of Marxan Web will be hosted on a production-ready machine with multiple processors and there may also be multiple instances hosted in different organisations.  
 
 ## Timeline
-The Beta Test programme will end on 31/07/2019. Please try and submit all bugs and feature requests by this time.  
+The Beta Test programme will end on 31/07/2019. Please try and submit all bugs and feature requests by this date.  
 
 ## Contact  
 For more information on the Beta Test programme contact [Jennifer McGowan](mailto:j.mcgowan@uq.edu.au) or [Andrew Cottam](mailto:andrew.cottam@ec.europa.eu).
