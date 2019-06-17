@@ -5,13 +5,13 @@ Welcome to the Marxan Web Beta Test Programme. This page gives instructions for 
 Marxan Web is available as a hosted service (i.e. where no software installation is required - only a browser is needed) and as a downloadable installation for a local computer. Both of these have exactly the same set of features. We would like to test both of these. Please follow the instructions below for either system. Full documentation is given [here](/docs_overview.md).  
 
 ### Marxan Web Hosted Service
-- Goto: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
-- Select the 'Beta Test' server
-- Click Register, enter you details and login  
+1. Goto: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
+1. Select the 'Beta Test' server
+1. Click Register, enter you details and login  
 
 ### Marxan Web install version
-- Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/beta](https://github.com/andrewcottam/marxan-web/releases/tag/beta)
-- Follow the instructions  
+1. Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/beta](https://github.com/andrewcottam/marxan-web/releases/tag/beta)
+1. Follow the instructions  
 
 ## Bugs and feature requests
 There will be bugs! Please report any bugs to the Marxan Web repository on GitHub by following the instructions in the [User Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#providing-feedback). In order to help fix bugs the following information would be really helpful:
