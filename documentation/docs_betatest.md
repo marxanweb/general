@@ -18,7 +18,7 @@ There will be bugs! Please report any bugs to the Marxan Web repository on GitHu
 
 - A brief description of the software that you are testing and on what browser.  
 - A detailed step-by-step set of instructions to be able to reproduce the bug.  
-- Ideally any errors that are reported in the browsers Console - this is a Developer tool that can be opened in the browser to help understand any errors when they occur. To open the console follow these links: for [Chrome](https://developers.google.com/web/tools/chrome-devtools/open#chrome), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console), [Safari](https://support.apple.com/en-gb/guide/safari/sfri20948/mac), [Internet Explorer](https://msdn.microsoft.com/en-us/data/gg589530(v=vs.71)).  
+- Ideally any errors that are reported in the browsers Console - this is a Developer tool that can be opened in the browser to help understand any errors when they occur. To open the console follow these links: for [Chrome](https://developers.google.com/web/tools/chrome-devtools/open#chrome), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console), [Safari](https://support.apple.com/en-gb/guide/safari/sfri20948/mac), [Internet Explorer](https://msdn.microsoft.com/en-us/data/gg589530(v=vs.71)). Errors will be shown in red - please copy and paste these into the GitHub issue.  
 
 There are some known bugs in the underlying DOS-based Marxan software which will be addressed before the full release of Marxan Web.  
 
