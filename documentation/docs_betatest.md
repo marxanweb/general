@@ -1,5 +1,5 @@
 # Beta Test Programme
-Welcome to the Marxan Web Beta Test Programme! This page gives instructions for the Beta testers on where to go and what to do for the testing programme. Thanks for taking part.
+Welcome to the Marxan Web Beta Test Programme. This page gives instructions for the Beta testers on where to go and what to do for the testing programme. Thanks for taking part.
 
 ## What to test
 Marxan Web is available as a hosted service (i.e. where no software installation is required - only a browser is needed) and as a downloadable installation for a local computer. Both of these have exactly the same set of features. We would like to test both of these. Please follow the instructions below for either system. Full documentation is given [here](/docs_overview.md).  
@@ -32,3 +32,5 @@ For the Beta programme, the Marxan Web hosted service is running on a machine wi
 ## Timeline
 The Beta Test programme will end on 31/07/2019. Please try and submit all bugs and feature requests by this time.  
 
+## Contact  
+For more information on the Beta Test programme contact [Jennifer McGowan](mailto:j.mcgowan@uq.edu.au) or [Andrew Cottam](mailto:andrew.cottam@ec.europa.eu).
