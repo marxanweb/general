@@ -71,6 +71,8 @@ If you want to connect to a different database then set the database configurati
 ##### CERTFILE
 The location of an digital certificate file (*.crt) used with a web browser to provide SSL authentication (i.e. https). CRT files are used to verify a secure website's authenticity, distributed by certificate authority companies such as GlobalSign, VeriSign and Thawte. The full certificate chain needs to be within the certificate file.   
 
+If you get an error 'SEC_ERROR_UNKNOWN_ISSUER' in Firefox it is because the crt certificate does not include the full chain of certificates. To fix this, copy the *.crt certificate and paste it into the top of the full *.ca-bundle certificate and save this as a new certificate, e.g. certificate_chain.crt. It should then work in Firefox.  
+
 ##### KEYFILE 
 This is the location of a private key for this machine that is used with the certificate file to provide SSL authentication. Reference a private key file (*.key).  
 
