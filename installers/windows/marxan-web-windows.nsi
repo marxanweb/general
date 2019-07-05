@@ -123,7 +123,7 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.7.2.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.8.0.exe" ;TODO Update to correct version
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\Marxan Web"
@@ -189,7 +189,7 @@ Section "Marxan Server" SectionMarxanServer
   ;CREATE WINDOWS SHORTCUTS
   CreateDirectory "$SMPROGRAMS\Marxan Web"
   SetOutPath "$INSTDIR\marxan-server" 
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda2\python.exe" "$\"$INSTDIR\marxan-server\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda3\python3.exe" "$\"$INSTDIR\marxan-server\marxan-server.py$\" http://localhost:8080/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
   WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
 
 SectionEnd
@@ -211,14 +211,14 @@ Section "Marxan database" SectionMarxanDatabase
   
 SectionEnd
 
-Section "Anaconda2" SectionMiniconda
+Section "Miniconda3" SectionMiniconda
   SectionIn 1 RO 
   ;INSTALL MINICONDA SILENTLY AND WHEN IT HAS FINISHED DELETE THE INSTALLER
-  ;By default this installs Miniconda2 in the install directory just for the current user and does not register Python in the PATH environment variable
+  ;By default this installs Miniconda3 in the install directory just for the current user and does not register Python in the PATH environment variable
   SetOutPath "$INSTDIR"
-  File "Miniconda2-latest-Windows-x86_64.exe"
-  ExecWait '"$INSTDIR\Miniconda2-latest-Windows-x86_64.exe" /InstallationType=JustMe /S /D=$INSTDIR\Miniconda2'  
-  Delete $INSTDIR\Miniconda2-latest-Windows-x86_64.exe
+  File "Miniconda3-latest-Windows-x86_64.exe"
+  ExecWait '"$INSTDIR\Miniconda3-latest-Windows-x86_64.exe" /InstallationType=JustMe /S /D=$INSTDIR\Miniconda3'  
+  Delete $INSTDIR\Miniconda3-latest-Windows-x86_64.exe
         
  SectionEnd
 
@@ -226,8 +226,8 @@ Section "Python packages" SectionPythonPackages
   SectionIn 1 RO 
   ;INSTALL THE PYTHON PREREQUISITES
   SetOutPath "$INSTDIR"
-  ExecWait '"$INSTDIR\Miniconda2\Scripts\conda" install -y tornado psycopg2 pandas gdal colorama'
-  ExecWait '"$INSTDIR\Miniconda2\Scripts\pip" install mapbox -q'
+  ExecWait '"$INSTDIR\Miniconda3\Scripts\conda" install -y tornado psycopg2 pandas gdal colorama'
+  ExecWait '"$INSTDIR\Miniconda3\Scripts\pip" install mapbox -q'
 
 SectionEnd
 
@@ -347,7 +347,7 @@ FunctionEnd
 ;Descriptions
 
   ;Language strings
-  LangString DESC_SectionMiniconda ${LANG_ENGLISH} "Miniconda2 is a package manager for Python that contains Python version 2.7.15 and a minimal set of Python packages"
+  LangString DESC_SectionMiniconda ${LANG_ENGLISH} "Miniconda3 is a package manager for Python that contains Python version 3.7 and a minimal set of Python packages"
   LangString DESC_SectionPythonPackages ${LANG_ENGLISH} "Python packages required to run Marxan Web"
   LangString DESC_SectionPostgresql ${LANG_ENGLISH} "Open source SQL database"
   LangString DESC_SectionPostGIS ${LANG_ENGLISH} "PostgreSQL/PostGIS open-source spatial database. Unselect if you already have a PostGIS server that you want to use."
