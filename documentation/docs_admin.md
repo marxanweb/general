@@ -71,6 +71,8 @@ If you want to connect to a different database then set the database configurati
 ##### CERTFILE
 The location of an digital certificate file (*.crt) used with a web browser to provide SSL authentication (i.e. https). CRT files are used to verify a secure website's authenticity, distributed by certificate authority companies such as GlobalSign, VeriSign and Thawte. The full certificate chain needs to be within the certificate file.   
 
+If you get an error 'SEC_ERROR_UNKNOWN_ISSUER' in Firefox it is because the crt certificate does not include the full chain of certificates. To fix this, copy the *.crt certificate and paste it into the top of the full *.ca-bundle certificate and save this as a new certificate, e.g. certificate_chain.crt. It should then work in Firefox.  
+
 ##### KEYFILE 
 This is the location of a private key for this machine that is used with the certificate file to provide SSL authentication. Reference a private key file (*.key).  
 
@@ -111,7 +113,7 @@ Authentication between marxan-client and marxan-server is done using secure cook
 To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-server only allows read-write access from those domains that are listed in the PERMITTED_DOMAINS value in the server.dat file. All other domains will only have read-only access. See [PERMITTED_DOMAINS](#permitted_domains) for more information.  
 
 #### Disabling security
-To disable all security in marxan-server, set the DISABLE_SECURITY constant in the webAPI_tornado.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
+To disable all security in marxan-server, set the DISABLE_SECURITY constant in the marxan-server.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
 
 ### Database configuration
 To configure you own database to use with marxan-server, set the appropriate settings in the server.dat file. See [DATABASE_NAME, DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD](#database_name-database_host-database_user-database_password) for more information.  
@@ -153,7 +155,7 @@ This log shows diagnostic information about the marxan-server software including
 marxan-server runs as a Python script from the marxan-server folder and on Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. It can also be started manually (for other operating systems or if you want to start it manually on Windows):  
 
 - Navigate to the marxan-server folder
-- Start the marxan-server by entering python webAPI_tornado.py
+- Start the marxan-server by entering python3 marxan-server.py
 
 You should see the marxan-server log output - for more information see [marxan-server log](#marxan-server-log).  
 

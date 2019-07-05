@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {features:[]};
   }
   loadProjects() {
-    jsonp("https://marxan-server-blishten.c9users.io:8081/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
+    jsonp("https://marxan-server-blishten.c9users.io/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
       console.log(parse(response.data[0].envelope).coordinates);
       this.setState({features: parse(response.data[0].envelope).coordinates});
     });
@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App">
       <Map
       // eslint-disable-next-line
-        style="mapbox://styles/mapbox/streets-v9"
+        style="mapbox://styles/mapbox/streets-v10"
         containerStyle={{
           height: "800px",
           width: "1000px"
@@ -37,6 +37,10 @@ class App extends Component {
     <Layer
       type="fill"
       id="marker"
+      paint={{
+        "fill-color": "rgba(0,0,0,0)",
+        "fill-outline-color": "rgba(255,0,0,0.9)"
+      }}
       >
       <Feature coordinates={this.state.features}/>
     </Layer>
