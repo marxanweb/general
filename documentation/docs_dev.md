@@ -24,15 +24,15 @@ As described above Marxan Web is a client-server piece of software with the clie
 #### Typical workflow
 This following is a typical simplified workflow for a running Marxan Web application:
 
-- The marxan-server (webAPI_tornado.py) is started [Adminstrator Documentation - Starting/stopping marxan-server](docs_admin.html#startingstopping-marxan-server)
+- The marxan-server (marxan-server.py) is started [Adminstrator Documentation - Starting/stopping marxan-server](docs_admin.html#startingstopping-marxan-server)
 - The user opens the marxan-client in a web browser and logs in - for more information see [Authentication](#authentication).  
 - REST requests are sent to the marxan-server API as GET, POST or WebSocket requests.  
-- The marxan-server matches the REST endpoint to an internal class in the webAPI_tornado.py file, runs the code and returns the results
+- The marxan-server matches the REST endpoint to an internal class in the marxan-server.py file, runs the code and returns the results
 - Returned json data is bound to user interface components using the React framework
 
 ### Technologies
 #### marxan-server
-marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight server that supports SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the webAPI_tornado.py file in the marxan-server folder and when you run this file you are starting marxan-server.    
+marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight server that supports SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the marxan-server.py file in the marxan-server folder and when you run this file you are starting marxan-server.    
 
 The PostGIS database is used to manage all of the spatial data that is created in Marxan Web and is the main processing engine for any intersections or other analyses. This fully-featured database means that any future spatial requirements can be met easily with the existing bundled database. Within marxan-server the connections to the database are managed using the psycopg2 Python library and the connection settings are set in the server.dat file. For more information see [Administrator Documentation - Database configuration](docs_admin.html#database-configuration) and [Interacting with PostGIS](#interacting-with-postgis).  
 
@@ -56,10 +56,10 @@ This section provides a quick guide to getting going in extending the marxan-ser
 
 Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/andrewcottam/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites - for more information see the [marxan-server repo](https://github.com/andrewcottam/marxan-server).  
 
-Now that repo is forked you can edit the webAPI_tornado.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
+Now that repo is forked you can edit the marxan-server.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
 ### Creating REST services
-The following section in the webAPI_tornado.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server. 
+The following section in the marxan-server.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server. 
 
 ```
 def make_app():
@@ -77,7 +77,7 @@ class testTornado(MarxanRESTHandler):
 REST services are ideal if the execution time is short and communication between marxan-server and marxan-client is just a request and response. Longer running or more complex services should be creating using WebSockets - for more information see [Creating WebSocket extensions](#creating-websocket-extensions).  
 
 #### Controlling access to REST services
-There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see the [User Guide - Roles](docs_user.html#roles)) and in marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the webAPI_tornado.py file. A curtailed example of this dictionary is shown below:
+There is one important additional step in creating new features through REST services - authorising those services. For all REST services, access is controlled through the use of roles (for more information see the [User Guide - Roles](docs_user.html#roles)) and in marxan-server the mapping between which roles have access to which services is controlled through the ROLE_UNAUTHORISED_METHODS dictionary at the top of the marxan-server.py file. A curtailed example of this dictionary is shown below:
 
 ```
 ROLE_UNAUTHORISED_METHODS = {
@@ -95,7 +95,7 @@ When you have finished developing your new REST service, make sure that you cont
 The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictionary firstly to show/hide relevant user interface components and secondly to physically stop any unauthorised access to a service based on the currently logged on users role.  
 
 #### Testing new REST services
-When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the webAPI_tornado.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation. At the end of the development process, make sure that you control access properly to the service.  
+When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the marxan-server.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation. At the end of the development process, make sure that you control access properly to the service.  
 
 ```
 PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]    
