@@ -187,9 +187,11 @@ Section "Marxan Server" SectionMarxanServer
   File /oname=$INSTDIR\marxan-server\server.dat ..\..\..\marxan-server\server.dat.default
 
   ;CREATE WINDOWS SHORTCUTS
+  SetOutPath "$INSTDIR"
+  File "marxan.ico"
+  File "run_marxan.bat"
   CreateDirectory "$SMPROGRAMS\Marxan Web"
-  SetOutPath "$INSTDIR\marxan-server" 
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda3\python3.exe" "$\"$INSTDIR\marxan-server\marxan-server.py$\" http://localhost:8080/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "C:\Windows\System32\cmd.exe" "/k $\"$INSTDIR\run_marxan.bat$\"" "$INSTDIR\marxan.ico" 0 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
   WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
 
 SectionEnd
@@ -224,11 +226,14 @@ Section "Miniconda3" SectionMiniconda
 
 Section "Python packages" SectionPythonPackages
   SectionIn 1 RO 
-  ;INSTALL THE PYTHON PREREQUISITES
   SetOutPath "$INSTDIR"
-  ExecWait '"$INSTDIR\Miniconda3\Scripts\conda" install -y tornado psycopg2 pandas gdal colorama'
-  ExecWait '"$INSTDIR\Miniconda3\Scripts\pip" install mapbox -q'
-
+  File "python_prerequisites.bat"
+  ;INITIALISE CONDA SO THAT IT CAN BE RUN FROM THE COMMAND LINE
+  ExecWait '"$INSTDIR\Miniconda3\Scripts\conda" init cmd.exe'
+  ;SET THE BASE ENVIRONMENT AND INSTALL PYTHON PREREQUISITES
+  ExecWait '"$INSTDIR\python_prerequisites.bat"'
+  Delete $INSTDIR\python_prerequisites.bat
+  
 SectionEnd
 
 Section "PostGIS 2.5.1" SectionPostGIS
@@ -383,6 +388,8 @@ Section "Uninstall"
   ;dont know how to do this silently
   
   ;remove windows shortcuts
+  Delete "$INSTDIR\marxan.ico"
+  Delete "$INSTDIR\run_marxan.bat"
   RMDir /r "$SMPROGRAMS\Marxan Web"
   
   ;delete registry keys
