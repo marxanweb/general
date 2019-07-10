@@ -5,3 +5,4 @@ installers/windows/postgis-bundle-pg10x64-setup-2.5.1-1.exe
 installers/windows/postgresql-10.7-1-windows-x64.exe
 installers/windows/dump.sql
 node_modules
+installers/windows/Miniconda3-latest-Windows-x86_64.exe
