@@ -146,7 +146,7 @@ npm run build
 This will create a compiled and minified version of your code that can be deployed to production - the build folder will contain all the code you need for deployment.  
 
 ### Deploying
-Your built application can be deployed simply by hosting the build folder on a suitable web server.  
+Your built application can be deployed simply by hosting the build folder on a suitable web server. If you want your new features to be available in other marxan-client deployments, then submit a pull request to the main marxan-client repo.  
 
 ## Building new user interfaces on Marxan data
 ### marxan-server API
