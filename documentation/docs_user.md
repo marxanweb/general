@@ -97,7 +97,7 @@ Existing DOS-based Marxan projects can also be imported to Marxan Web using the 
 To import a DOS-based Marxan project:  
 - Click on the Import button in the Projects window
 - Specify the Marxan Project Folder which should point to the folder that contains the input.dat file
-- Zip up the planning grid shapefile that was used in the DOS-based Marxan project - this shapefile should have a field called 'puid' which is the unique value for the planning unit. All of the individual files that make up a shapefile should be included (e.g. shp, shx, dbf etc.)
+- Zip up the planning grid shapefile that was used in the DOS-based Marxan project - this shapefile should have a field called 'puid' which is the unique value for the planning unit. All of the individual files that make up a shapefile should be included (e.g. shp, shx, dbf etc.). Do not include any relative or absolute paths or any other files.  
 - Upload the zipped shapefile
 - Specify the name of the planning grid - this will be the name of the planning grid that is created from the zipped up shapefile
 
