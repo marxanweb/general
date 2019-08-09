@@ -8,4 +8,5 @@ var MAPBOX_BASEMAPS = [{name: 'Streets', description: 'A complete basemap, perfe
 var MARXAN_SERVERS = [{name: 'JRC Development Server', port: 8081, host: '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com', protocol:'https:', description: 'Main development server for Marxan Web.',type:'remote'},
                       {name: 'The Nature Conservancy, USA', port: 8080, host: 'pending', protocol:'https:', description: 'Central service for TNC',type:'remote'},
                       {name: 'SPREP Regional Hub, Samoa', port: 8080, host: 'nonexistant', protocol:'https:', description: 'Regional node for BIOPAMA',type:'remote'},
-                     {name:'Beta test', port: 8080, host: 'andrewcottam.com',protocol:'https:', description:'Beta test Marxan Server hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}]
+                     {name:'Beta test', port: 8080, host: 'andrewcottam.com',protocol:'https:', description:'Beta test Marxan Server hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
+var WDPA_VERSION = {version_date:'August 2017',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Aug2019?type=shapefile'};
