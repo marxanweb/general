@@ -80,7 +80,7 @@ This is the location of a private key for this machine that is used with the cer
 This is the port that Tornado is listening on for requests and in the default server.dat file it is set to 8080. If this is set to a non-default value and this instance of marxan-server has been registered in the Marxan Registry, then make sure that the host value in the Marxan Registry includes the correct port in the host, e.g. andrewcottam.com:8081.  
 
 ##### WDPA_VERSION
-This is a text string that contains the version date for the WDPA that is included in the PostGIS database. If there is a new version of the WDPA available (the information on the latest version of the WDPA is contained in the Marxan Registry), then admin users will be able to update to the latest version in the Server Details dialog box.  
+This is a text string that contains the version date for the WDPA that is included in the PostGIS database. If there is a new version of the WDPA available (the information on the latest version of the WDPA is contained in the Marxan Registry), then admin users will be able to update to the latest version in the Server Details dialog box. For more information see [User Guide - Server Details](/docs_user.html#server-details).  
 
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
