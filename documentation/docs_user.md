@@ -490,7 +490,9 @@ The Help menu provides simple information on the server, a link to the documenta
 ### Server details
 The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system and the version of the marxan-server (and the marxan-client, if it is installed).  
 
-<img src='images/window_server_details.png' title='Server details window' class='docsImage'>
+<img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
+
+For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window.  
 
 ### Documentation
 This provides a link to the main page for the Marxan Web documentation.  
