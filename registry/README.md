@@ -18,9 +18,15 @@ Array of Marxan Servers that are listed in the login dialog in all instances of 
 - name: The name of the Marxan Server that is shown in the Marxan Server drop-down box in the login dialog  
 - description: The text description to show for the Marxan Server in the hover on the drop-down box 
 - host: The host for the Marxan Server (omitting the protocol)  
-- port: The port that the Marxan Server is listening on. By default Marxan Servers listen on port 8080, but if a non-default port is specified in the Server Configuration, then this must also be set here. e.g.8081. For more information see [Administration Guide - Enabling Guest Users](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html#port) 
+- port: The port that the Marxan Server is listening on. By default Marxan Servers listen on port 8080, but if a non-default port is specified in the Server Configuration, then this must also be set here. e.g.8081. For more information see [Administration Guide - Port setting](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html#port) 
 - protocol: Either http or https
 - type: Either remote or local
+
+`WDPA`
+Holds information about the latest version of the World Database of Protected Areas (WDPA) so that Marxan Web can be updated to new version of the WDPA once they become available. The object has the following keys:
+- latest_version: The month and year of the latest version that is available for download from the website of the EN Environment World Conservation Monitoring Centre. 
+- downloadUrl: The url that links to the download of the new version as a shapefile.  
+- tilesUrl: The url endpoint to the vector tiles for the latest version which must have been produced using the same downloaded shapefile. The vector tiles should be published in a workspace called 'marxan' and must have the layer name of 'wdpa_\<mmm\>_\<yyyy\>_polygons' where mmm is the abbreviated month and yyyy is the full year, e.g. wdpa_aug_2019_polygons.  
 
 ## Contact
 Andrew Cottam, Joint Research Centre :email:
