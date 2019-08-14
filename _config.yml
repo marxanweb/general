@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 markdown: kramdown
 kramdown:
   toc_levels: 1..3
