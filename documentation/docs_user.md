@@ -488,7 +488,7 @@ GIS users can directly connect to the database of a local installation of Marxan
 The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
 
 ### Server details
-The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system and the version of the marxan-server (and the marxan-client, if it is installed).  
+The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system, version of the marxan-server and the version of the World Database of Protected Areas.  
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
