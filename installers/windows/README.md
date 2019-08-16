@@ -3,12 +3,12 @@
 - Make sure all of the following files are in the GitHub\marxan-web\installers\windows folder: 
 
 ```
-dump.sql (from the marxan-server release)  
+dump.sql (from https://storage.cloud.google.com/marxan/dump.sql)  
 marxan.ico  
 marxan-web-windows.nsi  
-Miniconda3-latest-Windows-x86_64.exe  
-postgis-bundle-pg10x64-setup-2.5.1-1.exe  
-postgresql-10.7-1-windows-x64.exe   
+Miniconda3-latest-Windows-x86_64.exe (from https://github.com/andrewcottam/marxan-web/releases/download/beta/Miniconda3-latest-Windows-x86_64.exe)
+postgis-bundle-pg10x64-setup-2.5.1-1.exe (from https://github.com/andrewcottam/marxan-web/releases/download/beta/postgis-bundle-pg10x64-setup-2.5.1-1.exe)
+postgresql-10.7-1-windows-x64.exe (from https://github.com/andrewcottam/marxan-web/releases/download/beta/postgresql-10.7-1-windows-x64.exe)
 python_preprequisites.bat
 run_marxan.bat
 ```
@@ -16,4 +16,3 @@ run_marxan.bat
 - Open the *.nsi file from GitHub on the laptop
 - Update the output version, e.g. marxan-web-v0.8.0.exe 
 - Make the *.exe file and upload into an existing release or as a new release in the marxan-web repo
-
