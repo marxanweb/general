@@ -3,7 +3,7 @@
 - Make sure all of the following files are in the GitHub\marxan-web\installers\windows folder: 
 
 ```
-dump.sql (from https://storage.cloud.google.com/marxan/dump.sql)  
+dump.sql (from [here](https://storage.cloud.google.com/marxan/dump.sql))  
 marxan.ico  
 marxan-web-windows.nsi  
 Miniconda3-latest-Windows-x86_64.exe (from https://github.com/andrewcottam/marxan-web/releases/download/beta/Miniconda3-latest-Windows-x86_64.exe)
