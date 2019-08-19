@@ -12,4 +12,4 @@ spatial data needs to be topologically valid to be used within Marxan Web. This 
 A tileset is used to show a layer of data within the map that represents a feature, a planning grid or a protected area and this error is shown when the respective tileset cannot be found. The source gives more information about the tileset that cannot be found and if it is wdpa_source then that tileset cannot be loaded from the JRC hosted tilesets, otherwise it is not available from MapBox. In either case the server could be down, or the tileset may have been deleted.
 
 ## The field 'puid' does not exist in the shapefile
-In order for a planning grid to be used within Marxan Web, it must contain the mandatory column called 'puid' which should be an integer type.  
+In order for a planning grid to be used within Marxan Web, it must contain the mandatory column called 'puid' which should be an integer type. Update the shapefile to include this field and zip the shapefile and try again.  
