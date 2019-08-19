@@ -119,7 +119,7 @@ To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-serv
 To disable all security in marxan-server, set the DISABLE_SECURITY constant in the marxan-server.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
 
 #### Admin user password
-By default the admin user has the password 'password' which should be changed before the server is made available to any Marxan Web clients. This can be done using the [Change Password window](/docs_user.html#change-password).  
+By default the admin user has the password 'password' which should be changed before the server is made available to any Marxan Web clients. This can be done using the [Change Password window](docs_user.html#change-password).  
 
 ### Database configuration
 To configure you own database to use with marxan-server, set the appropriate settings in the server.dat file. See [DATABASE_NAME, DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD](#database_name-database_host-database_user-database_password) for more information.  
