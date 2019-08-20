@@ -15,4 +15,4 @@ A tileset is used to show a layer of data within the map that represents a featu
 In order for a planning grid to be used within Marxan Web, it must contain the mandatory column called 'puid' which should be an integer type. Update the shapefile to include this field and zip the shapefile and try again.  
 
 ## The *.\<extension\> file is missing in the zipfile
-All shapefiles must have the following files included in the zip file to be able to be imported: shp, shx, dbf. Without these files and error will be thrown on import.  
+All shapefiles must have the following files included in the zip file to be able to be imported: shp, shx, dbf. Without any one of these files an error will be thrown on import.  
