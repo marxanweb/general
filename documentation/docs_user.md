@@ -274,6 +274,8 @@ Adding features from the IUCN Red List will also be made available in future ver
 #### Deleting features
 Deleting features is only possible as an admin user and then only when the features are not in use in any projects on the server. If the features are in use, then a window will list all of the projects where they are being used.  
 
+<img src='images/failed_to_delete_feature.png' title='Failed to delete feature' class='docsImage'>
+
 ### Preprocessing features
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
 
