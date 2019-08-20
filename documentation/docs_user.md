@@ -272,7 +272,7 @@ The ability to add new features from GBIF will be made available in future versi
 Adding features from the IUCN Red List will also be made available in future versions of Marxan Web and the workflow will be similar to that for GBIF data.  
 
 #### Deleting features
-Deleting features is only possible as an admin user and should be done with great caution as those features may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.
+Deleting features is only possible as an admin user and then only when the features are not in use in any projects on the server. If the features are in use, then a window will list all of the projects where they are being used.  
 
 ### Preprocessing features
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
