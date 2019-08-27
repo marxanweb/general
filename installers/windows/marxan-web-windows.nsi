@@ -123,7 +123,7 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.8.0.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.8.53.exe" ;TODO Update to correct version
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\Marxan Web"
@@ -260,7 +260,10 @@ Section -"Database installation"
 		;restore the database dump to the new local installation of postgresql/postgis connecting as the postgres superuser
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
 			DetailPrint 'Restoring the database dump to the new local installation of postgresql/postgis'
-			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -f dump.sql postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE USER jrc WITH PASSWORD $\'thargal88$\' LOGIN NOSUPERUSER IN GROUP postgres;" --dbname postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'" --dbname postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore" --dbname=postgresql://postgres:postgres@localhost:5432/marxanserver dump.sql'
+			
 		${EndIf}
 		
 	${Else}
@@ -277,8 +280,8 @@ Section -"Database installation"
 		;restore the database dump to the specified instance of postgis - here we run psql with the superuser user/password (or a user with CREATEROLE privileges)
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
 		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
-			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\psql"
-			StrCpy $2 " -f dump.sql postgresql://"
+			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore"
+			StrCpy $2 " --dbname=postgresql://"
 			StrCpy $3 ":"
 			StrCpy $4 "@"
 			StrCpy $5 ":5432/"
