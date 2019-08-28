@@ -154,7 +154,7 @@ If you need to diagnose problems in the marxan-server, you can view the marxan-s
 
 <img src='images/server_log5.png' title='marxan-server log'>
 
-This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log.  
+This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log. The type of messages that are logged is controlled by the LOGGING_LEVEL constant in the top of the marxan-server.py file.  
 
 ### Routine tasks
 #### Starting/stopping marxan-server
