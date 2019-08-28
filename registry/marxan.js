@@ -1,4 +1,4 @@
-var MAPBOX_BASEMAPS = [{name: 'National Geographic', alias:'ESRI National Geographic',description: 'This (v2) vector tile layer provides a detailed view of the world featuring beautiful political boundaries, labeling, and background that highlights the differences in the physical characteristics of the land.', id:'https://basemaps.arcgis.com/arcgis/rest/services/OpenStreetMap_v2/VectorTileServer/resources/styles/root.json?f=pjson', provider:'esri'},
+var MAPBOX_BASEMAPS = [{name: 'Topographic', alias:'ESRI Topographic',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/0f52cd2d17ea4773944a1d0e0fb99ea4/resources/styles/root.json', provider:'esri'},
     {name: 'Streets', alias:'Mapbox Streets',description: 'A complete basemap, perfect for incorporating your own data.', id:'mapbox/streets-v10', provider:'mapbox'},
     {name: 'Outdoors', alias:'Mapbox Outdoors', description: 'General basemap tailored to hiking, biking, and sport.', id:'mapbox/outdoors-v10', provider:'mapbox'},
     {name: 'Dark',alias:'Mapbox Dark', description: 'Subtle dark backdrop for data visualizations.', id:'mapbox/dark-v9', provider:'mapbox'},
