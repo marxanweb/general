@@ -1,4 +1,5 @@
-var MAPBOX_BASEMAPS = [{name: 'Streets', alias:'Mapbox Streets',description: 'A complete basemap, perfect for incorporating your own data.', id:'mapbox/streets-v10', provider:'mapbox'},
+var MAPBOX_BASEMAPS = [{name: 'National Geographic', alias:'ESRI National Geographic',description: 'This (v2) vector tile layer provides a detailed view of the world featuring beautiful political boundaries, labeling, and background that highlights the differences in the physical characteristics of the land.', id:'https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/resources/styles/root.json?f=pjson', provider:'esri'},
+    {name: 'Streets', alias:'Mapbox Streets',description: 'A complete basemap, perfect for incorporating your own data.', id:'mapbox/streets-v10', provider:'mapbox'},
     {name: 'Outdoors', alias:'Mapbox Outdoors', description: 'General basemap tailored to hiking, biking, and sport.', id:'mapbox/outdoors-v10', provider:'mapbox'},
     {name: 'Dark',alias:'Mapbox Dark', description: 'Subtle dark backdrop for data visualizations.', id:'mapbox/dark-v9', provider:'mapbox'},
     {name: 'Light', alias:'Mapbox Light',description: 'Subtle light backdrop for data visualizations.', id:'mapbox/light-v9', provider:'mapbox'},
