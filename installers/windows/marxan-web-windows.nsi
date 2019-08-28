@@ -295,7 +295,7 @@ Section -"Database installation"
 			${EndIf}
 
 			DetailPrint 'Creating the marxanserver database'
-			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver2 WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'"'
+			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'"'
 			StrCpy $6 "$1$2$User$3$Password$4$Host$5"
 			ExecWait $6 $0
 			
@@ -407,6 +407,7 @@ Section "Uninstall"
   Delete "$INSTDIR\marxan.ico"
   Delete "$INSTDIR\run_marxan.bat"
   RMDir /r "$SMPROGRAMS\Marxan Web"
+  RMDir "$SMPROGRAMS\Marxan Web"
   
   ;delete registry keys
   DeleteRegKey HKCU "Software\Marxan Web" 
