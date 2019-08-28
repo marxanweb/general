@@ -1,4 +1,5 @@
-var MAPBOX_BASEMAPS = [{name: 'Topographic', alias:'ESRI Topographic',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/0f52cd2d17ea4773944a1d0e0fb99ea4/resources/styles/root.json', provider:'esri'},
+var MAPBOX_BASEMAPS = [{name: 'Charted', alias:'ESRI Charted Territory',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/1c365daf37a744fbad748b67aa69dac8/resources/styles/root.json', provider:'esri'},
+    {name: 'Topographic', alias:'ESRI Topographic',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/0f52cd2d17ea4773944a1d0e0fb99ea4/resources/styles/root.json', provider:'esri'},
     {name: 'Streets', alias:'Mapbox Streets',description: 'A complete basemap, perfect for incorporating your own data.', id:'mapbox/streets-v10', provider:'mapbox'},
     {name: 'Outdoors', alias:'Mapbox Outdoors', description: 'General basemap tailored to hiking, biking, and sport.', id:'mapbox/outdoors-v10', provider:'mapbox'},
     {name: 'Dark',alias:'Mapbox Dark', description: 'Subtle dark backdrop for data visualizations.', id:'mapbox/dark-v9', provider:'mapbox'},
