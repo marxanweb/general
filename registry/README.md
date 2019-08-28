@@ -8,7 +8,8 @@ Holds a number of global variables for the Marxan Web application which are load
 #### Variables
 `MAPBOX_BASEMAPS`  
 Array of Mapbox basemap styles that are available to Marxan users. This list is extensible and any new items will be immediately available to Marxan clients. Each object has the following keys:  
- - name: The name to show in the drop-down box in Marxan
+ - name: The unique name that identifies the basemap in Marxan Web
+ - alias: The name to show in the drop-down box for Basemap style
  - description: The text description to show as a hover in the drop-down box in Marxan
  - id: The Mapbox identifier of the style including the username, e.g. mapbox/outdoors-v9 or blishten/cjg6jk8vg3tir2spd2eatu5fd
  - provider: The organisation or person who created the style
