@@ -269,9 +269,7 @@ Section -"Database installation"
 	${Else}
 		;Using an existing PostGIS instance - write the data to the marxan web server.dat file
 		${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_HOST " "$Host" $R0 
-		;the following sections are no longer used - the user and password in the server.dat file will always be jrc/thargal88
-		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_USER " "$User" $R0 
-		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_PASSWORD " "$Password" $R0 
+		;the DATABASE_NAME, DATABASE_USER and DATABASE_PASSWORD will be the same as a default install
 		
 		;install the client tools only so that the dump.sql can be restored to an existing database
 		DetailPrint 'Installing the client tools only so that the dump.sql can be restored to an existing database'
@@ -279,8 +277,10 @@ Section -"Database installation"
 		
 		;restore the database dump to the specified instance of postgis - here we run psql with the superuser user/password (or a user with CREATEROLE privileges)
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
-		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
-			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore"
+			;create the JRC user
+			DetailPrint 'Restoring the database dump to the specified instance of postgis'
+			DetailPrint 'Creating the jrc user'
+			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE USER jrc WITH PASSWORD $\'thargal88$\' LOGIN NOSUPERUSER IN GROUP postgres;"'
 			StrCpy $2 " --dbname=postgresql://"
 			StrCpy $3 ":"
 			StrCpy $4 "@"
@@ -293,6 +293,19 @@ Section -"Database installation"
 				;connection failed
 				MessageBox MB_OK "The connection to the database failed. Check the connection settings and retry."
 			${EndIf}
+
+			DetailPrint 'Creating the marxanserver database'
+			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver2 WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'"'
+			StrCpy $6 "$1$2$User$3$Password$4$Host$5"
+			ExecWait $6 $0
+			
+		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
+			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore"
+			StrCpy $7 "marxanserver"
+			StrCpy $8 " dump.sql"
+			StrCpy $6 "$1$2$User$3$Password$4$Host$5$7$8"
+			ExecWait $6 $0
+
 		${EndIf}
 	${EndIf}
 	Delete $INSTDIR\postgresql-10.7-1-windows-x64.exe		
