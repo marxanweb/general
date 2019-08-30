@@ -245,7 +245,7 @@ All features within the project initially carry the same weight - that is, all o
 The source for these features can come from a range of different sources including local spatial data, global data providers or digitising them on the screen. One of the benefits of using Marxan Web is that any features that have been captured by the community can be shared between projects (if users have permissions).  
 
 ### The features window
-The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To preview an individual feature on a map click on the ellipsis button on the righe hand side of the table.  
+The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To preview an individual feature on a map click on the ellipsis button on the right hand side of the table.  
 
 <img src='images/window_features.png' title='Features window' class='docsImage'>
 
@@ -323,7 +323,7 @@ The planning grids window provides information on the planning grids that are av
 
 <img src='images/window_planning_units.png' title='Planning grids window' class='docsImage'>
 
-At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To preview an individual planning grid on a map click on the ellipsis button on the righe hand side of the table.  
+At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To preview an individual planning grid on a map click on the ellipsis button on the right hand side of the table.  
 
 ### Managing planning grids
 Planning grids can be created, imported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
