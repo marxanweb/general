@@ -354,7 +354,7 @@ When a planning grid is used within a project, by default all of the planning un
 #### Including/excluding individual planning units
 Manually including or excluding individual planning units is useful where a real-world issue affects where new protected areas can be designated. For example, if you know that a particular planning unit contains a restricted military area and cannot be designated, then you could manually exclude that planning unit from the project.  
 
-If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode, where you can change the status of any of the units to be one of the following: 
+If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode (disabling the Project and Features tab), where you can change the status of any of the units to be one of the following: 
 
 - initially included (i.e. the planning unit is initially in the reserve system but is not guaranteed to be in the results). 
 - locked in the reserve system, i.e. the planning unit will be present in every solution.
