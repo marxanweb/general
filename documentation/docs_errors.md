@@ -18,3 +18,6 @@ In order for a planning grid to be used within Marxan Web, it must contain the m
 
 ## The *.\<extension\> file is missing in the zipfile
 All shapefiles must have the following files included in the zip file to be able to be imported: shp, shx, dbf. Without any one of these files an error will be thrown on import.  
+
+## Planning grids cannot be created for countries that span the meridian
+Currently Marxan Web cannot create planning grids that span the meridian (at 180 degree longitude). These countries are Fiji, Kiribati, New Zealand, Russia, Tuvalu, USA and Wallis and Fortuna. As a workaround, planning grids can be created and uploaded from other GIS tools, e.g. ArcGIS or QGIS. For more information see [Importing existing planning grids](docs_user.html#importing-existing-planning-grids).  
