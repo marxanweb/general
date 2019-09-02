@@ -497,7 +497,7 @@ The Server details show the information about the server that the user is curren
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
-For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window.  
+For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window. For information on updates to the WDPA see [here](https://www.protectedplanet.net/c/monthly-updates).  
 
 ### Documentation
 This provides a link to the main page for the Marxan Web documentation.  
