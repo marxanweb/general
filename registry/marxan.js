@@ -11,4 +11,4 @@ var MARXAN_SERVERS = [{name: 'JRC Development Server', port: 8081, host: '61c92e
                       {name: 'The Nature Conservancy, USA', port: 8080, host: 'pending', protocol:'https:', description: 'Central service for TNC',type:'remote'},
                       {name: 'SPREP Regional Hub, Samoa', port: 8080, host: 'nonexistant', protocol:'https:', description: 'Regional node for BIOPAMA',type:'remote'},
                      {name:'Beta test', port: 8080, host: 'andrewcottam.com',protocol:'https:', description:'Beta test Marxan Server hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
-var WDPA = {latest_version:'August 2019',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Aug2019?type=shapefile', tilesUrl:'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?'};
+var WDPA = {latest_version:'September 2019',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Sep2019?type=shapefile', tilesUrl:'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?'};
