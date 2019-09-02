@@ -28,6 +28,7 @@ Holds information about the latest version of the World Database of Protected Ar
 - latest_version: The month and year of the latest version that is available for download from the website of the UN Environment World Conservation Monitoring Centre. 
 - downloadUrl: The url that links to the download of the new version as a shapefile from the WCMC website.  
 - tilesUrl: The url endpoint to the vector tiles for the latest version which must have been produced using the same downloaded shapefile. The vector tiles should be published in a workspace called 'marxan' and must have the layer name of 'wdpa_\<mmm\>_\<yyyy\>_polygons' where mmm is the abbreviated month and yyyy is the full year, e.g. wdpa_aug_2019_polygons.  
+- metadataUrl: The url that links to the WCMC metadata page for this update and includes a full description of which countries data have changed since the previous month.  
 
 ## Contact
 Andrew Cottam, Joint Research Centre :email:
