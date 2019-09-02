@@ -26,7 +26,7 @@ Array of Marxan Servers that are listed in the login dialog in all instances of 
 `WDPA`
 Holds information about the latest version of the World Database of Protected Areas (WDPA) so that Marxan Web can be updated to new version of the WDPA once they become available. The object has the following keys:
 - latest_version: The month and year of the latest version that is available for download from the website of the UN Environment World Conservation Monitoring Centre. 
-- downloadUrl: The url that links to the download of the new version as a shapefile.  
+- downloadUrl: The url that links to the download of the new version as a shapefile from the WCMC website.  
 - tilesUrl: The url endpoint to the vector tiles for the latest version which must have been produced using the same downloaded shapefile. The vector tiles should be published in a workspace called 'marxan' and must have the layer name of 'wdpa_\<mmm\>_\<yyyy\>_polygons' where mmm is the abbreviated month and yyyy is the full year, e.g. wdpa_aug_2019_polygons.  
 
 ## Contact
