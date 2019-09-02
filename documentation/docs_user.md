@@ -522,7 +522,7 @@ To create a new issue:
 For general feedback, please email andrew.cottam@ec.europa.eu.
 
 ## Acknowledgements
-### Data providers:  
+### Data providers  
 
 Uses data from the World Database of Protected Areas. IUCN and UNEP-WCMC (2017), The World Database on Protected Areas (WDPA) August 2017, Cambridge, UK: UNEP-WCMC. Available at: www.protectedplanet.net  
 
