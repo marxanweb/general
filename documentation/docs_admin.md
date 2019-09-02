@@ -201,3 +201,4 @@ To install software updates to marxan-client:
 
 - In the command prompt, navigate to the marxan-client folder
 - Type git pull
+- Refresh the Marxan Web page in the browser (you may need to clear your browser cache)
