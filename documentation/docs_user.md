@@ -275,7 +275,7 @@ The ability to add new features from GBIF will be made available in future versi
 Adding features from the IUCN Red List will also be made available in future versions of Marxan Web and the workflow will be similar to that for GBIF data.  
 
 #### Deleting features
-Deleting features is only possible as an admin user and then only when the features are not in use in any projects on the server. If the features are in use, then a window will list all of the projects where they are being used.  
+Deleting features is only possible as an admin user and then only when the features are not in use in any projects and they are not system supplied. System supplied features are ones that are used in case studies and tutorials and therefore cannot be deleted. If the features are in use, then a window will list all of the projects where they are being used.  
 
 <img src='images/failed_to_delete_feature.png' title='Failed to delete feature' class='docsImage'>
 
