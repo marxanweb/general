@@ -21,3 +21,6 @@ All shapefiles must have the following files included in the zip file to be able
 
 ## Planning grids cannot be created for countries that span the meridian
 Currently Marxan Web cannot create planning grids that span the meridian (at 180 degree longitude). These countries are Fiji, Kiribati, New Zealand, Russia, Tuvalu, USA and Wallis and Fortuna. As a workaround, planning grids can be created and uploaded from other GIS tools, e.g. ArcGIS or QGIS. For more information see [Importing existing planning grids](docs_user.html#importing-existing-planning-grids).  
+
+## The zip file contains multiple shapefiles
+When uploading and importing zipped shapefiles, the zip files must only contain a single shapefile - i.e. a set of files all with the same name but with different extensions.  
