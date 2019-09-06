@@ -11,22 +11,30 @@ const Map = ReactMapboxGl({
 });
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {features:[]};
+    this.state = { features: [] };
+  }
+  _handleMouseEnter(cursor, item) {
+    console.log(cursor && cursor.features && cursor.features[0] && cursor.features[0].properties && cursor.features[0].properties.alias);
+  }
+  _handleMouseLeave(cursor) {
+
   }
   loadProjects() {
-    jsonp("https://marxan-server-blishten.c9users.io/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
-      console.log(parse(response.data[0].envelope).coordinates);
-      this.setState({features: parse(response.data[0].envelope).coordinates});
+    jsonp("https://andrewcottam.com:8080/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
+      this.setState({ features: response.data });
     });
   }
   render() {
+    var c = [this.state.features.map((item) => { 
+      return <Feature coordinates={parse(item.envelope).coordinates} properties={item}/>;
+    })];
     return (
       <div className="App">
       <Map
       // eslint-disable-next-line
-        style="mapbox://styles/mapbox/streets-v10"
+        style="mapbox://styles/mapbox/light-v9"
         containerStyle={{
           height: "800px",
           width: "1000px"
@@ -34,16 +42,17 @@ class App extends Component {
         onStyleLoad={this.loadProjects.bind(this)}
         zoom={[0.7]}
         >
-    <Layer
-      type="fill"
-      id="marker"
-      paint={{
-        "fill-color": "rgba(0,0,0,0)",
-        "fill-outline-color": "rgba(255,0,0,0.9)"
-      }}
-      >
-      <Feature coordinates={this.state.features}/>
-    </Layer>
+        <Layer
+          type="fill"
+          id="marker"
+          paint={{
+            "fill-color": "rgba(88,194,255,0.3)",
+            "fill-outline-color": "rgba(202,88,255,0.6)"
+          }}
+          onMouseEnter={(cursor, item) => this._handleMouseEnter(cursor, item)}
+          onMouseLeave={cursor => this._handleMouseLeave(cursor)}
+          children={c}
+          />
       </Map>      
     </div>
     );
