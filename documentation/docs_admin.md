@@ -79,6 +79,9 @@ This is the location of a private key for this machine that is used with the cer
 ##### PORT 
 This is the port that Tornado is listening on for requests and in the default server.dat file it is set to 8080. If this is set to a non-default value and this instance of marxan-server has been registered in the Marxan Registry, then make sure that the host value in the Marxan Registry includes the correct port in the host, e.g. andrewcottam.com:8081.  
 
+##### WDPA_VERSION
+This is a text string that contains the version date for the WDPA that is included in the PostGIS database, e.g. August 2019. If there is a new version of the WDPA available (the information on the latest version of the WDPA is contained in the Marxan Registry), then admin users will be able to update to the latest version in the Server Details dialog box. For more information see [User Guide - Server Details](docs_user.html#server-details).  
+
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
 
@@ -115,6 +118,9 @@ To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-serv
 #### Disabling security
 To disable all security in marxan-server, set the DISABLE_SECURITY constant in the marxan-server.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
 
+#### Admin user password
+By default the admin user has the password 'password' which should be changed before the server is made available to any Marxan Web clients. This can be done using the Change Password window - for more information see [User Guide - Change Password window](docs_user.html#change-password).  
+
 ### Database configuration
 To configure you own database to use with marxan-server, set the appropriate settings in the server.dat file. See [DATABASE_NAME, DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD](#database_name-database_host-database_user-database_password) for more information.  
 
@@ -148,14 +154,14 @@ If you need to diagnose problems in the marxan-server, you can view the marxan-s
 
 <img src='images/server_log5.png' title='marxan-server log'>
 
-This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log.  
+This log shows diagnostic information about the marxan-server software including the versions of components and the location of key files. It also shows a full log of all of the requests to the marxan-server from the marxan-client applications. If errors occur in marxan-server these are printed in this log. The type of messages that are logged is controlled by the LOGGING_LEVEL constant in the top of the marxan-server.py file.  
 
 ### Routine tasks
 #### Starting/stopping marxan-server
 marxan-server runs as a Python script from the marxan-server folder and on Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. It can also be started manually (for other operating systems or if you want to start it manually on Windows):  
 
 - Navigate to the marxan-server folder
-- Start the marxan-server by entering python3 marxan-server.py
+- Start the marxan-server by entering python marxan-server.py
 
 You should see the marxan-server log output - for more information see [marxan-server log](#marxan-server-log).  
 
@@ -195,3 +201,4 @@ To install software updates to marxan-client:
 
 - In the command prompt, navigate to the marxan-client folder
 - Type git pull
+- Refresh the Marxan Web page in the browser (you may need to clear your browser cache)

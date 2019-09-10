@@ -123,7 +123,7 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.7.2.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.8.53.exe" ;TODO Update to correct version
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\Marxan Web"
@@ -187,9 +187,11 @@ Section "Marxan Server" SectionMarxanServer
   File /oname=$INSTDIR\marxan-server\server.dat ..\..\..\marxan-server\server.dat.default
 
   ;CREATE WINDOWS SHORTCUTS
+  SetOutPath "$INSTDIR"
+  File "marxan.ico"
+  File "run_marxan.bat"
   CreateDirectory "$SMPROGRAMS\Marxan Web"
-  SetOutPath "$INSTDIR\marxan-server" 
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "$INSTDIR\Miniconda2\python.exe" "$\"$INSTDIR\marxan-server\webAPI_tornado.py$\" http://localhost:8081/index.html" "marxan.ico" 1 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "C:\Windows\System32\cmd.exe" "/k $\"$INSTDIR\run_marxan.bat$\"" "$INSTDIR\marxan.ico" 0 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
   WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
 
 SectionEnd
@@ -211,24 +213,27 @@ Section "Marxan database" SectionMarxanDatabase
   
 SectionEnd
 
-Section "Anaconda2" SectionMiniconda
+Section "Miniconda3" SectionMiniconda
   SectionIn 1 RO 
   ;INSTALL MINICONDA SILENTLY AND WHEN IT HAS FINISHED DELETE THE INSTALLER
-  ;By default this installs Miniconda2 in the install directory just for the current user and does not register Python in the PATH environment variable
+  ;By default this installs Miniconda3 in the install directory just for the current user and does not register Python in the PATH environment variable
   SetOutPath "$INSTDIR"
-  File "Miniconda2-latest-Windows-x86_64.exe"
-  ExecWait '"$INSTDIR\Miniconda2-latest-Windows-x86_64.exe" /InstallationType=JustMe /S /D=$INSTDIR\Miniconda2'  
-  Delete $INSTDIR\Miniconda2-latest-Windows-x86_64.exe
+  File "Miniconda3-latest-Windows-x86_64.exe"
+  ExecWait '"$INSTDIR\Miniconda3-latest-Windows-x86_64.exe" /InstallationType=JustMe /S /D=$INSTDIR\Miniconda3'  
+  Delete $INSTDIR\Miniconda3-latest-Windows-x86_64.exe
         
  SectionEnd
 
 Section "Python packages" SectionPythonPackages
   SectionIn 1 RO 
-  ;INSTALL THE PYTHON PREREQUISITES
   SetOutPath "$INSTDIR"
-  ExecWait '"$INSTDIR\Miniconda2\Scripts\conda" install -y tornado psycopg2 pandas gdal colorama'
-  ExecWait '"$INSTDIR\Miniconda2\Scripts\pip" install mapbox -q'
-
+  File "python_prerequisites.bat"
+  ;INITIALISE CONDA SO THAT IT CAN BE RUN FROM THE COMMAND LINE
+  ExecWait '"$INSTDIR\Miniconda3\Scripts\conda" init cmd.exe'
+  ;SET THE BASE ENVIRONMENT AND INSTALL PYTHON PREREQUISITES
+  ExecWait '"$INSTDIR\python_prerequisites.bat"'
+  Delete $INSTDIR\python_prerequisites.bat
+  
 SectionEnd
 
 Section "PostGIS 2.5.1" SectionPostGIS
@@ -255,15 +260,16 @@ Section -"Database installation"
 		;restore the database dump to the new local installation of postgresql/postgis connecting as the postgres superuser
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
 			DetailPrint 'Restoring the database dump to the new local installation of postgresql/postgis'
-			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -f dump.sql postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE USER jrc WITH PASSWORD $\'thargal88$\' LOGIN NOSUPERUSER IN GROUP postgres;" --dbname postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'" --dbname postgresql://postgres:postgres@localhost:5432/'
+			ExecWait '"$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore" --dbname=postgresql://postgres:postgres@localhost:5432/marxanserver dump.sql'
+			
 		${EndIf}
 		
 	${Else}
 		;Using an existing PostGIS instance - write the data to the marxan web server.dat file
 		${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_HOST " "$Host" $R0 
-		;the following sections are no longer used - the user and password in the server.dat file will always be jrc/thargal88
-		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_USER " "$User" $R0 
-		;${ConfigWrite} "$INSTDIR\marxan-server\server.dat" "DATABASE_PASSWORD " "$Password" $R0 
+		;the DATABASE_NAME, DATABASE_USER and DATABASE_PASSWORD will be the same as a default install
 		
 		;install the client tools only so that the dump.sql can be restored to an existing database
 		DetailPrint 'Installing the client tools only so that the dump.sql can be restored to an existing database'
@@ -271,9 +277,11 @@ Section -"Database installation"
 		
 		;restore the database dump to the specified instance of postgis - here we run psql with the superuser user/password (or a user with CREATEROLE privileges)
 		${If} ${SectionIsSelected} ${SectionMarxanDatabase}
-		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
-			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\psql"
-			StrCpy $2 " -f dump.sql postgresql://"
+			;create the JRC user
+			DetailPrint 'Restoring the database dump to the specified instance of postgis'
+			DetailPrint 'Creating the jrc user'
+			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE USER jrc WITH PASSWORD $\'thargal88$\' LOGIN NOSUPERUSER IN GROUP postgres;"'
+			StrCpy $2 " --dbname=postgresql://"
 			StrCpy $3 ":"
 			StrCpy $4 "@"
 			StrCpy $5 ":5432/"
@@ -285,6 +293,19 @@ Section -"Database installation"
 				;connection failed
 				MessageBox MB_OK "The connection to the database failed. Check the connection settings and retry."
 			${EndIf}
+
+			DetailPrint 'Creating the marxanserver database'
+			StrCpy $1 '"$PROGRAMFILES64\PostgreSQL\10\bin\psql" -c "CREATE DATABASE marxanserver WITH TEMPLATE = template0 ENCODING=$\'UTF8$\'"'
+			StrCpy $6 "$1$2$User$3$Password$4$Host$5"
+			ExecWait $6 $0
+			
+		    DetailPrint 'Restoring the database dump to the specified instance of postgis'
+			StrCpy $1 "$PROGRAMFILES64\PostgreSQL\10\bin\pg_restore"
+			StrCpy $7 "marxanserver"
+			StrCpy $8 " dump.sql"
+			StrCpy $6 "$1$2$User$3$Password$4$Host$5$7$8"
+			ExecWait $6 $0
+
 		${EndIf}
 	${EndIf}
 	Delete $INSTDIR\postgresql-10.7-1-windows-x64.exe		
@@ -347,7 +368,7 @@ FunctionEnd
 ;Descriptions
 
   ;Language strings
-  LangString DESC_SectionMiniconda ${LANG_ENGLISH} "Miniconda2 is a package manager for Python that contains Python version 2.7.15 and a minimal set of Python packages"
+  LangString DESC_SectionMiniconda ${LANG_ENGLISH} "Miniconda3 is a package manager for Python that contains Python version 3.7 and a minimal set of Python packages"
   LangString DESC_SectionPythonPackages ${LANG_ENGLISH} "Python packages required to run Marxan Web"
   LangString DESC_SectionPostgresql ${LANG_ENGLISH} "Open source SQL database"
   LangString DESC_SectionPostGIS ${LANG_ENGLISH} "PostgreSQL/PostGIS open-source spatial database. Unselect if you already have a PostGIS server that you want to use."
@@ -383,7 +404,10 @@ Section "Uninstall"
   ;dont know how to do this silently
   
   ;remove windows shortcuts
+  Delete "$INSTDIR\marxan.ico"
+  Delete "$INSTDIR\run_marxan.bat"
   RMDir /r "$SMPROGRAMS\Marxan Web"
+  RMDir "$SMPROGRAMS\Marxan Web"
   
   ;delete registry keys
   DeleteRegKey HKCU "Software\Marxan Web" 

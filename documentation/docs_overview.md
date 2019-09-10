@@ -7,3 +7,4 @@ Choose the appropriate topic from the list below:
 * [Tutorials](https://andrewcottam.github.io/marxan-web/documentation/docs_tutorials.html) - Read this if you want to start using Marxan Web straight away by following a set of tutorials.    
 * [Administrator Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html) - Read this if you are an IT administrator and you want to deploy and configure Marxan Web in your organisation.  
 * [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html) - Read this if you are a software developer and you want to: extend Marxan Web with new features; create new websites from the data or if you want to use desktop GIS tools to link directly to the Marxan Web database.  
+* [Errors](https://andrewcottam.github.io/marxan-web/documentation/docs_errors.html) - An appendix of all of the errors that can occur within Marxan Web and how to resolve them.  

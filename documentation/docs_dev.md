@@ -7,7 +7,7 @@
 The Developer Documentation is aimed at software developers who want to: extend Marxan Web with new features; create new websites from the data or want to use desktop GIS tools to link directly to the Marxan Web database. Each of these topics is described below.  
 
 ## Overview of extending Marxan Web
-Marxan Web is a piece of client-server software with the client running in a Web Browser and the server running cross-platform on any operating system. The high level architecture is a loosely-coupled application that uses REST Services and WebSockets to communicate between the marxan-client and marxan-server. This loosely coupled system means that from the developers point of view the system is open and can be extended quickly and easily using the marxan-server API.  
+Marxan Web is a piece of client-server software with the client running in a Web Browser (marxan-client) and the server running cross-platform on any operating system (marxan-server). The high level architecture is a loosely-coupled application that uses REST Services and WebSockets to communicate between the marxan-client and marxan-server. This loosely coupled system means that from the developers point of view the system is open and can be extended quickly and easily using the marxan-server API.  
 
 Components on marxan-server include the PostGIS spatial database, the Tornado Web Server, the DOS-based Marxan software and the marxan-server custom software written in Python. The components of marxan-client are a web application written in React, the MapboxGL Javascript Mapping Library and a set of Vector Tile services to provide the mapping layers. These are all open-source technologies and can be customised and extended without restrictions. 
 
@@ -32,7 +32,7 @@ This following is a typical simplified workflow for a running Marxan Web applica
 
 ### Technologies
 #### marxan-server
-marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight server that supports SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the marxan-server.py file in the marxan-server folder and when you run this file you are starting marxan-server.    
+marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight cross-platform server that supports SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the marxan-server.py file in the marxan-server folder and when you run this file you are starting marxan-server.    
 
 The PostGIS database is used to manage all of the spatial data that is created in Marxan Web and is the main processing engine for any intersections or other analyses. This fully-featured database means that any future spatial requirements can be met easily with the existing bundled database. Within marxan-server the connections to the database are managed using the psycopg2 Python library and the connection settings are set in the server.dat file. For more information see [Administrator Documentation - Database configuration](docs_admin.html#database-configuration) and [Interacting with PostGIS](#interacting-with-postgis).  
 
@@ -54,7 +54,7 @@ Finally, the mapping data itself is delivered through Vector Tiles that are sour
 ## marxan-server development
 This section provides a quick guide to getting going in extending the marxan-server software.  
 
-Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/andrewcottam/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites - for more information see the [marxan-server repo](https://github.com/andrewcottam/marxan-server).  
+Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/andrewcottam/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server repo](https://github.com/andrewcottam/marxan-server).  
 
 Now that repo is forked you can edit the marxan-server.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
@@ -102,7 +102,7 @@ PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]
 ```
 
 ### Interacting with PostGIS
-PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with an 'f_' (for features) and 'pu_' (for planning units). Each of these tables with be projected in an equal area projection (EPSG:3410).  
+PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with an 'f_' (for features) and 'pu_' (for planning units). Each of these tables will be projected in an equal area projection (EPSG:3410).  
 
 In addition, new features and planning grids will each have a respective new record in the 'metadata_planning_units' or 'metadata_interest_features' tables. These tables are used to capture the metadata for these entities.  
 
@@ -119,8 +119,34 @@ For most purposes in marxan-server, creating extensions by creating new REST ser
 To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There are already two example subclasses of the MarxanWebSocketHandler class: runMarxan (for running Marxan jobs) and QueryWebSocketHandler (for running PostGIS queries). Follow these example classes to create your own WebSocket extensions.  
 
 ## marxan-client development
+The marxan-client software is developed using the React Framework from Facebook and was created using the create-react-app tool. This is a nodejs package that contains a development server, tools for rapidly creating user interfaces and compiling and building the code for  production. In order to develop and extend marxan-client, use the following steps:  
+
+- Fork the [repo](https://github.com/andrewcottam/marxan-client) and clone it to a development machine
+- Change to the marxan-client folder and run npm install to install all of the nodejs dependencies
+
+```
+cd marxan-client
+marxan-client/npm install
+```
+
+- You can now write React code to extend marxan-client and test it with the development server:
+
+```
+npm start
+```
+- When ever your source code changes this is detected and the web page will automatically reload.   
+
 ### Building 
+Once you have finished your React development, you can build the repo using the npm run build command:  
+
+```
+npm run build
+```
+
+This will create a compiled and minified version of your code that can be deployed to production - the build folder will contain all the code you need for deployment.  
+
 ### Deploying
+Your built application can be deployed simply by hosting the build folder on a suitable web server. If you want your new features to be available in other marxan-client deployments, then submit a pull request to the main marxan-client repo.  
 
 ## Building new user interfaces on Marxan data
 ### marxan-server API

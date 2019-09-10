@@ -10,7 +10,7 @@ Marxan Web is available as a hosted service (i.e. where no software installation
 1. Click Register, enter you details and login  
 
 ### Marxan Web install version
-1. Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/beta](https://github.com/andrewcottam/marxan-web/releases/tag/beta)
+1. Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/v0.9.0_beta](https://github.com/andrewcottam/marxan-web/releases/tag/v0.9.0_beta)
 1. Follow the instructions  
 
 ## Bugs and feature requests
@@ -29,10 +29,10 @@ For feature requests, please also add them as issues in the Marxan Web repositor
 
 - The Marxan Web hosted service is running on a machine with a single processor and this will be shared by all users. Therefore in some cases the performance may be very slow when multiple users are using the tool. Please try to keep the number of iterations for a project as low as possible and also please don't share the link to the Beta Test website just yet. This should not be an issue for the release version of Marxan Web as it will be hosted on a production-ready machine with multiple processors and there may also be additional instances hosted in other organisations.  
 
-- Not all the World Database of Protected Areas is included in the current version of Marxan Web - it is only available for countries in Africa, the Caribbean and the Pacific. The full version will be available with the full release.  
+- In the Windows version, not all the World Database of Protected Areas is included by default - it is only available for countries in Africa, the Caribbean and the Pacific. If you are logged in as admin you can update to the full most-recent version by following the instructions on screen.    
 
 ## Timeline
-The Beta Test programme will end on 31/07/2019. Please try and submit all bugs and feature requests by this date.  
+The Beta Test programme will end on 31/10/2019. Please try and submit all bugs and feature requests by this date.  
 
 ## Contact  
 For more information on the Beta Test programme contact [Jennifer McGowan](mailto:j.mcgowan@uq.edu.au) or [Andrew Cottam](mailto:andrew.cottam@ec.europa.eu).
