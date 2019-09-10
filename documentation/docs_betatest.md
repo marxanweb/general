@@ -32,7 +32,7 @@ For feature requests, please also add them as issues in the Marxan Web repositor
 - In the Windows version, not all the World Database of Protected Areas is included by default - it is only available for countries in Africa, the Caribbean and the Pacific. If you are logged in as admin you can update to the full most-recent version by following the instructions on screen.    
 
 ## Timeline
-The Beta Test programme will end on 31/07/2019. Please try and submit all bugs and feature requests by this date.  
+The Beta Test programme will end on 31/10/2019. Please try and submit all bugs and feature requests by this date.  
 
 ## Contact  
 For more information on the Beta Test programme contact [Jennifer McGowan](mailto:j.mcgowan@uq.edu.au) or [Andrew Cottam](mailto:andrew.cottam@ec.europa.eu).
