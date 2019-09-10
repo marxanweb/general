@@ -19,7 +19,7 @@ class App extends Component {
     var properties = cursor && cursor.features && cursor.features[0] && cursor.features[0].properties;
     if (properties) this.setState({lng:cursor.lngLat.lng,lat:cursor.lngLat.lat, alias: properties.alias,display:'block'});
   }
-  _handleMouseLeave() {
+  _handleMouseLeave(event) {
     this.setState({display:'none'});
   }
   loadProjects() {
@@ -51,7 +51,7 @@ class App extends Component {
             "fill-outline-color": "rgba(202,88,255,0.6)"
           }}
           onMouseEnter={(cursor, item) => this._handleMouseEnter(cursor, item)}
-          onMouseLeave={() => this._handleMouseLeave()}
+          onMouseLeave={(cursor) => this._handleMouseLeave(cursor)} 
           children={c}
         />
         <Popup
@@ -60,7 +60,7 @@ class App extends Component {
           offset={{
             'bottom-left': [12, -38],  'bottom': [0, -38], 'bottom-right': [-12, -38]
           }}>
-          <h1>{this.state.alias}</h1>
+          <div className='popup'>{this.state.alias}</div>
         </Popup>
       </Map>      
       </div>
