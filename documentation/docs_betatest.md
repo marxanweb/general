@@ -10,7 +10,7 @@ Marxan Web is available as a hosted service (i.e. where no software installation
 1. Click Register, enter you details and login  
 
 ### Marxan Web install version
-1. Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/beta](https://github.com/andrewcottam/marxan-web/releases/tag/beta)
+1. Goto: [https://github.com/andrewcottam/marxan-web/releases/tag/beta](https://github.com/andrewcottam/marxan-web/releases/tag/v0.9.0_beta)
 1. Follow the instructions  
 
 ## Bugs and feature requests
