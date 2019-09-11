@@ -130,7 +130,7 @@ The features that are included in a project are shown in the features tab and fo
 
 <img src='images/tab_features.png' title='Feature tab' class='docsImage'>
 
-The target icon shows the target that has been set for that particular feature and its color reflects the status of the feature't target that is met. If the project has been run and the target has been achieved for the feature then it is white. If the target has not been achieved it is shown in pink.  
+The target icon shows the target that has been set for that particular feature and its color reflects the status of the features target. If the project has been run and the target has been achieved for the feature then it is white. If the target has not been achieved it is shown in pink.  
 
 The status bar shows a scale from 0 to 100% which reflects the percentage of the target acheived (in blue) relative to the amount set (in grey). If there is a target shortfall for a feature, the target icon will be pink.  
 
@@ -156,6 +156,7 @@ In the context menu click Properties to view all of the feature metadata. For mo
 Feature targets can be changed in one of two ways:  
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
 - In the Feature Properties window, enter a new value in the Target Percent field and click OK  
+To change targets for all features, click on the target icon underneath the list of features and set a value.  
 
 #### Changing feature penalty factor  
 In the Feature Properties window, enter a new value in the Species Penalty Factor field and click OK.  
