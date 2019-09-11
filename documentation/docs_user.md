@@ -156,6 +156,7 @@ In the context menu click Properties to view all of the feature metadata. For mo
 Individual feature targets can be changed in one of two ways:  
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
 - In the Feature Properties window, enter a new value in the Target Percent field and click OK  
+
 To change targets for all features, click on the target icon underneath the list of features and set a value.  
 
 #### Changing feature penalty factor  
