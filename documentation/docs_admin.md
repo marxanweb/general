@@ -35,6 +35,8 @@ If you want to use an existing PostGIS database, then untick the PostGIS checkbo
 
 <img src='images/install_postgis.png' title='Windows Installer PostGIS components' class='docsImage'>
 
+For uninstall information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page.
+
 ### Unix
 marxan-server and marxan-client have to be installed separately on Unix operating systems. For more information on installing these, see the relevant GitHub repos: [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client).  
 
