@@ -29,11 +29,11 @@ Marxan Web is cross-platform which means that it will install and run on any ope
 ### Windows
 A Windows installer is available for installing Marxan Web on Windows and is available from the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page. Once downloaded, when you run the installer you can choose whether to install Marxan Web with a new PostGIS database or use an existing one:
 
-![install](https://user-images.githubusercontent.com/596494/64844555-6db26100-d608-11e9-929f-903c28efbfbe.png)  
+<img src='images/install.png' title='Windows Installer' class='docsImage'>
 
 If you want to use an existing PostGIS database, then untick the PostGIS checkbox and enter the connection information on the following page. The user must have superuser permissions.
 
-![install_postgis](https://user-images.githubusercontent.com/596494/64844647-a9e5c180-d608-11e9-86af-31cfbce90a47.png)
+<img src='images/install_postgis.png' title='Windows Installer PostGIS components' class='docsImage'>
 
 ### Unix
 marxan-server and marxan-client have to be installed separately on Unix operating systems. For more information on installing these, see the relevant GitHub repos: [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client).  
