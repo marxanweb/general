@@ -13,7 +13,7 @@ Tools are available in common GIS packages to help repair geometries so that the
 ## The tileset from source \<source\> was not found
 A tileset is used to show a layer of data within the map that represents a feature, a planning grid or a protected area and this error is shown when the respective tileset cannot be found. The error message gives more information about the source for the tileset that cannot be found. If it is 'wdpa_source' then that protected area tileset cannot be loaded from the JRC hosted tilesets for that location. By default a Marxan Server only comes with protected area information for Africa, the Caribbean and the Pacific (ACP) - although it can be updated at any time to the global dataset (see [here](docs_user.html#server-details)). The project location maybe outside this region in this case and that is why there is an error. If it is within the ACP region, then there is a problem in connecting to the server (it may be down).  
 
-If the source is something other than 'wdpa_source' then the tilesets are not available from MapBox. In this case there may be a problem in connecting to the server, or the tileset may have been deleted from Mapbox.  
+If the source is something other than 'wdpa_source' then the tilesets are not available from MapBox. In this case there may be a problem in connecting to the server, the tileset may not have finished uploading or the tileset may have been deleted from Mapbox.  
 
 ## The field 'puid' does not exist in the shapefile
 In order for a planning grid to be used within Marxan Web, it must contain the mandatory column called 'puid' which should be an integer type. Update the shapefile to include this field and zip the shapefile and try again.  
