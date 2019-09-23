@@ -35,6 +35,10 @@ If you want to use an existing PostGIS database, then untick the PostGIS checkbo
 
 <img src='images/install_postgis.png' title='Windows Installer PostGIS components' class='docsImage'>
 
+Once the installation has completed, you can run Marxan Web from the Start Menu:
+
+<img src='images/startmenu.png' title='Windows Start Menu' class='docsImage'>
+
 For uninstall information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page.
 
 ### Unix
