@@ -123,7 +123,7 @@ To delete a project, select a project and click on the delete button. Deleting a
 By default projects are created as public which means that they can be viewed by any other Marxan user. In order to restrict access to the project, it can be flagged as private and it will then only be visible to the project author. To set a project as private, in the project tab select the check box marked private at the bottom of the window.  
 
 #### Editing project metadata
-To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER.  
+To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER. The description can be entered as HTML so that hyperlinks to web resources can be embedded.     
 
 ### Managing features within a project
 The features that are included in a project are shown in the features tab and for each feature there is a target icon (on the left), a status bar (underneath the feature name) and a context menu (on the right).  
