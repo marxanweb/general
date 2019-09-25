@@ -35,3 +35,6 @@ Another user has started the project and it is currently running. If you are an 
 
 ## Request timeout
 No response was received from the server. This may be due to a number of reasons including: no connection to the internet; the server stopping; low bandwidth.  
+
+## Number of planning units exceeds the threshold
+When creating a new planning grid for a country, there are limits on the number of planning units that can be created. By default this is 100,000 units. If the estimated number of planning units will exceed this number then this error is raised.  
