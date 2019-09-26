@@ -94,7 +94,7 @@ This is the port that Tornado is listening on for requests and in the default se
 ##### WDPA_VERSION
 This is a text string that contains the version date for the WDPA that is included in the PostGIS database, e.g. August 2019. If there is a new version of the WDPA available (the information on the latest version of the WDPA is contained in the Marxan Registry), then admin users will be able to update to the latest version in the Server Details dialog box. For more information see [User Guide - Server Details](docs_user.html#server-details).  
 
-#### PLANNING_GRID_UNITS_LIMIT
+##### PLANNING_GRID_UNITS_LIMIT
 When creating planning grids, this is the threshold for the number of planning grid units that can be created. If there are more than this number, then an error message will be returned to the client.  
 
 #### user.dat
