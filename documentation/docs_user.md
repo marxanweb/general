@@ -330,7 +330,12 @@ The planning grids window provides information on the planning grids that are av
 
 <img src='images/window_planning_units.png' title='Planning grids window' class='docsImage'>
 
-At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To preview an individual planning grid on a map click on the ellipsis button on the right hand side of the table.  
+At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To view more details on an individual planning grid, click on the ellipsis button on the right hand side of the table.  
+
+### The plannning grid details window
+The plannning grid details window shows you all of the information for an individual plannning grid and shows a preview of the plannning grid on a map. Additional internal information on the plannning grid is available by clicking on the down arrow.  
+
+<img src='images/window_plannning_grid_details.png' title='Plannning grid details window' class='docsImage'>
 
 ### Managing planning grids
 Planning grids can be created, imported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
