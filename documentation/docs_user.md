@@ -261,10 +261,11 @@ The feature details window shows you all of the information for an individual fe
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).  
 
 ##### Importing existing features
-To upload existing spatial data from the local machine onto the server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
-The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
+To upload existing spatial data from the local machine onto the server as new features, click on the Import button. This opens the Import wizard, which steps you through the process of imported single or multiple features.  
 
-<img src='images/window_new_feature.png' title='New feature window' class='docsImage'>
+In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next. In the seconds step, choose whether you want to create a single feature or a set of features from the shapefile, then click next. The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features. This field must contain unique values otherwise an error will be raised. Click finish to import the features from the shapefile. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+
+The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
