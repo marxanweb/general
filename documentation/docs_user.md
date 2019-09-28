@@ -296,15 +296,8 @@ The Feature properties window shows information about the feature including its 
 <img src='images/feature_properties.png' title='Feature properties window' class='docsImage'>
 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
-- ID - an internal unique identifer for the feature.  
-- Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
-- Feature class name - the unique system-provided name for the feature. This identifer is unique across all server databases and is the same identifier used in the Mapbox ID.  
-- Description - the description the user provided for the feature.
-- Creation date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
-- Mapbox ID - a unique identifier for the feature in Mapbox.
-- Total area - the total area of the feature in square kilometers.
-- Target percent - the target percentage for the feature for the Marxan run.
-- Species penalty factor - the weighting given to the feature.
+- Target percent - the target percentage for the feature for the Marxan run. This can be edited in place by typing a value and pressing ENTER.  
+- Species penalty factor - the weighting given to the feature. This can be edited in place by typing a value and pressing ENTER.
 - Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the  planning unit count and area.
 - Planning unit count - the total number of planning units which intersect the feature.
 - Planning unit area - the total area of the feature in the planning grid (in square kilometers). 
