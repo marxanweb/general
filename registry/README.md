@@ -4,7 +4,7 @@ The files in this folder manage a number of globally useful functions and variab
 ## Files list
 ### marxan.js file
 #### Description  
-Holds a number of global variables for the Marxan Web application which are loaded on application startup. If the load fails then the application reverts to a local copy (which could be out of date). The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
+Holds a number of global variables for the Marxan Web application which are loaded on application startup. The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
 #### Variables
 `MAPBOX_BASEMAPS`  
 Array of Mapbox basemap styles that are available to Marxan users. This list is extensible and any new items will be immediately available to Marxan clients. Each object has the following keys:  
