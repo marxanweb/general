@@ -12,3 +12,4 @@ var MARXAN_SERVERS = [{name: 'JRC Development Server', port: 8081, host: '61c92e
                       {name: 'SPREP Regional Hub, Samoa', port: 8080, host: 'nonexistant', protocol:'https:', description: 'Regional node for BIOPAMA',type:'remote'},
                      {name:'Beta test', port: 8080, host: 'andrewcottam.com',protocol:'https:', description:'Beta test Marxan Server hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
 var WDPA = {latest_version:'September 2019',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Sep2019?type=shapefile', tilesUrl:'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?','metadataUrl':'https://www.protectedplanet.net/c/monthly-updates/2019/september-2019-update-of-the-wdpa'};
+var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g";
