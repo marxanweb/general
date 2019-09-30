@@ -37,6 +37,8 @@ On the left hand side of the application user interface is the project window wh
 
 <img src='images/tab_project.png' title='Project window' class='docsImage'>
 
+At the bottom of the project window is a toolbar for working with the project. There are buttons to start, stop and configure Marxan Runs and also buttons to zoom back to the projects full extent and to get a shareable url. This link can be shared with anyone and will open the project (as a guest user) with no requirement to login first.  
+
 ### Results window
 On the right hand side of the application user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the [Running projects](#running-projects) section.  
 
