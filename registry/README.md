@@ -6,10 +6,10 @@ The files in this folder manage a number of globally useful functions and variab
 #### Description  
 Holds a number of global variables for the Marxan Web application which are loaded on application startup. The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
 #### Variables
-`CLIENT_VERSION`
+`CLIENT_VERSION`  
 The latest version number for the marxan-client software.
 
-`SERVER_VERSION`
+`SERVER_VERSION`  
 The latest version number for the marxan-server software.
 
 `MAPBOX_BASEMAPS`  
@@ -36,7 +36,7 @@ Holds information about the latest version of the World Database of Protected Ar
 - tilesUrl: The url endpoint to the vector tiles for the latest version which must have been produced using the same downloaded shapefile. The vector tiles should be published in a workspace called 'marxan' and must have the layer name of 'wdpa_\<mmm\>_\<yyyy\>_polygons' where mmm is the abbreviated month and yyyy is the full year, e.g. wdpa_aug_2019_polygons.  
 - metadataUrl: The url that links to the WCMC metadata page for this update and includes a full description of which countries data have changed since the previous month.  
 
-`NOTIFICATIONS'
+`NOTIFICATIONS`  
 Array of notification objects where are used to show notifications when users log on to Marxan Web.
 
 ## Contact
