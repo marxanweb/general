@@ -19,5 +19,5 @@ var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUF
 var NOTIFICATIONS = [
     {id:1, html:"The Beta Test programme ends at end of October. Let us know what you think!", type:"News", expires: "10/31/2019", showForRoles: ["Admin","User","ReadOnly"]},
     {id:2, html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", expires: "", showForRoles: ["Admin","User","ReadOnly"]},
-    {id:2, html:"New training course for Marxan Web, maybe", type:"Training", expires: "", showForRoles: ["Admin","User","ReadOnly"]}    
+    {id:3, html:"New training course for Marxan Web, maybe", type:"Training", expires: "", showForRoles: ["Admin","User","ReadOnly"]}    
     ];
