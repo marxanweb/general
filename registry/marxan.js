@@ -17,5 +17,5 @@ var WDPA = {latest_version:'September 2019',downloadUrl:'https://www.protectedpl
 var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g";
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
 var NOTIFICATIONS = [
-    {id:1, html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", startDate: "01/10/19", endDate: "", source: "MarxanRegistry", showForRoles: ["Admin","User","ReadOnly"]}
+    {id:'n_1', html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", startDate: "01/10/19", endDate: "", source: "MarxanRegistry", showForRoles: ["Admin","User","ReadOnly"]}
     ];
