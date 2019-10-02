@@ -1,5 +1,5 @@
-var CLIENT_VERSION = "v0.9.16";
-var SERVER_VERSION = "v0.9.15";
+var CLIENT_VERSION = "v0.9.17";
+var SERVER_VERSION = "v0.9.17";
 var MAPBOX_BASEMAPS = [{name: 'Charted', alias:'ESRI Charted Territory',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/1c365daf37a744fbad748b67aa69dac8/resources/styles/root.json', provider:'esri'},
     {name: 'Topographic', alias:'ESRI Topographic',description: 'Oooo lovely', id:'https://www.arcgis.com/sharing/rest/content/items/0f52cd2d17ea4773944a1d0e0fb99ea4/resources/styles/root.json', provider:'esri'},
     {name: 'Streets', alias:'Mapbox Streets',description: 'A complete basemap, perfect for incorporating your own data.', id:'mapbox/streets-v10', provider:'mapbox'},
@@ -17,5 +17,5 @@ var WDPA = {latest_version:'September 2019',downloadUrl:'https://www.protectedpl
 var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g";
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
 var NOTIFICATIONS = [
-    {id:1, html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", startDate: "01/10/19", endDate: "", source: "MarxanRegistry", showForRoles: ["Admin","User","ReadOnly"]}
+    {id:1, html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", expires: "", showForRoles: ["Admin","User","ReadOnly"]}
     ];
