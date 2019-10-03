@@ -18,6 +18,6 @@ var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
 var NOTIFICATIONS = [
     {id:1, html:"The Beta Test programme ends at end of October. Let us know what you think!", type:"News", expires: "10/31/2019", showForRoles: ["Admin","User","ReadOnly"]},
-    {id:2, html:"Tonga has reached Aichi Target 11 - see <a href='www.google.com' target='_blank'>here</a>", type:"News", expires: "", showForRoles: ["Admin","User","ReadOnly"]},
+    {id:2, html:"Tonga has achieved it marine Aichi Target 11 - see <a href='http://macbio-pacific.info/updates/' target='_blank'>here</a>", type:"News", expires: "", showForRoles: ["Admin","User","ReadOnly"]},
     {id:3, html:"New training course for Marxan Web, maybe", type:"Training", expires: "", showForRoles: ["Admin","User","ReadOnly"]}    
     ];
