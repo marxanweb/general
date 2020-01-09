@@ -10,7 +10,7 @@ This guide is aimed at existing users of the DOS version of Marxan (together wit
 Marxan Web offers a number of advantages and features that were not available in the DOS version of Marxan. However, there are some cases in which it may be better to stick with what you know rather than moving to Marxan Web. Below are some of the questions that may help in making the decision.  
 
 ### Do you have an internet connection?  
-It may be obvious, bu Marxan Web depends on an internet connection and although it will work over low bandwidth connections it will not work without an internet connection. This also applies to the local installation of Marxan Web running on Windows as it uses live spatial data from Open Street Map and Mapbox. CLUZ (Conservation Land-Use Zoning software) is an alternative tool for working with Marxan that has no dependency on the internet, so if you need to work offline then this is a better option that migrating to Marxan Web. For more information see [CLUZ](https://anotherbobsmith.wordpress.com/software/cluz/).  
+It may be obvious, but Marxan Web depends on an internet connection and although it will work over low bandwidth connections it will not work without an internet connection. This also applies to the local installation of Marxan Web running on Windows as it uses live spatial data from Open Street Map and Mapbox. CLUZ (Conservation Land-Use Zoning software) is an alternative tool for working with Marxan that has no dependency on the internet, so if you need to work offline then this is a better option that migrating to Marxan Web. For more information see [CLUZ](https://anotherbobsmith.wordpress.com/software/cluz/).  
 
 ### Do you need to share resources?
 Another question to ask is whether or not you need to share various Marxan resources with anyone else, e.g. scenarios, features, spatial data, planning grids or indeed the results. If the answer to all of these is no, then you may be better to continue with your existing Marxan tools and setup. However, if you want to share at least some data then Marxan Web makes it very easy.  
@@ -37,7 +37,7 @@ The planning unit file is managed from the Planning Unit tab where the status of
 The puvsrp.dat file is created automatically whenever a project is run by intersecting the features with the planning units. The progress of this preprocessing is shown in the Log window. If features are removed from a project, then the relevant records are also removed from the puvspr.dat file. For more information see [User Guide - Preprocessing features](docs_user.md#preprocessing-features).  
 
 #### spec.dat file
-The species file managed using the Features tab and when species are added/removed or their targets of spf values are changed then the underlying spec.dat file is updated. For more information see [User Guide - Managing features within a project](docs_user.md#managing-features-within-a-project).  
+The species file is managed using the Features tab and when species are added/removed or their targets of spf values are changed then the underlying spec.dat file is updated. For more information see [User Guide - Managing features within a project](docs_user.md#managing-features-within-a-project).  
 
 #### bounds.dat file
 The boundary length file is created automatically when the Clumping window is opened for the first time in a project. For more information see [User Guide - Clumping window](docs_user.md#clumping-window).  

@@ -37,6 +37,8 @@ On the left hand side of the application user interface is the project window wh
 
 <img src='images/tab_project.png' title='Project window' class='docsImage'>
 
+At the bottom of the project window is a toolbar for working with the project. There are buttons to start, stop and configure Marxan Runs and also buttons to zoom back to the projects full extent and to get a shareable url. This link can be shared with anyone and will open the project (as a guest user) with no requirement to login first.  
+
 ### Results window
 On the right hand side of the application user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the [Running projects](#running-projects) section.  
 
@@ -123,7 +125,7 @@ To delete a project, select a project and click on the delete button. Deleting a
 By default projects are created as public which means that they can be viewed by any other Marxan user. In order to restrict access to the project, it can be flagged as private and it will then only be visible to the project author. To set a project as private, in the project tab select the check box marked private at the bottom of the window.  
 
 #### Editing project metadata
-To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER.  
+To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER. The description can be entered as HTML so that hyperlinks to web resources can be embedded.     
 
 ### Managing features within a project
 The features that are included in a project are shown in the features tab and for each feature there is a target icon (on the left), a status bar (underneath the feature name) and a context menu (on the right).  
@@ -247,19 +249,25 @@ All features within the project initially carry the same weight - that is, all o
 The source for these features can come from a range of different sources including local spatial data, global data providers or digitising them on the screen. One of the benefits of using Marxan Web is that any features that have been captured by the community can be shared between projects (if users have permissions).  
 
 ### The features window
-The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To preview an individual feature on a map click on the ellipsis button on the right hand side of the table.  
+The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To view all of the details for an individual feature, click on the ellipsis button on the right hand side of the table to open the feature details window.  
 
 <img src='images/window_features.png' title='Features window' class='docsImage'>
+
+### The feature details window
+The feature details window shows you all of the information for an individual feature and shows a preview of the feature on a map (if it has been uploaded to Mapbox). Additional internal information on the feature is available by clicking on the down arrow.  
+
+<img src='images/window_feature_details.png' title='Feature details window' class='docsImage'>
 
 ### Managing features
 #### Creating new features
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).  
 
 ##### Importing existing features
-To upload existing spatial data from the local machine onto the server as a new feature, click on the Import button. This opens the Import wizard, which requires a zipped shapefile and the name and description of the new feature. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
-The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
+To upload existing spatial data from the local machine onto the server as new features, click on the Import button. This opens the Import wizard, which steps you through the process of imported single or multiple features.  
 
-<img src='images/window_new_feature.png' title='New feature window' class='docsImage'>
+In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next. In the seconds step, choose whether you want to create a single feature or a set of features from the shapefile, then click next. The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features. This field must contain unique values otherwise an error will be raised. Click finish to import the features from the shapefile. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+
+The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
@@ -290,15 +298,8 @@ The Feature properties window shows information about the feature including its 
 <img src='images/feature_properties.png' title='Feature properties window' class='docsImage'>
 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
-- ID - an internal unique identifer for the feature.  
-- Alias - the user-friendly name for the feature and the one that will be shown in the features window and features tab
-- Feature class name - the unique system-provided name for the feature. This identifer is unique across all server databases and is the same identifier used in the Mapbox ID.  
-- Description - the description the user provided for the feature.
-- Creation date - the date that the feature was created in Marxan Web (not the date that the shapefile was created in the case of an imported shapefile)
-- Mapbox ID - a unique identifier for the feature in Mapbox.
-- Total area - the total area of the feature in square kilometers.
-- Target percent - the target percentage for the feature for the Marxan run.
-- Species penalty factor - the weighting given to the feature.
+- Target percent - the target percentage for the feature for the Marxan run. This can be edited in place by typing a value and pressing ENTER.  
+- Species penalty factor - the weighting given to the feature. This can be edited in place by typing a value and pressing ENTER.
 - Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the  planning unit count and area.
 - Planning unit count - the total number of planning units which intersect the feature.
 - Planning unit area - the total area of the feature in the planning grid (in square kilometers). 
@@ -325,7 +326,12 @@ The planning grids window provides information on the planning grids that are av
 
 <img src='images/window_planning_units.png' title='Planning grids window' class='docsImage'>
 
-At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To preview an individual planning grid on a map click on the ellipsis button on the right hand side of the table.  
+At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To view more details on an individual planning grid, click on the ellipsis button on the right hand side of the table.  
+
+### The planning grid details window
+The planning grid details window shows you all of the information for an individual planning grid and shows a preview of the planning grid on a map. Additional internal information on the planning grid is available by clicking on the down arrow.  
+
+<img src='images/window_planning_grid_details.png' title='planning grid details window' class='docsImage'>
 
 ### Managing planning grids
 Planning grids can be created, imported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
@@ -380,7 +386,9 @@ If you have already made some manual edits to the planning units and these overl
 Marxan Web uses protected areas information from the World Database of Protected Areas (WDPA) and the citation and version of the WDPA that is used is indicated in the Help | About window and at the bottom of the map (see also [Acknowledgements](#acknowledgements)). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
 
 #### Preprocessing protected areas
-Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab.  
+Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab. 
+
+If the WDPA is updated with new data then the intersection analysis between the protected areas and the planning units will need to be repeated.  
 
 ## Users
 ### Understanding users
@@ -499,7 +507,7 @@ The Server details show the information about the server that the user is curren
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
-For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window. For information on updates to the WDPA see [here](https://www.protectedplanet.net/c/monthly-updates){:target="_blank"}.  
+For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window. For information on updates to the WDPA see [here](https://www.protectedplanet.net/c/monthly-updates){:target="_blank"}. If the WDPA is updated with new data then the intersection analysis between the protected areas and the planning units will need to be repeated.  
 
 ### Documentation
 This provides a link to the main page for the Marxan Web documentation.  

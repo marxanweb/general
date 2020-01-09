@@ -29,3 +29,12 @@ When uploading and importing zipped shapefiles, the zip files must only contain 
 
 ## Not all planning units have been added
 When protected areas are intersected with the planning units in a project the results of that intersection are shown on the map as locked-in to the network. These planning units are outlined in blue. However, if the project already has some planning units that have been manually edited individually, these will be left as they are.  
+
+## The project is already running
+Another user has started the project and it is currently running. If you are an admin user you can use the Run Log to see the progress of all projects that are being run - see [The Run Log](docs_user.html#the-run-log) and stop them if necessary. Once the project has finished running you can run it.  
+
+## Request timeout
+No response was received from the server. This may be due to a number of reasons including: no connection to the internet; the server stopping; low bandwidth.  
+
+## Number of planning units exceeds the threshold
+When creating a new planning grid for a country, there are limits on the number of planning units that can be created. By default this is 100,000 units. If the estimated number of planning units will exceed this number then this error is raised. The threshold for the number of planning units can be set by the system Administrator. For more information see [PLANNING_GRID_UNITS_LIMIT](docs_admin.html#planning_grid_units_limit).  

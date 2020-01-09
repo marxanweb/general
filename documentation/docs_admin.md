@@ -35,6 +35,10 @@ If you want to use an existing PostGIS database, then untick the PostGIS checkbo
 
 <img src='images/install_postgis.png' title='Windows Installer PostGIS components' class='docsImage'>
 
+Once the installation has completed, you can run Marxan Web from the Start Menu:
+
+<img src='images/startmenu.png' title='Windows Start Menu' class='docsImage'>
+
 For uninstall information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page.
 
 ### Unix
@@ -44,7 +48,7 @@ marxan-server and marxan-client have to be installed separately on Unix operatin
 The installation of Marxan Web on Mac operating systems has not been done yet as there are some issues with installing PostGIS which is a prerequisite of marxan-server.  
 
 ## Configuration
-There are various ways that marxan-server can be configured from overall settings that apply at the server level, such as database connections, security settings and access control, to settings at the user level. In a normal installation none of this configuration needs to be done, but there are a few basic steps that will increase the security of your installation. This sections describes how to do that.  
+There are various ways that marxan-server can be configured from overall settings that apply at the server level, such as database connections, security settings and access control, to settings at the user level. In a normal installation none of this configuration needs to be done, but there are a few basic steps that will increase the security of your installation. This section describes how to do that.  
 
 ### Configuration files
 Configuration in marxan-server is done through a set of configuration files that are installed in the marxan-server folder and sub-folders. The following configuration files are used:  
@@ -85,10 +89,13 @@ If you get an error 'SEC_ERROR_UNKNOWN_ISSUER' in Firefox it is because the crt 
 This is the location of a private key for this machine that is used with the certificate file to provide SSL authentication. Reference a private key file (*.key).  
 
 ##### PORT 
-This is the port that Tornado is listening on for requests and in the default server.dat file it is set to 8080. If this is set to a non-default value and this instance of marxan-server has been registered in the Marxan Registry, then make sure that the host value in the Marxan Registry includes the correct port in the host, e.g. andrewcottam.com:8081.  
+This is the port that Tornado is listening on for requests and in the default server.dat file it is set to 8080. If this is set to a non-default value and this instance of marxan-server has been registered in the Marxan Registry, then make sure that the host value in the Marxan Registry includes the correct port in the host, e.g. andrewcottam.com:8081. Be aware that some organisation firewalls block traffic over non-standard ports, e.g. ports other than 8080, so it is safest to leave this with the default value of 8080.  
 
 ##### WDPA_VERSION
 This is a text string that contains the version date for the WDPA that is included in the PostGIS database, e.g. August 2019. If there is a new version of the WDPA available (the information on the latest version of the WDPA is contained in the Marxan Registry), then admin users will be able to update to the latest version in the Server Details dialog box. For more information see [User Guide - Server Details](docs_user.html#server-details).  
+
+##### PLANNING_GRID_UNITS_LIMIT
+When creating planning grids, this is the threshold for the number of planning grid units that can be created. If there are more than this number, then an error message will be returned to the client.  
 
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
@@ -193,9 +200,6 @@ You should see the following if marxan-server is running properly:
 <img src='images/testTornado.png' title='testTornado'>
 
 If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](#clearing-cache-and-service-worker). 
-
-#### Removing clumping projects
-Marxan Web uses temporary projects to be able to see the effects of changes to the BLM value and sometimes these projects are not deleted. These projects are stored in the users/_clumping folder. All of the projects in this folder can be deleted whenever necessary. 
 
 ### Updates 
 To install software updates to marxan-server:  

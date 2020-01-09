@@ -4,8 +4,14 @@ The files in this folder manage a number of globally useful functions and variab
 ## Files list
 ### marxan.js file
 #### Description  
-Holds a number of global variables for the Marxan Web application which are loaded on application startup. If the load fails then the application reverts to a local copy (which could be out of date). The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
+Holds a number of global variables for the Marxan Web application which are loaded on application startup. The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
 #### Variables
+`CLIENT_VERSION`  
+The latest version number for the marxan-client software.
+
+`SERVER_VERSION`  
+The latest version number for the marxan-server software.
+
 `MAPBOX_BASEMAPS`  
 Array of Mapbox basemap styles that are available to Marxan users. This list is extensible and any new items will be immediately available to Marxan clients. Each object has the following keys:  
  - name: The unique name that identifies the basemap in Marxan Web
@@ -29,6 +35,9 @@ Holds information about the latest version of the World Database of Protected Ar
 - downloadUrl: The url that links to the download of the new version as a shapefile from the WCMC website.  
 - tilesUrl: The url endpoint to the vector tiles for the latest version which must have been produced using the same downloaded shapefile. The vector tiles should be published in a workspace called 'marxan' and must have the layer name of 'wdpa_\<mmm\>_\<yyyy\>_polygons' where mmm is the abbreviated month and yyyy is the full year, e.g. wdpa_aug_2019_polygons.  
 - metadataUrl: The url that links to the WCMC metadata page for this update and includes a full description of which countries data have changed since the previous month.  
+
+`NOTIFICATIONS`  
+Array of notification objects where are used to show notifications when users log on to Marxan Web.
 
 ## Contact
 Andrew Cottam, Joint Research Centre :email:
