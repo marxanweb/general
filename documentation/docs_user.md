@@ -496,7 +496,7 @@ Any spatial data that is imported into Marxan Web is stored in a database on the
 
 ## Tools and analyses
 ### Gap analysis window
-The gap analysis windows shows the results of a gap analyis using the features and targets from the current project (using the method outlined in Rodriguez <i>et al</i>, 2004. A gap analysis calculates how much of each feature is protected within the existing protected area network and then summarises the representation as a score. The calculation is based on combining the protected areas into a single layer where there are no overlaps (i.e. dissolving the protected area boundaries) - this dissolving is based on protected areas whose status is not 'Proposed' or 'Not reported' and whose designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'. The features are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is calculated according to the Mean target achievement given in Jantke <i>et al</i>, 2019.
+The gap analysis windows shows the results of a gap analyis using the features and targets from the current project (using the method outlined in [Rodriguez <i>et al</i>, 2004](#references). A gap analysis calculates how much of each feature is protected within the existing protected area network and then summarises the representation as a score. The calculation is based on combining the protected areas into a single layer where there are no overlaps (i.e. dissolving the protected area boundaries) - this dissolving is based on protected areas whose status is not 'Proposed' or 'Not reported' and whose designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'. The features are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).
 
 ## Reports and outputs
 Future versions of Marxan Web will have features to produce a downloadable report which presents information on the project, features, targets and shows the map results.  
@@ -520,8 +520,9 @@ This provides a link to the main page for the Marxan Web documentation.
 The About window provides information on the versions of software that are being used including the underlying DOS version of Marxan. It also provides information on data providers and funding and in-kind contributions. 
 
 <img src='images/windows_about.png' title='About window' class='docsImage'>
+
 ## References  
-Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. Metrics for evaluating representation target achievement in protected area networks. Divers Distrib. 2019; 25: 170– 175. https://doi.org/10.1111/ddi.12853
+Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. Metrics for evaluating representation target achievement in protected area networks. Divers Distrib. 2019; 25: 170– 175. [https://doi.org/10.1111/ddi.12853](https://doi.org/10.1111/ddi.12853)
 
 Rodrigues, Ana & Akcakaya, H. Resit & Andelman, Sandy & Bakarr, Mohamed & Boitani, Luigi & Brooks, Thomas & Chanson, Janice & Fishpool, Lincoln & Fonseca, Gustavo & Gaston, Kevin & Hoffmann, Michael & Marquet, Pablo & Pilgrim, John & Pressey, Robert & Schipper, Jan & Sechrest, Wes & Stuart, Simon & Underhill, Leslie & Waller, Robert & Xie, Yan. (2004). Global Gap Analysis: Priority Regions for Expanding the Global Protected-Area Network. BioScience. 54. 10.1641/0006-3568(2004)054[1092:GGAPRF]2.0.CO;2. 
 
