@@ -522,7 +522,7 @@ The About window provides information on the versions of software that are being
 <img src='images/windows_about.png' title='About window' class='docsImage'>
 
 ## References  
-Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. <i>Metrics for evaluating representation target achievement in protected area networks. Divers Distrib</i>. 2019; 25: 170– 175. [https://doi.org/10.1111/ddi.12853](https://doi.org/10.1111/ddi.12853)
+Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. <i>Metrics for evaluating representation target achievement in protected area networks. Divers Distrib</i>. 2019; 25: 170– 175. [https://doi.org/10.1111/ddi.12853](https://doi.org/10.1111/ddi.12853){:target="_blank"}
 
 Rodrigues, Ana & Akcakaya, H. Resit & Andelman, Sandy & Bakarr, Mohamed & Boitani, Luigi & Brooks, Thomas & Chanson, Janice & Fishpool, Lincoln & Fonseca, Gustavo & Gaston, Kevin & Hoffmann, Michael & Marquet, Pablo & Pilgrim, John & Pressey, Robert & Schipper, Jan & Sechrest, Wes & Stuart, Simon & Underhill, Leslie & Waller, Robert & Xie, Yan. (2004). <i>Global Gap Analysis: Priority Regions for Expanding the Global Protected-Area Network</i>. BioScience. 54. 10.1641/0006-3568(2004)054[1092:GGAPRF]2.0.CO;2. 
 
