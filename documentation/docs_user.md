@@ -498,7 +498,12 @@ Any spatial data that is imported into Marxan Web is stored in a database on the
 ### Gap analysis window
 <img src='images/window_gap_analysis.png' title='Gap analysis window' class='docsImage'>
 
-The gap analysis windows shows the results of a gap analyis using the features and targets from the current project (using the method outlined in [Rodriguez <i>et al</i>, 2004](#references). A gap analysis calculates how much of each feature is protected within the existing protected area network and then summarises the representation as a score. The calculation is based on combining the protected areas into a single layer where there are no overlaps (i.e. dissolving the protected area boundaries) - this dissolving is based on protected areas whose status is not 'Proposed' or 'Not reported' and whose designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'. The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).
+The gap analysis windows shows the results of a gap analyis using the features and targets from the current project (using the method outlined in [Rodriguez <i>et al</i>, 2004](#references). A gap analysis calculates how much of each feature is protected within the existing protected area network and then summarises the representation as a score. The calculation is based on combining the protected areas into a single layer where there are no overlaps (i.e. dissolving the protected area boundaries) - this dissolving is based on a filtered set of protected areas which excludes the following:
+- The status is not 'Proposed' or 'Not reported'
+- The designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'
+- Protected areas that are represented as points - although these have an attribute for the area, there is no way of knowing where they are and so any gap analysis based on these would be higher uncertainty.  
+
+The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).
 
 ## Reports and outputs
 Future versions of Marxan Web will have features to produce a downloadable report which presents information on the project, features, targets and shows the map results.  
