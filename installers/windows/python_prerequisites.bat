@@ -1,4 +1,3 @@
-CALL conda.bat create --name marxan -y
-CALL conda.bat activate marxan
+CALL conda.bat activate base
 "%~dp0Miniconda3\Scripts\conda" install -y tornado psycopg2 pandas gdal colorama psutil
 "%~dp0Miniconda3\Scripts\pip" install mapbox -q
