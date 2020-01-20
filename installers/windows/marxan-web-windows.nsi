@@ -399,7 +399,7 @@ Section "Uninstall"
   
   ;anaconda3 and all packages
   ExecWait '"$INSTDIR\Miniconda3\Uninstall-Miniconda3.exe" /S' 
-  RMDir -r "$INSTDIR\Miniconda3"
+  RMDir /r "$INSTDIR\Miniconda3"
   
   ;postgis
   ;dont know how to do this silently
