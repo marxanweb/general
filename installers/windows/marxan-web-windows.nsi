@@ -123,13 +123,13 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.9.26.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.9.27.exe" ;TODO Update to correct version
 
   ;Default installation folder
-  InstallDir "$LOCALAPPDATA\Marxan Web"
+  InstallDir "$LOCALAPPDATA\MarxanWeb"
   
   ;Get installation folder from registry if available
-  InstallDirRegKey HKCU "Software\Marxan Web" ""
+  InstallDirRegKey HKCU "Software\MarxanWeb" ""
 
   ;Request application privileges for Windows Vista and Windows 7 +
   RequestExecutionLevel admin
@@ -177,7 +177,7 @@ Var txt
 
 Section "Marxan Server" SectionMarxanServer
   ;see if marxan web is already installed
-  ;ReadRegStr $0 HKCU "Software\Marxan Web" ""
+  ;ReadRegStr $0 HKCU "Software\MarxanWeb" ""
 
   SectionIn 1 RO ;add RO to make it read only
   ;INSTALL MARXAN-SERVER 
@@ -190,9 +190,9 @@ Section "Marxan Server" SectionMarxanServer
   SetOutPath "$INSTDIR"
   File "marxan.ico"
   File "run_marxan.bat"
-  CreateDirectory "$SMPROGRAMS\Marxan Web"
-  CreateShortcut "$SMPROGRAMS\Marxan Web\Launch Marxan Web.lnk" "C:\Windows\System32\cmd.exe" "/k $\"$INSTDIR\run_marxan.bat$\"" "$INSTDIR\marxan.ico" 0 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
-  WriteINIStr "$SMPROGRAMS\Marxan Web\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
+  CreateDirectory "$SMPROGRAMS\MarxanWeb"
+  CreateShortcut "$SMPROGRAMS\MarxanWeb\Launch Marxan Web.lnk" "C:\Windows\System32\cmd.exe" "/k $\"$INSTDIR\run_marxan.bat$\"" "$INSTDIR\marxan.ico" 0 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
+  WriteINIStr "$SMPROGRAMS\MarxanWeb\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
 
 SectionEnd
 
@@ -202,7 +202,7 @@ Section "Marxan Client" SectionMarxanClient
   SetOutPath "$INSTDIR"
   File /r ..\..\..\marxan-client 
   ;Store installation folder
-  WriteRegStr HKCU "Software\Marxan Web" "" $INSTDIR
+  WriteRegStr HKCU "Software\MarxanWeb" "" $INSTDIR
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
  
@@ -397,8 +397,9 @@ Section "Uninstall"
   RMDir /r "$INSTDIR\marxan-server"
   Delete "$INSTDIR\Uninstall.exe"
   
-  ;anaconda2 and all packages
-  RMDir "$INSTDIR"
+  ;anaconda3 and all packages
+  ExecWait '"$INSTDIR\Miniconda3\Uninstall-Miniconda3.exe" /S' 
+  RMDir -r "$INSTDIR\Miniconda3"
   
   ;postgis
   ;dont know how to do this silently
@@ -406,9 +407,10 @@ Section "Uninstall"
   ;remove windows shortcuts
   Delete "$INSTDIR\marxan.ico"
   Delete "$INSTDIR\run_marxan.bat"
-  RMDir /r "$SMPROGRAMS\Marxan Web"
-  RMDir "$SMPROGRAMS\Marxan Web"
+  Delete "$INSTDIR\python_prerequisites.bat"
+  RMDir /r "$SMPROGRAMS\MarxanWeb"
+  RMDir "$SMPROGRAMS\MarxanWeb"
   
   ;delete registry keys
-  DeleteRegKey HKCU "Software\Marxan Web" 
+  DeleteRegKey HKCU "Software\MarxanWeb" 
 SectionEnd
