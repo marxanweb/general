@@ -18,7 +18,7 @@ var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
 var NOTIFICATIONS = [
     {id:1, html:"The <a href='https://andrewcottam.github.io/marxan-web/documentation/docs_betatest.html' target='_blank'>Beta Test Programme</a> ends at the end of October. Let us know what you think!", type:"News", expires: "10/31/2019", showForRoles: ["Admin","User","ReadOnly"]},
-    {id:2, html:"Tonga has achieved its marine Aichi Target 11, maybe - see <a href='http://macbio-pacific.info/updates/' target='_blank'>here</a>", type:"News", expires: "", showForRoles: ["Admin","User","ReadOnly"]},
+    {id:2, html:"Tonga has achieved its marine Aichi Target 11, maybe - see <a href='http://macbio-pacific.info/updates/' target='_blank'>here</a>", type:"News", expires: "01/01/2020", showForRoles: ["Admin","User","ReadOnly"]},
     {id:3, html:"New training course for Marxan Web, maybe", type:"Training", expires: "01/01/2020", showForRoles: ["Admin","User","ReadOnly"]},
     {id:4, html:"Zero draft of the <a href='https://www.cbd.int/article/2020-01-10-19-02-38' target='_blank'>Post-2020 Global Biodiversity Framework</a> published by the Convention on Biological Diversity Secretariat", type:"News", expires: "10/09/2020", showForRoles: ["Admin","User","ReadOnly"]},
     {id:5, html:"Spatial action planning for biodiversity in 2020 and beyond. Marxan Web Training Session on 14/06/2020 at the World Conservation Congress in Marseille", type:"Training", expires: "14/06/2020", showForRoles: ["Admin","User","ReadOnly"]}
