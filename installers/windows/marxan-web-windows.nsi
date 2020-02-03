@@ -123,7 +123,7 @@ FunctionEnd
 
   ;Name and file
   Name "Marxan Web"
-  OutFile "marxan-web-v0.9.28.exe" ;TODO Update to correct version
+  OutFile "marxan-web-v0.9.29.exe" ;TODO Update to correct version
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\MarxanWeb"
@@ -409,7 +409,9 @@ Section "Uninstall"
   Delete "$INSTDIR\run_marxan.bat"
   Delete "$INSTDIR\python_prerequisites.bat"
   RMDir /r "$SMPROGRAMS\MarxanWeb"
-  RMDir "$SMPROGRAMS\MarxanWeb"
+  ;change output directory so we can delete the marxanweb folder
+  SetOutPath "$PROGRAMFILES64"
+  RMDir /r "$SMPROGRAMS\MarxanWeb"
   
   ;delete registry keys
   DeleteRegKey HKCU "Software\MarxanWeb" 
