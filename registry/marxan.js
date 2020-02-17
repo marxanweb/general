@@ -10,7 +10,7 @@ var MAPBOX_BASEMAPS = [{name: 'Charted', alias:'ESRI Charted Territory',descript
     {name: 'Satellite', alias:'Mapbox Satellite',description: 'A beautiful global satellite and aerial imagery layer.', id:'mapbox/satellite-v9', provider:'mapbox'},
     {name: 'Satellite Streets', alias:'Mapbox Satellite Streets',description: 'Global imagery enhanced with road and label hierarchy.', id:'mapbox/satellite-streets-v9', provider:'mapbox'}];
 var MARXAN_SERVERS = [{name: 'JRC Development Server', port: 443, host: '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com', protocol:'https:', description: 'Main development server for Marxan Web.',type:'remote'},
-                      {name: 'The Nature Conservancy, USA', port: 8080, host: 'pending', protocol:'https:', description: 'Central service for TNC',type:'remote'},
+                      {name: 'The Nature Conservancy, USA', port: 80, host: '34.70.243.181', protocol:'http:', description: 'Central service for TNC',type:'remote'},
                       {name: 'SPREP Regional Hub, Samoa', port: 8080, host: 'nonexistant', protocol:'https:', description: 'Regional node for BIOPAMA',type:'remote'},
                      {name:'Marxan Web Training Course', port: 8080, host: 'andrewcottam.com',protocol:'https:', description:'Marxan Server specifically for training hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
 var WDPA = {latest_version:'February 2020',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Feb2020?type=shapefile', tilesUrl:'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?','metadataUrl':'https://www.protectedplanet.net/c/monthly-updates/2020/february-2020-update-of-the-wdpa'};
