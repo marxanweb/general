@@ -176,7 +176,7 @@ This log shows diagnostic information about the marxan-server software including
 marxan-server runs as a Python script from the marxan-server folder and on Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. It can also be started manually (for other operating systems or if you want to start it manually on Windows):  
 
 - Navigate to the marxan-server folder
-- Start the marxan-server by entering python marxan-server.py
+- Start the marxan-server by entering python marxan-server.py (this must be as root user if you are serving from port 80 or 443)  
 
 You should see the marxan-server log output - for more information see [marxan-server log](#marxan-server-log).  
 
