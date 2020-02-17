@@ -503,7 +503,7 @@ The gap analysis window shows the results of a gap analyis using the features an
 - The designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'
 - Protected areas that are represented as points - although these have an attribute for the area, there is no way of knowing where they are and so any gap analysis based on these would be higher uncertainty.  
 
-The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).
+The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean Target Achievement given in [Jantke <i>et al</i>, 2019](#references).
 
 ## Reports and outputs
 Future versions of Marxan Web will have features to produce a downloadable report which presents information on the project, features, targets and shows the map results.  
