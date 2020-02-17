@@ -1,6 +1,6 @@
 # Errors List
   
-[Back to documentation](docs_overview.html)
+<a href='docs_overview.html'><img src='images/back.png' title='Back to documentation' class='docsImage3'></a> [Back to documentation](docs_overview.html)  
 
 ## The input shapefile does not have a coordinate system defined  
 Any spatial data imported into Marxan Web must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that spatial operations can be done (e.g. intersection) and so that Marxan can run using the data.  
