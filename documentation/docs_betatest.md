@@ -6,7 +6,7 @@ Marxan Web is available as a hosted service (i.e. where no software installation
 
 ### Marxan Web Hosted Service
 1. Goto: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/)
-1. Select the 'Marxan Web Training Course' server
+1. Select the 'Beta test' server
 1. Click Register, enter you details and login  
 
 ### Marxan Web install version
