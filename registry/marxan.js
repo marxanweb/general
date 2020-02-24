@@ -12,7 +12,7 @@ var MAPBOX_BASEMAPS = [{name: 'Charted', alias:'ESRI Charted Territory',descript
 var MARXAN_SERVERS = [{name: 'JRC Development Server', port: 8081, host: '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com', protocol:'https:', description: 'Main development server for Marxan Web.',type:'remote'},
                       {name: 'Marxan Web Training Course', port: 80, host: '34.70.243.181', protocol:'http:', description: 'Central service for TNC',type:'remote'},
                       {name: 'SPREP Regional Hub, Samoa', port: 8080, host: 'nonexistant', protocol:'https:', description: 'Regional node for BIOPAMA',type:'remote'},
-                     {name:'Marxan Web Training Course', port: 443, host: 'andrewcottam.com',protocol:'https:', description:'Marxan Server specifically for training hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
+                     {name:'Beta test', port: 443, host: 'andrewcottam.com',protocol:'https:', description:'Marxan Server specifically for training hosted on Google Cloud Platform. All projects will be deleted at the end.', type:'remote'}];
 var WDPA = {latest_version:'February 2020',downloadUrl:'https://www.protectedplanet.net/downloads/WDPA_Feb2020?type=shapefile', tilesUrl:'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?','metadataUrl':'https://www.protectedplanet.net/c/monthly-updates/2020/february-2020-update-of-the-wdpa'};
 var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g";
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
