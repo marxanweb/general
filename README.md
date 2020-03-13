@@ -14,7 +14,7 @@ This repo should be used alongside the [marxan-server](https://github.com/andrew
 Marxan Web is available here: [https://app.marxanweb.org/](https://app.marxanweb.org/). This hosted service requires no installation.  
 
 ## Installer for Windows
-The installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repo.  
+The installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repository.  
 
 ## Install script for the Windows platform
 This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://andrewcottam.github.io/marxan-web/installers/windows/) file.
