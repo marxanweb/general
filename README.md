@@ -1,6 +1,6 @@
 # Marxan Web
-This is the main repo for the Marxan Web Systematic Conservation Planning tool and provides access to the following:
-- Link to hosted Marxan Web (beta version)  
+This is the general repo for the Marxan Web Systematic Conservation Planning tool and provides access to the following:
+- Link to hosted Marxan Web 
 - Installer for Windows
 - Install script for the Windows platform
 - Marxan Registry information
@@ -10,8 +10,8 @@ This is the main repo for the Marxan Web Systematic Conservation Planning tool a
 
 This repo should be used alongside the [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client) repos which provide the source code for the Marxan Server and Client respectively. More information on the architecture of Marxan Web is available in the [Developer Documentation](https://andrewcottam.github.io/marxan-web/documentation/docs_dev.html).  
 
-## Hosted Marxan Web (beta version)
-Marxan Web is available for beta testing here: [https://beta.biopama.org/marxan-client/build/](https://beta.biopama.org/marxan-client/build/). This hosted service requires no installation.  
+## Hosted Marxan Web 
+Marxan Web is available here: [https://app.marxanweb.org/](https://app.marxanweb.org/). This hosted service requires no installation.  
 
 ## Installer for Windows
 The installer for Windows is available in the [Releases](https://github.com/andrewcottam/marxan-web/releases) section of this repo.  
