@@ -3,7 +3,6 @@ This is the main repo for the Marxan Web Systematic Conservation Planning tool a
 - Link to hosted Marxan Web (beta version)  
 - Installer for Windows
 - Install script for the Windows platform
-- Online Documentation for the tool
 - Marxan Registry information
 - Issue tracker
 - Sample client applications for developers
@@ -19,9 +18,6 @@ The installer for Windows is available in the [Releases](https://github.com/andr
 
 ## Install script for the Windows platform
 This contains the install script for building the Windows installer for the local installation of Marxan Web. It is a Nullsoft Scriptable Install System file (*.nsi) and instructions for using it to build the installer are given in the [readme.md](https://andrewcottam.github.io/marxan-web/installers/windows/) file.
-
-## Online Documentation for the tool
-This contains the Documentation that is linked to directly from Marxan Web and is a set of markdown pages that are automatically build in GitHub Pages using Jekyll. The start page is the [docs_overview.html](https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html) page.  
 
 ## Marxan Registry information
 The Marxan Registry information is a Javascript file that contains information on all of the Marxan Servers that are shown on application startup in the Marxan Servers list box. This list is essentially the network of servers that want to be published and made available through the Marxan Web tool.  
