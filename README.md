@@ -1,4 +1,4 @@
-# Marxan Web
+# General
 This is the general repo for the Marxan Web Systematic Conservation Planning tool and provides access to the following:
 - Link to hosted Marxan Web 
 - Installer for Windows
