@@ -28,3 +28,5 @@ All bugs and feature requests for Marxan Web are managed in this repo under the 
 ## Sample client applications for developers  
 Some example applications that use the marxan-server services are included in this folder. Start page [here](https://andrewcottam.github.io/marxan-web/client-apps/).   
 
+## Sample test data for using in unit tests
+Data for testing te app including shapefiles and other stuff
