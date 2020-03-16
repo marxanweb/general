@@ -1,4 +1,4 @@
-{ CLIENT_VERSION: "v0.9.33" }, { SERVER_VERSION: "v0.9.33" }, {
+{marxanRegisty: { CLIENT_VERSION: "v0.9.33" }, { SERVER_VERSION: "v0.9.33" }, {
     MAPBOX_BASEMAPS: [{ name: 'Charted', alias: 'ESRI Charted Territory', description: 'Oooo lovely', id: 'https://www.arcgis.com/sharing/rest/content/items/1c365daf37a744fbad748b67aa69dac8/resources/styles/root.json', provider: 'esri' },
         { name: 'Topographic', alias: 'ESRI Topographic', description: 'Oooo lovely', id: 'https://www.arcgis.com/sharing/rest/content/items/0f52cd2d17ea4773944a1d0e0fb99ea4/resources/styles/root.json', provider: 'esri' },
         { name: 'Streets', alias: 'Mapbox Streets', description: 'A complete basemap, perfect for incorporating your own data.', id: 'mapbox/streets-v10', provider: 'mapbox' },
@@ -23,4 +23,4 @@
         { id: 4, html: "Zero draft of the <a href='https://www.cbd.int/article/2020-01-10-19-02-38' target='_blank'>Post-2020 Global Biodiversity Framework</a> published by the Convention on Biological Diversity Secretariat", type: "News", expires: "10/09/2020", showForRoles: ["Admin", "User", "ReadOnly"] },
         { id: 5, html: "<i>'Spatial action planning for biodiversity in 2020 and beyond'</i>. Marxan Web Training Session on 14/06/2020 at the World Conservation Congress in Marseille", type: "Training", expires: "14/06/2020", showForRoles: ["Admin", "User", "ReadOnly"] }
     ]
-},
+}
