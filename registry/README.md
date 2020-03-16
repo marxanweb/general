@@ -28,6 +28,7 @@ Array of Marxan Servers that are listed in the login dialog in all instances of 
 - port: The port that the Marxan Server is listening on. By default Marxan Servers listen on port 8080, but if a non-default port is specified in the Server Configuration, then this must also be set here. e.g.8081. For more information see [Administration Guide - Port setting](https://andrewcottam.github.io/marxan-web/documentation/docs_admin.html#port) 
 - protocol: Either http or https
 - type: Either remote or local
+- instanceName: Specifies the name of the Virtual Machine on Google Cloud Platform (in the marxancloud@gmail.com account). Setting this value provides a mechanism to start/stop and configure the VM from the Marxan Web website directly.  
 
 `WDPA`  
 Holds information about the latest version of the World Database of Protected Areas (WDPA) so that Marxan Web can be updated to new version of the WDPA once they become available. The object has the following keys:
