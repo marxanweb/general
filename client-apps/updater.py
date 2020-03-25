@@ -1,5 +1,6 @@
+#utiliy for updating all of the marxan servers from a single script
 import requests, json
-from requests.exceptions import ConnectTimeout, SSLError, RequestException
+from requests.exceptions import ConnectTimeout, SSLError, RequestException, ConnectionError
 MARXAN_REGISTRY = "https://marxanweb.github.io/general/registry/marxan.js"
 TORNADO_PATH = "/marxan-server/"
 r = requests.get(MARXAN_REGISTRY)
@@ -43,6 +44,8 @@ for server in marxan_servers:
         updates = r2.json()['info']
         print("\n".join(updates))
     except (ConnectTimeout) as e:
+        print("ConnectTimeout")
+    except (ConnectionError) as e:
         print("ConnectTimeout")
     except (SSLError) as e:
         print("SSLError")
