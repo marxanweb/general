@@ -8,7 +8,8 @@ var MAPBOX_BASEMAPS = [{ name: 'Charted', alias: 'ESRI Charted Territory', descr
     { name: 'Light', alias: 'Mapbox Light', description: 'Subtle light backdrop for data visualizations.', id: 'mapbox/light-v9', provider: 'mapbox' },
     { name: 'North Star', alias: 'Mapbox North Star', description: 'Slightly modified North Star with no Bathymetry.', id: 'blishten/cjg6jk8vg3tir2spd2eatu5fd', provider: 'Joint Research Centre' },
     { name: 'Satellite', alias: 'Mapbox Satellite', description: 'A beautiful global satellite and aerial imagery layer.', id: 'mapbox/satellite-v9', provider: 'mapbox' },
-    { name: 'Satellite Streets', alias: 'Mapbox Satellite Streets', description: 'Global imagery enhanced with road and label hierarchy.', id: 'mapbox/satellite-streets-v9', provider: 'mapbox' }
+    { name: 'Satellite Streets', alias: 'Mapbox Satellite Streets', description: 'Global imagery enhanced with road and label hierarchy.', id: 'mapbox/satellite-streets-v9', provider: 'mapbox' },
+    { name: 'Blank', alias: 'Blank background', description: 'Plain white background', id: '', provider: 'local' }
 ];
 var MARXAN_SERVERS = [{ 'name': 'JRC Development Server', 'port': 8081, 'host': '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com', 'protocol': 'https:', 'description': 'Main development server for Marxan Web.', 'type': 'remote' },
     { 'name': 'Marxan Web Training Course', 'port': 443, 'host': 'marxantraining.org', 'protocol': 'https:', 'description': 'Central service for running Marxan Web training courses', 'type': 'remote', 'project': 'marxan-web', 'zone': 'us-central1-a', 'instanceName': 'marxantraining-org' },
