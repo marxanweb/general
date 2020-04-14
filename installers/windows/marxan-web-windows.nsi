@@ -192,7 +192,7 @@ Section "Marxan Server" SectionMarxanServer
   File "run_marxan.bat"
   CreateDirectory "$SMPROGRAMS\MarxanWeb"
   CreateShortcut "$SMPROGRAMS\MarxanWeb\Launch Marxan Web.lnk" "C:\Windows\System32\cmd.exe" "/k $\"$INSTDIR\run_marxan.bat$\"" "$INSTDIR\marxan.ico" 0 SW_SHOWNORMAL ALT|M "Starts the marxan-server and opens Marxan Web"
-  WriteINIStr "$SMPROGRAMS\MarxanWeb\Documentation.url" "InternetShortcut" "URL" "https://andrewcottam.github.io/marxan-web/documentation/docs_overview.html"
+  WriteINIStr "$SMPROGRAMS\MarxanWeb\Documentation.url" "InternetShortcut" "URL" "https://docs.marxanweb.org/"
 
 SectionEnd
 
