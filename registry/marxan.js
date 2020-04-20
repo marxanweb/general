@@ -6,7 +6,7 @@ var MAPBOX_BASEMAPS = [{ name: 'Charted', alias: 'ESRI Charted Territory', descr
     { name: 'Outdoors', alias: 'Mapbox Outdoors', description: 'General basemap tailored to hiking, biking, and sport.', id: 'mapbox/outdoors-v10', provider: 'mapbox' },
     { name: 'Dark', alias: 'Mapbox Dark', description: 'Subtle dark backdrop for data visualizations.', id: 'mapbox/dark-v9', provider: 'mapbox' },
     { name: 'Light', alias: 'Mapbox Light', description: 'Subtle light backdrop for data visualizations.', id: 'mapbox/light-v9', provider: 'mapbox' },
-    { name: 'North Star', alias: 'Mapbox North Star', description: 'Slightly modified North Star with no Bathymetry.', id: 'blishten/cjg6jk8vg3tir2spd2eatu5fd', provider: 'mapbox' },
+    { name: 'North Star', alias: 'Mapbox North Star', description: 'Slightly modified North Star with no Bathymetry.', id: 'blishten/cjg6jk8vg3tir2spd2eatu5fd', provider: 'Joint Research Centre' },
     { name: 'Satellite', alias: 'Mapbox Satellite', description: 'A beautiful global satellite and aerial imagery layer.', id: 'mapbox/satellite-v9', provider: 'mapbox' },
     { name: 'Satellite Streets', alias: 'Mapbox Satellite Streets', description: 'Global imagery enhanced with road and label hierarchy.', id: 'mapbox/satellite-streets-v9', provider: 'mapbox' },
     { name: 'Blank', alias: 'Blank background', description: 'Plain white background', id: '', provider: 'local' }
