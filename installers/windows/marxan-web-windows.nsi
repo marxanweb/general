@@ -183,8 +183,10 @@ Section "Marxan Server" SectionMarxanServer
   ;INSTALL MARXAN-SERVER 
   SetOutPath "$INSTDIR"
   File /r ..\..\..\marxan-server 
-  #On windows we want to create a server.dat file from the default file - the user shouldnt have to configure it 
+  #create a server.dat file from the default file - the user shouldnt have to configure it 
   File /oname=$INSTDIR\marxan-server\server.dat ..\..\..\marxan-server\server.dat.default
+  #create an admin user user.dat file so we can git reset --hard without overwriting any changes to the admin user
+  File /oname=$INSTDIR\marxan-server\users\admin\user.dat ..\..\..\marxan-server\users\admin\user.dat.default
 
   ;CREATE WINDOWS SHORTCUTS
   SetOutPath "$INSTDIR"
