@@ -12,7 +12,7 @@ var MAPBOX_BASEMAPS = [{ name: 'Charted', alias: 'ESRI Charted Territory', descr
     { name: 'Blank', alias: 'Blank background', description: 'Plain white background', id: '', provider: 'local' }
 ];
 var MARXAN_SERVERS = [{ 'name': 'JRC Development Server', 'port': 8081, 'host': '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com', 'protocol': 'https:', 'description': 'Main development server for Marxan Web.', 'type': 'remote' },
-    { 'name': 'Microsoft Azure trial', 'port': 80, 'host': 'azure.marxanweb.org', 'protocol': 'http:', 'description': 'Trial instance hosted on Microsoft Azure.', 'type': 'remote' },
+    { 'name': 'Microsoft Azure trial', 'port': 443, 'host': 'azure.marxanweb.org', 'protocol': 'https:', 'description': 'Trial instance hosted on Microsoft Azure.', 'type': 'remote' },
     { 'name': 'Marxan Web Training Course', 'port': 443, 'host': 'marxantraining.org', 'protocol': 'https:', 'description': 'Central service for running Marxan Web training courses', 'type': 'remote', 'project': 'marxan-web', 'zone': 'us-central1-a', 'instanceName': 'marxantraining-org' },
     { 'name': 'SPREP Regional Hub, Samoa', 'port': 8080, 'host': 'www.sprep.org', 'protocol': 'https:', 'description': 'Regional node for BIOPAMA', 'type': 'remote' },
     { 'name': 'Beta test', 'port': 443, 'host': 'andrewcottam.com', 'protocol': 'https:', 'description': 'Playground for trying features and analyses. All projects will be deleted at the end.', 'type': 'remote', 'project': 'geeImageServer', 'zone': 'europe-west6-a', 'instanceName': 'marxan-test-server' }
