@@ -1,12 +1,15 @@
-import tornado, asyncio, json, datetime
+import tornado, asyncio, json, datetime, colorama
 from tornado import websocket, httputil, queues, gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
+from colorama import Fore, Back, Style
 #constants
 LIVE_OUTPUT = True
 LOGIN_USER = "admin"
 LOGIN_PASSWORD = "password"
 PROTOCOL = "https://"
 DOMAIN = "andrewcottam.com"
+# DOMAIN = "marxantraining.org"
+# DOMAIN = "azure.marxanweb.org"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
 HTTP_ENDPOINT = REFERER + "/marxan-server/"
@@ -20,6 +23,7 @@ CONCURRENT_TASKS = 10
 cookie = None
 q = None
 
+colorama.init()
 def setCookies(response):
     #get the cookies
     cookies = response.headers['set-cookie'].split(",")
@@ -41,18 +45,18 @@ def getDictResponse(request, response):
     else:
         #for WebSocket requests there will be more than one message
         _dict = dict(json.loads(response)) 
-    if LIVE_OUTPUT:
-        # print(timestamp() + request.url + 5*" " + json.dumps(_dict))
+    if LIVE_OUTPUT and 'status' in _dict.keys() and _dict['status'] != 'RunningMarxan':
+        print(Fore.RESET + timestamp() + request.url + 5*" " + json.dumps(_dict))
         pass
     return _dict
 
 def logStart(url):
     if LIVE_OUTPUT:
-        print("\n" + timestamp() + url + 5*" " + (160 - len(url))*"=")
+        print(Fore.GREEN + timestamp() + url)
     
 def logFinish(url):
     if LIVE_OUTPUT:
-        print(timestamp() + url + 5*" " + "Finished  " + (150 - len(url))*"=" + "\n")
+        print(Fore.RED + timestamp() + url)
         
 async def makeRequest(user, request, **kwargs):
     logStart(request.url)
@@ -138,6 +142,11 @@ async def createRequestQueue():
         Request("WebSocket",'runMarxan?user=admin&project=Tonga%20Marine%20NBSAP'),
         Request("WebSocket",'runMarxan?user=andrew&project=Start%20project'),
         Request("WebSocket",'runMarxan?user=andrew&project=British%20Columbia%20Marine%20Case%20Study'),
+        Request("WebSocket",'preprocessFeature?user=andrew&project=Start%20project&planning_grid_name=pu_ton_marine_hexagon_50&feature_class_name=volcano&alias=volcano&id=63408475'),
+        Request("WebSocket",'createPlanningUnitGrid?iso3=ARG&domain=Terrestrial&areakm2=110&shape=hexagon'),
+        Request("WebSocket",'preprocessPlanningUnits?user=admin2&project=Start%20project'),
+        Request("WebSocket",'preprocessPlanningUnits?user=admin&project=British%20Columbia%20Marine%20Case%20Study'),
+        Request("WebSocket",'createPlanningUnitGrid?iso3=ARG&domain=Terrestrial&areakm2=100&shape=hexagon'),
     ]
     #create a queue for the request to submit
     global q
@@ -165,7 +174,8 @@ def outputResults(user):
         if type(_request.response) == dict:
             print(json.dumps(_request.response)[:80])
         else:
-            print(json.dumps(_request.response[-1])[:80])
+            if len(_request.response) > 0:
+                print(json.dumps(_request.response[-1])[:80])
     print("Finished all requests")
         
 class Request():
@@ -198,5 +208,4 @@ class User():
     
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(createRequestQueue())
-    # asyncio.get_event_loop().run_until_complete(makeWebSocketRequest('createPlanningUnitGrid?iso3=AND&domain=Terrestrial&areakm2=40&shape=square'))
     

@@ -1,4 +1,5 @@
 #utiliy for updating all of the marxan servers from a single script
+# either adds a new parameter to a *.dat file or updates an existing parameter value
 import requests, json
 from requests.exceptions import ConnectTimeout, SSLError, RequestException, ConnectionError
 MARXAN_REGISTRY = "https://marxanweb.github.io/general/registry/marxan.js"
@@ -28,7 +29,7 @@ for server in marxan_servers:
     print("Updating: '" + server['name'] + "'")
     try:
         #authenticate to the server
-        r = requests.get(authenticateUrl, timeout=0.5, headers={'referer': origin})
+        r = requests.get(authenticateUrl, timeout=2, headers={'referer': origin}, verify=False)
         if (r.text.find('VFS connection does not exist')!=-1):
             raise RequestException("VFS connection does not exist")
         if ('error' in r.json()):
@@ -36,17 +37,18 @@ for server in marxan_servers:
         #print the response
         print(r.json()['info'])
         #get the update url
-        updateUrl = endpoint + "addParameter?type=user&key=REPORTUNITS&value=Ha"
+        # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false"
+        updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
         #run the update
-        r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies)
+        r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies, verify=False)
         if ('error' in r2.json()):
             raise Exception(r2.json()['error'])
         updates = r2.json()['info']
         print("\n".join(updates))
     except (ConnectTimeout) as e:
-        print("ConnectTimeout")
+        print(e)
     except (ConnectionError) as e:
-        print("ConnectTimeout")
+        print(e)
     except (SSLError) as e:
         print("SSLError")
     except (RequestException) as e:
