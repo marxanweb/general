@@ -1,11 +1,10 @@
-import tornado, asyncio, json, datetime, colorama
+import tornado, asyncio, json, datetime, colorama, stressTestingJobs
 from tornado import websocket, httputil, queues, gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 from colorama import Fore, Back, Style
+
 #constants
 LIVE_OUTPUT = True
-LOGIN_USER = "admin"
-LOGIN_PASSWORD = "password"
 PROTOCOL = "https://"
 DOMAIN = "andrewcottam.com"
 # DOMAIN = "marxantraining.org"
@@ -20,6 +19,7 @@ PROJECT = "test_project"
 CONCURRENT_TASKS = 10
 
 #global variables
+current_test = stressTestingJobs.JOB_01
 cookie = None
 q = None
 
@@ -132,22 +132,7 @@ async def createRequestQueue():
     user = User("admin", "password")
     await user.authenticate()
     #get the request to submit
-    user.requests = [
-        Request("GET",'getProjects?user=' + LOGIN_USER), 
-        Request("GET",'getProjects?user=jennifer'),
-        Request("WebSocket",'runMarxan?user=admin&project=Start%20project'),
-        Request("WebSocket",'runMarxan?user=admin&project=British%20Columbia%20Marine%20Case%20Study'),
-        Request("WebSocket",'runMarxan?user=admin&project=Coral%20Triangle%20Case%20Study'),
-        Request("WebSocket",'runMarxan?user=admin&project=Fiji%20NBSAP'),
-        Request("WebSocket",'runMarxan?user=admin&project=Tonga%20Marine%20NBSAP'),
-        Request("WebSocket",'runMarxan?user=andrew&project=Start%20project'),
-        Request("WebSocket",'runMarxan?user=andrew&project=British%20Columbia%20Marine%20Case%20Study'),
-        Request("WebSocket",'preprocessFeature?user=andrew&project=Start%20project&planning_grid_name=pu_ton_marine_hexagon_50&feature_class_name=volcano&alias=volcano&id=63408475'),
-        Request("WebSocket",'createPlanningUnitGrid?iso3=ARG&domain=Terrestrial&areakm2=110&shape=hexagon'),
-        Request("WebSocket",'preprocessPlanningUnits?user=admin2&project=Start%20project'),
-        Request("WebSocket",'preprocessPlanningUnits?user=admin&project=British%20Columbia%20Marine%20Case%20Study'),
-        Request("WebSocket",'createPlanningUnitGrid?iso3=ARG&domain=Terrestrial&areakm2=100&shape=hexagon'),
-    ]
+    user.requests = [Request(request[0], request[1]) for request in current_test]
     #create a queue for the request to submit
     global q
     q = queues.Queue()
