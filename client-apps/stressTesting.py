@@ -12,14 +12,14 @@ DOMAIN = "andrewcottam.com"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
 HTTP_ENDPOINT = REFERER + "/marxan-server/"
-WS = "ws://" if PROTOCOL == "http://" else "wss://" 
+WS = "ws://" if PROTOCOL == "http://" else "wss://"
 WS_ENDPOINT = WS + DOMAIN + ":" + PORT + "/marxan-server/"
 USER = "unit_tester"
 PROJECT = "test_project"
 CONCURRENT_TASKS = 10
 
 #global variables
-current_test = stressTestingJobs.JOB_01
+current_test = stressTestingJobs.JOB_17
 cookie = None
 q = None
 
@@ -37,14 +37,14 @@ def setCookies(response):
 
 def timestamp():
     return datetime.datetime.now().strftime("%H:%M:%S.%f") + 5*" "
-    
+
 def getDictResponse(request, response):
     if hasattr(response, 'body'):
         #for GET/POST requests there is only one response
-        _dict = dict(json.loads(response.body.decode("utf-8"))) 
+        _dict = dict(json.loads(response.body.decode("utf-8")))
     else:
         #for WebSocket requests there will be more than one message
-        _dict = dict(json.loads(response)) 
+        _dict = dict(json.loads(response))
     if LIVE_OUTPUT and 'status' in _dict.keys() and _dict['status'] != 'RunningMarxan':
         print(Fore.RESET + timestamp() + request.url + 5*" " + json.dumps(_dict))
         pass
@@ -53,11 +53,11 @@ def getDictResponse(request, response):
 def logStart(url):
     if LIVE_OUTPUT:
         print(Fore.GREEN + timestamp() + url)
-    
+
 def logFinish(url):
     if LIVE_OUTPUT:
         print(Fore.RED + timestamp() + url)
-        
+
 async def makeRequest(user, request, **kwargs):
     logStart(request.url)
     if request.type == "WebSocket":
@@ -86,12 +86,13 @@ async def makeHttpRequest(user, request, **kwargs):
     try:
         response = await http_client.fetch(HTTPRequest(HTTP_ENDPOINT + request.url, **kwargs))
     except Exception as e:
-        print(e)
+        print(Fore.BLUE+ timestamp() + request.url + " ERROR")
+        print(timestamp() + str(e))
     else:
         # get the response as a dictionary
         _dict = getDictResponse(request, response)
         return response, _dict
-    
+
 async def makeWebSocketRequest(user, request, **kwargs):
     msgs = []
     #dont attempt to validate the SSL certificate otherwise you get SSL errors - not sure why and set the request timeout (5 seconds by default)
@@ -100,7 +101,8 @@ async def makeWebSocketRequest(user, request, **kwargs):
     try:
         ws_client = await tornado.websocket.websocket_connect(HTTPRequest(WS_ENDPOINT + request.url, **kwargs))
     except Exception as e:
-        print(e)
+        print(Fore.BLUE+ timestamp() + request.url + " ERROR")
+        print(timestamp() + str(e))
     else:
         while True:
             msg = await ws_client.read_message()
@@ -123,11 +125,11 @@ async def createRequestQueue():
                 await makeRequest(user, request)
                 fetched.add(request.url)
             except Exception as e:
-                log("Exception: %s %s" % (e, request))
+                print(Fore.BLUE + "Exception: %s %s" % (e, request))
                 dead.add(request.url)
             finally:
                 q.task_done()
-    
+
     #create a new user and authenticate
     user = User("admin", "password")
     await user.authenticate()
@@ -149,31 +151,31 @@ async def createRequestQueue():
     for _ in range(CONCURRENT_TASKS):
         await q.put(None)
     await workers
-    outputResults(user)
+    # outputResults(user)
 
 def outputResults(user):
     #get the longest request url length
     longest = sorted([len(r.url) for r in user.requests])[-1]
     for _request in user.requests:
-        print(_request.url + (60-len(_request.url))*" ", end=' ', flush=True)        
+        print(_request.url + (60-len(_request.url))*" ", end=' ', flush=True)
         if type(_request.response) == dict:
             print(json.dumps(_request.response)[:80])
         else:
             if len(_request.response) > 0:
                 print(json.dumps(_request.response[-1])[:80])
     print("Finished all requests")
-        
+
 class Request():
     def __init__(self, type, url):
         self.type = type
         self.url = url
         self.response = None
-        
+
 class User():
     def __init__(self, user, password):
         self.user = user
         self.password = password
-    
+
     def setCookie(self, response):
         #get the cookies
         cookies = response.headers['set-cookie'].split(",")
@@ -183,14 +185,13 @@ class User():
         #get the role cookie
         roleCookie = next((c for c in parsed if "role" in c.keys()), None)
         self.cookie = "user=" + userCookie['user'] + ";role=" + roleCookie['role']
-    
+
     async def authenticate(self):
         response, _dict = await makeRequest(None, Request("GET", 'validateUser?user=' + self.user + '&password=' + self.password))
         if "error" in _dict.keys():
             raise Exception("Authentication error")
         else:
             self.setCookie(response)
-    
+
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(createRequestQueue())
-    

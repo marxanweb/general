@@ -38,7 +38,8 @@ for server in marxan_servers:
         print(r.json()['info'])
         #get the update url
         # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false"
-        updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
+        # updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
+        updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"
         #run the update
         r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies, verify=False)
         if ('error' in r2.json()):
