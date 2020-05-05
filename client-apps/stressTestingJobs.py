@@ -209,5 +209,14 @@ JOB_18 = [
     ("WebSocket",'runMarxan?user=admin&project=Coral%20Triangle%20Case%20Study'),
 ];
 JOB_19 = [
+#no errors with 30 users on beta and training
     ("WebSocket",'runMarxan?user=USER&project=PROJECT'),
+];
+JOB_20 = [
+#with 30 users on beta the following errors - but no errors on the server - the timeouts occurred after 20seconds which is weird
+#09:56:24.724506     preprocessFeature?user=user_22&project=Start%20project&planning_grid_name=pu_ton_marine_hexagon_50&feature_class_name=volcano&alias=volcano&id=63408475 ERROR
+#09:56:24.725861     Timeout during request
+
+    ("WebSocket",'runMarxan?user=USER&project=PROJECT'),
+    ("WebSocket",'preprocessFeature?user=USER&project=PROJECT&planning_grid_name=pu_ton_marine_hexagon_50&feature_class_name=volcano&alias=volcano&id=63408475'),
 ];

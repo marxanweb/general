@@ -6,8 +6,8 @@ from colorama import Fore, Back, Style
 #constants
 LIVE_OUTPUT = True
 PROTOCOL = "https://"
-DOMAIN = "andrewcottam.com"
-# DOMAIN = "marxantraining.org"
+# DOMAIN = "andrewcottam.com"
+DOMAIN = "marxantraining.org"
 # DOMAIN = "azure.marxanweb.org"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
@@ -16,10 +16,10 @@ WS = "ws://" if PROTOCOL == "http://" else "wss://"
 WS_ENDPOINT = WS + DOMAIN + ":" + PORT + "/marxan-server/"
 USER = "unit_tester"
 PROJECT = "test_project"
-CONCURRENT_TASKS = 10
+CONCURRENT_TASKS = 1000
 
 #global variables
-current_test = stressTestingJobs.JOB_19
+current_test = stressTestingJobs.JOB_20
 adminUser = None
 
 colorama.init()
@@ -37,21 +37,33 @@ def getDictResponse(request, response):
     if LIVE_OUTPUT and 'status' in _dict.keys() and _dict['status'] != 'RunningMarxan':
         print(Fore.RESET + timestamp() + request.url + 5*" " + json.dumps(_dict))
         pass
+    if "error" in _dict.keys():
+        print(Fore.BLUE+ timestamp() + _dict['error'] + " ERROR")
     return _dict
 
+def getRequestMethod(url):
+    pos = url.find("?") if url.find("?") != -1 else len(url)
+    return url[:pos]
+    
+def getElapsedTime(request):
+    request.t2 = datetime.datetime.now()
+    return request.t2 - request.t1
+    
 def logStart(request):
+    request.t1 = datetime.datetime.now()
     if LIVE_OUTPUT:
         if request.user != None:
-            print(Fore.GREEN + timestamp() + str(request.user.id) + " " + request.url)
+            print(Fore.GREEN + timestamp() + str(request.user.id) + " " + request.method)
         else:
-            print(Fore.GREEN + timestamp() + request.url)
+            print(Fore.GREEN + timestamp() + request.method)
             
 def logFinish(request):
+    request.elapsed = getElapsedTime(request)
     if LIVE_OUTPUT:
         if request.user != None:
-            print(Fore.RED + timestamp() + str(request.user.id) + " " + request.url)
+            print(Fore.BLUE + timestamp() + str(request.user.id) + " " + request.method + " (" + str(request.elapsed)[5:] + "s)") 
         else:
-            print(Fore.RED + timestamp() + request.url)
+            print(Fore.BLUE + timestamp() + request.method + " (" + str(request.elapsed)[5:] + "s)")
 
 #gets all of the requests for a user from the current_test suite
 def getUserRequests(user):
@@ -65,16 +77,20 @@ def getUserRequests(user):
         
 async def makeRequest(request, **kwargs):
     logStart(request)
-    if request.type == "WebSocket":
-        msgs = await makeWebSocketRequest(request, **kwargs)
-        request.response = msgs
-        logFinish(request)
-        return msgs
-    else:
-        response, _dict = await makeHttpRequest(request, **kwargs)
-        request.response = _dict
-        logFinish(request)
-        return response, _dict
+    try:
+        if request.type == "WebSocket":
+            msgs = await makeWebSocketRequest(request, **kwargs)
+            request.response = msgs
+            logFinish(request)
+            return msgs
+        else:
+            response, _dict = await makeHttpRequest(request, **kwargs)
+            request.response = _dict
+            logFinish(request)
+            return response, _dict
+    except Exception as e:
+        request.elapsed = getElapsedTime(request)
+        print(Fore.RED + timestamp() + str(request.user.id) + " " + request.method + " " + str(e) + " (" + str(request.elapsed)[5:] + "s)")
 
 async def makeHttpRequest(request, **kwargs):
     #get any existing headers
@@ -88,34 +104,24 @@ async def makeHttpRequest(request, **kwargs):
     kwargs.update({'headers': {**d1, **d2}, 'validate_cert': False, 'request_timeout': None})
     #make the request
     http_client = AsyncHTTPClient()
-    try:
-        response = await http_client.fetch(HTTPRequest(HTTP_ENDPOINT + request.url, method=request.type, **kwargs))
-    except Exception as e:
-        print(Fore.BLUE+ timestamp() + request.url + " ERROR")
-        print(timestamp() + str(e))
-    else:
-        # get the response as a dictionary
-        _dict = getDictResponse(request, response)
-        return response, _dict
+    response = await http_client.fetch(HTTPRequest(HTTP_ENDPOINT + request.url, method=request.type, **kwargs))
+    # get the response as a dictionary
+    _dict = getDictResponse(request, response)
+    return response, _dict
 
 async def makeWebSocketRequest(request, **kwargs):
     msgs = []
     #dont attempt to validate the SSL certificate otherwise you get SSL errors - not sure why and set the request timeout (5 seconds by default)
     kwargs.update({'headers':{'Cookie': request.user.cookie, "referer": REFERER}, 'validate_cert': False, 'request_timeout': None})
     #make the request
-    try:
-        ws_client = await tornado.websocket.websocket_connect(HTTPRequest(WS_ENDPOINT + request.url, **kwargs))
-    except Exception as e:
-        print(Fore.BLUE+ timestamp() + request.url + " ERROR")
-        print(timestamp() + str(e))
-    else:
-        while True:
-            msg = await ws_client.read_message()
-            if not msg:
-                break
-            _dict = getDictResponse(request, msg)
-            msgs.append(_dict)
-        return msgs
+    ws_client = await tornado.websocket.websocket_connect(HTTPRequest(WS_ENDPOINT + request.url, **kwargs))
+    while True:
+        msg = await ws_client.read_message()
+        if not msg:
+            break
+        _dict = getDictResponse(request, msg)
+        msgs.append(_dict)
+    return msgs
 
 async def stressTestServer(numUsers=1):
     async def worker():
@@ -188,6 +194,7 @@ class Request():
         self.url = url
         self.response = None
         self.user = user
+        self.method = getRequestMethod(url)
 
 class User():
     def __init__(self, id=None):
@@ -228,4 +235,4 @@ class User():
         response, _dict = await makeRequest(Request('GET','deleteUser?user=' + self.user, adminUser))
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(stressTestServer(2))
+    asyncio.get_event_loop().run_until_complete(stressTestServer(5))
