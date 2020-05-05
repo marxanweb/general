@@ -208,3 +208,6 @@ JOB_18 = [
     ("WebSocket",'runMarxan?user=admin&project=British%20Columbia%20Marine%20Case%20Study'),
     ("WebSocket",'runMarxan?user=admin&project=Coral%20Triangle%20Case%20Study'),
 ];
+JOB_19 = [
+    ("WebSocket",'runMarxan?user=USER&project=PROJECT'),
+];
