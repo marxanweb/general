@@ -28,6 +28,7 @@ for server in marxan_servers:
     print("------------------------------------")
     print("Updating: '" + server['name'] + "'")
     try:
+        print(authenticateUrl)
         #authenticate to the server
         r = requests.get(authenticateUrl, timeout=2, headers={'referer': origin}, verify=False)
         if (r.text.find('VFS connection does not exist')!=-1):
@@ -38,8 +39,8 @@ for server in marxan_servers:
         print(r.json()['info'])
         #get the update url
         # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false"
-        # updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
-        updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"
+        updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
+        # updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"
         #run the update
         r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies, verify=False)
         if ('error' in r2.json()):

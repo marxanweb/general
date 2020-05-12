@@ -1,4 +1,4 @@
-import tornado, asyncio, json, datetime, colorama, stressTestingJobs, uuid, urllib
+import tornado, asyncio, json, datetime, colorama, Test_StressJobs, uuid, urllib
 from tornado import websocket, httputil, queues, gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 from colorama import Fore, Back, Style
@@ -6,8 +6,8 @@ from colorama import Fore, Back, Style
 #constants
 LIVE_OUTPUT = True
 PROTOCOL = "https://"
-# DOMAIN = "andrewcottam.com"
-DOMAIN = "marxantraining.org"
+DOMAIN = "andrewcottam.com"
+# DOMAIN = "marxantraining.org"
 # DOMAIN = "azure.marxanweb.org"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
@@ -19,7 +19,7 @@ PROJECT = "test_project"
 CONCURRENT_TASKS = 1000
 
 #global variables
-current_test = stressTestingJobs.JOB_20
+current_test = Test_StressJobs.JOB_20
 adminUser = None
 
 colorama.init()
@@ -35,10 +35,10 @@ def getDictResponse(request, response):
         #for WebSocket requests there will be more than one message
         _dict = dict(json.loads(response))
     if LIVE_OUTPUT and 'status' in _dict.keys() and _dict['status'] != 'RunningMarxan':
-        print(Fore.RESET + timestamp() + request.url + 5*" " + json.dumps(_dict))
+        # print(Fore.RESET + timestamp() + str(request.user.id) + " " + request.url + 5*" " + json.dumps(_dict))
         pass
     if "error" in _dict.keys():
-        print(Fore.BLUE+ timestamp() + _dict['error'] + " ERROR")
+        print(Fore.RED+ timestamp() + _dict['error'])
     return _dict
 
 def getRequestMethod(url):
@@ -235,4 +235,4 @@ class User():
         response, _dict = await makeRequest(Request('GET','deleteUser?user=' + self.user, adminUser))
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(stressTestServer(5))
+    asyncio.get_event_loop().run_until_complete(stressTestServer(30))
