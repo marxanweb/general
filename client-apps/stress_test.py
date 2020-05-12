@@ -1,4 +1,4 @@
-import tornado, asyncio, json, datetime, colorama, Test_StressJobs, uuid, urllib
+import tornado, asyncio, json, datetime, colorama, stress_test_jobs, uuid, urllib
 from tornado import websocket, httputil, queues, gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 from colorama import Fore, Back, Style
@@ -19,7 +19,7 @@ PROJECT = "test_project"
 CONCURRENT_TASKS = 1000
 
 #global variables
-current_test = Test_StressJobs.JOB_20
+current_test = stress_test_jobs.JOB_20
 adminUser = None
 
 colorama.init()
