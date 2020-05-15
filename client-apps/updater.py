@@ -22,13 +22,15 @@ marxan_servers = json.loads(arrayStr)
 for server in marxan_servers:
     #get the request url
     origin = server['protocol'] + "//" + server['host'] + ":" + str(server['port'])
+    #requests to https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/ have to go to http://localhost:8081
+    if server['host'] == '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com':
+        origin = 'http://localhost:8081'
     endpoint = origin + TORNADO_PATH
     #the user/password are hardcoded for now
     authenticateUrl = endpoint + "validateUser?user=admin&password=password"
     print("------------------------------------")
     print("Updating: '" + server['name'] + "'")
     try:
-        print(authenticateUrl)
         #authenticate to the server
         r = requests.get(authenticateUrl, timeout=2, headers={'referer': origin}, verify=False)
         if (r.text.find('VFS connection does not exist')!=-1):
@@ -36,11 +38,10 @@ for server in marxan_servers:
         if ('error' in r.json()):
             raise Exception(r.json()['error'])
         #print the response
-        print(r.json()['info'])
-        #get the update url
-        # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false"
-        updateUrl = endpoint + "addParameter?type=user&key=USEFEATURECOLORS&value=true"
-        # updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"
+        # print(r.json()['info'])
+        updateUrl = endpoint + "addParameter?type=server&key=ENABLE_RESET&value=false"      #server.dat update
+        # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false" #user.dat update
+        # updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"           #input.dat update
         #run the update
         r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies, verify=False)
         if ('error' in r2.json()):
