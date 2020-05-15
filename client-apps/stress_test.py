@@ -6,8 +6,8 @@ from colorama import Fore, Back, Style
 #constants
 LIVE_OUTPUT = True
 PROTOCOL = "https://"
-DOMAIN = "andrewcottam.com"
-# DOMAIN = "marxantraining.org"
+# DOMAIN = "andrewcottam.com"
+DOMAIN = "marxantraining.org"
 # DOMAIN = "azure.marxanweb.org"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
@@ -173,8 +173,8 @@ async def stressTestServer(numUsers=1):
     await workers
     # outputResults(user)
     #delete all users
-    for user in users:
-        await user.deleteUser()
+    # for user in users:
+        # await user.deleteUser()
 
 def outputResults(user):
     #get the longest request url length
