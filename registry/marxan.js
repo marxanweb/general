@@ -17,7 +17,7 @@ var MARXAN_SERVERS = [{ 'name': 'JRC Development Server', 'port': 8081, 'host': 
     { 'name': 'SPREP Regional Hub, Samoa', 'port': 8080, 'host': 'www.sprep.org', 'protocol': 'https:', 'description': 'Regional node for BIOPAMA', 'type': 'remote' },
     { 'name': 'Beta test', 'port': 443, 'host': 'andrewcottam.com', 'protocol': 'https:', 'description': 'Playground for trying features and analyses. All projects will be deleted at the end.', 'type': 'remote', 'project': 'geeImageServer', 'zone': 'europe-west6-a', 'instanceName': 'marxan-test-server' }
 ];
-var WDPA = { latest_version: 'March 2020', downloadUrl: 'https://www.protectedplanet.net/downloads/WDPA_Mar2020?type=shapefile', tilesUrl: 'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?', 'metadataUrl': 'https://www.protectedplanet.net/c/monthly-updates/2020/march-2020-update-of-the-wdpa' };
+var WDPA = { latest_version: 'May 2020', downloadUrl: 'https://www.protectedplanet.net/downloads/WDPA_May2020?type=shapefile', tilesUrl: 'https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?', 'metadataUrl': 'https://www.protectedplanet.net/c/monthly-updates/2020/may-2020-update-of-the-wdpa' };
 var MBAT = "sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g";
 var MBAT_PUBLIC = "pk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiMEZrNzFqRSJ9.0QBRA2HxTb8YHErUFRMPZg";
 var NOTIFICATIONS = [
