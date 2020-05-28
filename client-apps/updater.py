@@ -39,9 +39,10 @@ for server in marxan_servers:
             raise Exception(r.json()['error'])
         #print the response
         # print(r.json()['info'])
-        updateUrl = endpoint + "addParameter?type=server&key=ENABLE_RESET&value=false"      #server.dat update
+        # updateUrl = endpoint + "addParameter?type=server&key=ENABLE_RESET&value=false"      #server.dat update
         # updateUrl = endpoint + "addParameter?type=user&key=SHOWWELCOMESCREEN&value=false" #user.dat update
         # updateUrl = endpoint + "addParameter?type=project&key=NUMREPS&value=10"           #input.dat update
+        updateUrl = endpoint + "addParameter?type=project&key=COSTS&value=Uniform"           #input.dat update
         #run the update
         r2 = requests.get(updateUrl, headers={'referer': origin}, cookies=r.cookies, verify=False)
         if ('error' in r2.json()):
