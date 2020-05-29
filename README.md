@@ -7,7 +7,7 @@ This is the general repo for the Marxan Web Systematic Conservation Planning too
 - Issue tracker
 - Sample client applications for developers
 
-This repo should be used alongside the [marxan-server](https://github.com/marxanweb/marxan-server) and [marxan-client](https://github.com/marxanweb/marxan-client) repos which provide the source code for the Marxan Server and Client respectively. More information on the architecture of Marxan Web is available in the [Developer Documentation](https://marxanweb.github.io/marxan-web/documentation/docs_dev.html).  
+This repo should be used alongside the [marxan-server](../marxan-server) and [marxan-client](https://github.com/marxanweb/marxan-client) repos which provide the source code for the Marxan Server and Client respectively. More information on the architecture of Marxan Web is available in the [Developer Documentation](https://marxanweb.github.io/marxan-web/documentation/docs_dev.html).  
 
 ## Hosted Marxan Web 
 Marxan Web is available here: [https://app.marxanweb.org/](https://app.marxanweb.org/). This hosted service requires no installation.  
