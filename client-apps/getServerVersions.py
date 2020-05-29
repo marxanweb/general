@@ -24,6 +24,9 @@ marxan_servers = json.loads(arrayStr)
 for server in marxan_servers:
     #get the request url
     origin = server['protocol'] + "//" + server['host'] + ":" + str(server['port'])
+    #requests to https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/ have to go to http://localhost:8081
+    if server['host'] == '61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com':
+        origin = 'http://localhost:8081'
     endpoint = origin + TORNADO_PATH
     print(server['name'] , end=' ', flush=True)
     #get the length of the longest server text
