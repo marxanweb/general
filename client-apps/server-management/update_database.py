@@ -12,4 +12,4 @@ for server in reg.MarxanServers:
     except Exception as e:
         pass
     else:
-        server.runSQL('/home/ubuntu/environment/marxanweb/general/client-apps/batch-requests/update.sql')
+        server.runSQL('/home/ubuntu/environment/marxanweb/general/client-apps/server-management/update.sql')
