@@ -12,6 +12,6 @@ for server in reg.MarxanServers:
     except Exception as e:
         pass
     else:
-        server.addParameter('server', 'ENABLE_RESET','false')
+        # server.addParameter('server', 'ENABLE_RESET','false')
         # server.addParameter('user', 'SHOWWELCOMESCREEN','false')
-        # server.addParameter('project', 'NUMREPS','10')
+        server.addParameter('project', 'COSTS','Equal area')
