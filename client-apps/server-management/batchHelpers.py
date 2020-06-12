@@ -1,7 +1,7 @@
 #utiliy for updating all of the marxan servers databases from a single script
 import requests, json, os
 from requests.exceptions import ConnectTimeout, SSLError, RequestException, ConnectionError
-MARXAN_REGISTRY = "https://marxanweb.github.io/general/registry/marxan.js"
+MARXAN_REGISTRY = "https://marxanweb.github.io/general/registry/marxan.json"
 TORNADO_PATH = "/marxan-server/"
 
 class MarxanServer():
@@ -82,20 +82,8 @@ class MarxanServer():
 class Registry():
     def __init__(self):
         r = requests.get(MARXAN_REGISTRY)
-        #get the data
-        data = r.text
         #get the marxan servers
-        pos = data.find("MARXAN_SERVERS")
-        if (pos == -1):
-            raise Exception("MARXAN_SERVERS not found")
-        startpos = data[pos:].find("[")
-        if (startpos == -1):
-            raise Exception("MARXAN_SERVERS starting array not found")
-        endpos = data[pos:].find("]") + 1
-        if (endpos == -1):
-            raise Exception("MARXAN_SERVERS closing array not found")
-        arrayStr = data[pos + startpos:pos + endpos].replace("'", '"')
-        marxan_servers = json.loads(arrayStr)
+        marxan_servers = r.json()['MARXAN_SERVERS']
         self.MarxanServers = []
         for server in marxan_servers:
             #requests to https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/ have to go to http://localhost:8081

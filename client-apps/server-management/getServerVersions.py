@@ -1,5 +1,7 @@
 import batchHelpers
 from batchHelpers import Registry
+#run with:
+#python -W ignore getServerVersions.py 
 
 #create a new Registry object
 reg = Registry()

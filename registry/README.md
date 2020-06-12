@@ -2,7 +2,7 @@
 The files in this folder manage a number of globally useful functions and variables as outlined below:
 
 ## Files list
-### marxan.js file
+### marxan.json file
 #### Description  
 Holds a number of global variables for the Marxan Web application which are loaded on application startup. The variables in this file relate to externally provided services which are available through static urls which could change over time. If these urls were changed then all of the application instances would break and users would have to reinstall from an updated built project. Managing them this way through a CDN allows easy maintenance of these external services.
 #### Variables

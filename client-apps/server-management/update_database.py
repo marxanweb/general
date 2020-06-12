@@ -1,5 +1,7 @@
 import batchHelpers
 from batchHelpers import Registry
+#run with:
+#python -W ignore update_database.py 
 
 #create a new Registry object
 reg = Registry()

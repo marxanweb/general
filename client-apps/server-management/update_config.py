@@ -1,5 +1,7 @@
 import batchHelpers
 from batchHelpers import Registry
+#run with:
+#python -W ignore update_config.py 
 
 #create a new Registry object
 reg = Registry()
@@ -13,5 +15,5 @@ for server in reg.MarxanServers:
         pass
     else:
         # server.addParameter('server', 'ENABLE_RESET','false')
-        # server.addParameter('user', 'SHOWWELCOMESCREEN','false')
-        server.addParameter('project', 'COSTS','Equal area')
+        server.addParameter('user', 'SHOWWELCOMESCREEN','false')
+        # server.addParameter('project', 'COSTS','Equal area')
