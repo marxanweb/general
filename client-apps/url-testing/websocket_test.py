@@ -7,7 +7,9 @@ from urllib.parse import urlparse
 
 #ENTER THE URL TO TEST HERE###########################################################################################
 # TEST_URL = "wss://andrewcottam.com:443/marxan-server/preprocessFeature?user=steveschill&project=British%20Columbia%20Marine%20Case%20Study&planning_grid_name=pu_89979654c5d044baa27b6008f9d06&feature_class_name=f_9ef0acbea19b4f26b1c540b9b39e90&alias=BC:%200-20m%20Hard%20substrate&id=35132"
-TEST_URL = "ws://localhost:8081/marxan-server/createFeaturesFromWFS?wfsendpoint=https%3A%2F%2Fdservices2.arcgis.com%2F7p8XMQ9sy7kJZN4K%2Farcgis%2Fservices%2FCranes_Species_Ranges%2FWFSServer%3Fservice%3Dwfs%26request%3Dgetcapabilities&featuretype=Cranes_Species_Ranges%3ABlack_Crowned_Cranes&name=test&description=wibble"
+# TEST_URL = "ws://localhost:8081/marxan-server/createFeaturesFromWFS?wfsendpoint=https%3A%2F%2Fdservices2.arcgis.com%2F7p8XMQ9sy7kJZN4K%2Farcgis%2Fservices%2FCranes_Species_Ranges%2FWFSServer%3Fservice%3Dwfs%26request%3Dgetcapabilities&featuretype=Cranes_Species_Ranges%3ABlack_Crowned_Cranes&name=test&description=wibble"
+TEST_URL = "wss://azure.marxanweb.org/marxan-server/runMarxan?user=admin&project=Fiji%20NBSAP" #doesnt finish in the client!!!
+# TEST_URL = "wss://andrewcottam.com/marxan-server/runMarxan?user=admin&project=Fiji%20NBSAP" #does finish!!
 
 async def test_websocket():
     parsed = urlparse(TEST_URL)

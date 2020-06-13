@@ -7,8 +7,8 @@ from colorama import Fore, Back, Style
 LIVE_OUTPUT = True
 PROTOCOL = "https://"
 # DOMAIN = "andrewcottam.com"
-DOMAIN = "marxantraining.org"
-# DOMAIN = "azure.marxanweb.org"
+# DOMAIN = "marxantraining.org"
+DOMAIN = "azure.marxanweb.org"
 PORT = '80' if PROTOCOL == "http://" else '443'
 REFERER = PROTOCOL + DOMAIN + ":" + PORT
 HTTP_ENDPOINT = REFERER + "/marxan-server/"
@@ -17,9 +17,10 @@ WS_ENDPOINT = WS + DOMAIN + ":" + PORT + "/marxan-server/"
 USER = "unit_tester"
 PROJECT = "test_project"
 CONCURRENT_TASKS = 1000
+CURRENT_TEST = stress_test_jobs.JOB_20
+CONCURRENT_USERS = 5
 
 #global variables
-current_test = stress_test_jobs.JOB_20
 adminUser = None
 
 colorama.init()
@@ -65,10 +66,10 @@ def logFinish(request):
         else:
             print(Fore.BLUE + timestamp() + request.method + " (" + str(request.elapsed)[5:] + "s)")
 
-#gets all of the requests for a user from the current_test suite
+#gets all of the requests for a user from the CURRENT_TEST suite
 def getUserRequests(user):
     requests = []
-    for request in current_test:
+    for request in CURRENT_TEST:
         #replace any place holders with the runtime data
         url = request[1].replace("USER", user.user)
         url = url.replace("PROJECT", "Start%20project")
@@ -173,8 +174,8 @@ async def stressTestServer(numUsers=1):
     await workers
     # outputResults(user)
     #delete all users
-    # for user in users:
-        # await user.deleteUser()
+    for user in users:
+        await user.deleteUser()
 
 def outputResults(user):
     #get the longest request url length
@@ -235,4 +236,4 @@ class User():
         response, _dict = await makeRequest(Request('GET','deleteUser?user=' + self.user, adminUser))
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(stressTestServer(30))
+    asyncio.get_event_loop().run_until_complete(stressTestServer(CONCURRENT_USERS))
