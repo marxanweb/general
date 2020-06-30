@@ -189,6 +189,8 @@ Section "Marxan Server" SectionMarxanServer
   File /oname=$INSTDIR\marxan-server\users\admin\user.dat ..\..\..\marxan-server\users\admin\user.dat.default
   #create a marxan-server.log file so we can git reset --hard without overwriting any changes to the log file
   File /oname=$INSTDIR\marxan-server\marxan-server.log ..\..\..\marxan-server\marxan-server.log.default
+  #create a runlog.dat file so we can git reset --hard without overwriting any changes to the runlog file
+  File /oname=$INSTDIR\marxan-server\runlog.dat ..\..\..\marxan-server\runlog.dat.default
 
   ;CREATE WINDOWS SHORTCUTS
   SetOutPath "$INSTDIR"
