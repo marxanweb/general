@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactMapboxGl, {Popup , Layer, Feature } from "react-mapbox-gl";
+import ReactMapboxGl, { Popup, Layer, Feature } from "react-mapbox-gl";
 import './App.css';
 import jsonp from 'jsonp-promise';
 import parse from 'wellknown';
@@ -13,22 +13,22 @@ const Map = ReactMapboxGl({
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { features: [],lat:0,lng:0,alias:'',display:'none' };
+    this.state = { features: [], lat: 0, lng: 0, alias: '', display: 'none' };
   }
   _handleMouseEnter(cursor, item) {
     var properties = cursor && cursor.features && cursor.features[0] && cursor.features[0].properties;
-    if (properties) this.setState({lng:cursor.lngLat.lng,lat:cursor.lngLat.lat, alias: properties.alias,display:'block'});
+    if (properties) this.setState({ lng: cursor.lngLat.lng, lat: cursor.lngLat.lat, alias: properties.alias, display: 'block' });
   }
   _handleMouseLeave(event) {
-    this.setState({display:'none'});
+    this.setState({ display: 'none' });
   }
   loadProjects() {
-    jsonp("https://andrewcottam.com:8080/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
+    jsonp("https://andrewcottam.com/marxan-server/getProjectsWithGrids?&callback=__jp2").promise.then((response) => {
       this.setState({ features: response.data });
     });
   }
   render() {
-    var c = [this.state.features.map((item) => { 
+    var c = [this.state.features.map((item) => {
       return <Feature coordinates={parse(item.envelope).coordinates} properties={item}/>;
     })];
     return (
