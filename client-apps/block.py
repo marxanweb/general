@@ -1,3 +1,11 @@
+#
+# Copyright (c) 2020 Andrew Cottam.
+#
+# This file is part of marxanweb/general
+# (see https://github.com/marxanweb/general).
+#
+# License: European Union Public Licence V. 1.2, see https://opensource.org/licenses/EUPL-1.2
+#
 #utiliy for polling a server to check for blocking operations
 import requests, json
 from requests.exceptions import ConnectTimeout, SSLError, RequestException, ConnectionError
