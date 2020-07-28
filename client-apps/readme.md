@@ -1,13 +1,15 @@
-# Folders:
-## Projects summary
+This folder contains sample client applications for working with marxan-server. They are described below.  
+
+## projects-summary
 ### Description
+An example react create-react-app application that uses a number of marxan-server API requests to show project boundaries on a map. 
 ### URL: [https://andrewcottam.github.io/marxan-web/client-apps/projects-summary/build/index.html](https://andrewcottam.github.io/marxan-web/client-apps/projects-summary/build/index.html)
 
-# Files:
-- GET_test.py - Test for GET requests - paste in a test url
-- getServerVersions.py - Gets the version number of all online servers
-- stress_test.py - Simulates requests from multiple concurrent users
-- stress_test_jobs - Set of individual job queues for using in the stress tests
-- updater_config.py - Creates or updates parameters on all online servers (either server, user or project config files)
-- updater_db.py - Uploads an SQL file and executes it on all online servers
-- websocket_test.py - Test for WebSocket requests - paste in a test url
+## server-management
+Client application for managing marxan-servers. See the readme for more information.
+
+## stress-testing
+Client application for simulating multiple concurrent requests to a marxan-server hosted service for testing robustness with mutliple users. See the readme for more information. 
+
+## url-testing
+Client application for directly testing a specific url (either HTTP or WebSocket). Useful for debugging individual hosted services.  
