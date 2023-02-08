@@ -20,7 +20,7 @@
     {"name": "Beta test","port": 443,"host": "andrewcottam.com","protocol": "https:","description": "Playground for trying features and analyses. All projects will be deleted at the end.","type": "remote","project": "geeImageServer","zone": "europe-west6-a","instanceName": "marxan-test-server" }
 ],
 "WDPA": {"latest_version": "February 2023","downloadUrl": "http://wcmc.io/wdpa_current_release","tilesUrl": "https://geospatial.jrc.ec.europa.eu/geoserver/gwc/service/wmts?","metadataUrl": "https://www.protectedplanet.net/en/resources/february-2023-update-of-the-wdpa-and-wd-oecm" },
-"MBAT":"sk.eyJ1IjoiYmxpc2h0ZW4iLCJhIjoiY2piNm1tOGwxMG9lajMzcXBlZDR4aWVjdiJ9.Z1Jq4UAgGpXukvnUReLO1g",
+"MBAT":"sk.eyJ1IjoiYW5kcmV3Y290dGFtIiwiYSI6ImNsZHc1NjQ3cDA0NGwzcnJ4bHQ4cGU4OGYifQ.Jb1-is7c96_-x3aheAKyLg",
 "MBAT_PUBLIC":"pk.eyJ1IjoiYW5kcmV3Y290dGFtIiwiYSI6ImNsY3N4aHM5czB1YjkzbmxoNzN1NHk3aGYifQ.LzpyM7lJ5-f0vjshJoaNXg",
 "NOTIFICATIONS": [
     {"id": 1,"html":"The <a href='https://andrewcottam.github.io/marxan-web/documentation/docs_betatest.html' target='_blank'>Beta Test Programme</a> ends at the end of October. Let us know what you think!","type":"News","expires":"10/31/2019","showForRoles": ["Admin","User","ReadOnly"] },
