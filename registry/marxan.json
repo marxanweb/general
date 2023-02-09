@@ -1,4 +1,4 @@
-{"CLIENT_VERSION":"v1.0.7",
+{"CLIENT_VERSION":"v1.0.8",
 "SERVER_VERSION":"v1.0.8",
 "MAPBOX_BASEMAPS": [
     {"name": "Charted","alias": "ESRI Charted Territory","description": "Oooo lovely","id": "https://www.arcgis.com/sharing/rest/content/items/1c365daf37a744fbad748b67aa69dac8/resources/styles/root.json","provider": "esri" },
